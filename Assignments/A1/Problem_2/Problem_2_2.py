@@ -103,6 +103,15 @@ def calc_error(persons, j_max, steps, feature, method, title):
                         p1 += 1
         # Calculate error for threshold TH
         if method == 0:
+            # Error is calculated by the non-majority answer in the subset 
+            if ( n0 > p0 ):
+                err += p0
+            else:
+                err += n0
+             if ( n0 > p0 ):
+                err += p0
+            else:
+                err += n0 
             error.append([j,n1+p0])
         elif method == 1:
             error.append([j,mutual_inf(n0,p0,n1,p1,10)])
