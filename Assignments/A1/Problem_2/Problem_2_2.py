@@ -26,6 +26,17 @@ class person(object):
     age = 0
     salary = 0
     degree = 0
+    position = 0
+# Create a class to built a node for a tree 
+class node(object):
+    position = 0
+    persons = []
+    label = 0
+    prevnode = 0
+    nextnode0 = 0
+    nextnode1 = 0
+# Create empty numpy array as an array of node
+tree = np.ndarray((1),dtype=np.object)
 # Create numpy array of i persons
 persons = np.ndarray((10,),dtype=np.object)
 # Initialize array of persons
@@ -37,13 +48,26 @@ for i in range(10):
     persons[i].age = data[0][i]
     persons[i].salary = data[1][i]
     persons[i].degree = data[2][i]
-# Command to delete i'th element of persons array
-#persons = np.delete(persons,1,0)
+    persons[i].position = 1
+# Create root node
+root = node()
+root.position = 1
+root.persons = persons
+root.label = -1
+root.prevnode = -1
+# Insert root node into tree
+tree[0] = root
+print(tree[0].position)
+
 # Function to print current list of persons 
 def print_persons(persons):
     for i in range(len(persons)):
-        print("Person ", persons[i].index, ", Age: ", persons[i].age, ", Salary: ", persons[i].salary, ", Degree: ", persons[i].degree)
+        print("Person ", persons[i].index, ", Age: ", persons[i].age, ", Salary: ", persons[i].salary, ", Degree: ", persons[i].degree, " Postition: ", persons[i].position)
     return 0
+# Function to print the tree
+def print_tree(tree):
+    for i in range(len(tree)):
+        print("Node number: ", i, "Position in tree: ", tree[i].position, "List of persons: ", print_persons(tree[i].persons))
 # Boolean variable for choosing method of aclculating error
 method = 0 # Standard error 
 # Function for calculating the mutual information
@@ -78,6 +102,7 @@ def calc_error(persons, j_max, steps, feature, method, title):
     for j in range(0,j_max,steps):
         # Threshold
         TH = j
+        err = 0
         for i in range(len(persons)):
             if ( feature == 0 ): 
                 if (persons[i].age < TH ): #Hard condition
@@ -108,11 +133,11 @@ def calc_error(persons, j_max, steps, feature, method, title):
                 err += p0
             else:
                 err += n0
-             if ( n0 > p0 ):
-                err += p0
+            if ( n1 > p1 ):
+                err += p1
             else:
-                err += n0 
-            error.append([j,n1+p0])
+                err += n1 
+            error.append([j,err])
         elif method == 1:
             error.append([j,mutual_inf(n0,p0,n1,p1,10)])
         else:
@@ -125,34 +150,79 @@ def calc_error(persons, j_max, steps, feature, method, title):
         p1 = 0 # Number of people with age higher TH and college degree
     # Plot result
     
-    plt.figure()
-    plt.plot(*zip(*error))
-    plt.title(title)
-    plt.xlabel("Threshold")
-    plt.ylabel("Error")
-    plt.grid(True)
-    minimum = 10000
+    #plt.figure()
+    #plt.plot(*zip(*error))
+    #plt.title(title)
+    #plt.xlabel("Threshold")
+    #plt.ylabel("Error")
+    #plt.grid(True)
+    # Calculate best TH forsplitting
+    minimum = [0,10000]
     for i in range(len(error)):
-        if ( error[i][1] < minimum ):
-            minimum = error[i][1]
-            label = i 
+        if ( error[i][1] < minimum[1] ):
+            minimum[1] = error[i][1]
+            minimum[0] = i
         else:
             continue 
-    print("Minimum: ", minimum, " at TH: ", label)
-        
+    return(minimum)
     
+#tree = np.append(tree,root,axis=None)
+# Command to delete i'th element of persons array
+#persons = np.delete(persons,1,0)
 
-
-calc_error(persons,120000,1,1,0,"Age as feature (with normal error estimation)")
-
-
-
-print_persons(persons)
 
 # Built greedy tree
-def DTreeTrain():
-    
+def DTreeTrain(tree, nodeindex):
+    # Initialize temporary arrays
+    persons0 =  np.ndarray((0),dtype=np.object)
+    persons1 =  np.ndarray((0),dtype=np.object)
+    # Initialize array of persons
+    for i in range(0):
+        persons0[i] = person()
+        persons1[i] = person()
+    # Search for a minimal error by scanning thresholds, choose feature with smallet error
+    TH_sal = calc_error(tree[nodeindex].persons,120000,1,1,0,"Salary as feature (with normal error estimation)")
+    TH_age = calc_error(tree[nodeindex].persons,100,1,0,0,"Age as feature (with normal error estimation)") 
+    # Choose the feature according to the smalles error
+    if ( TH_sal[0] < TH_age[0] ):
+        for i in range(len(tree[nodeindex].persons)):
+            # If feature of person i is under threshold, person i goes into left node
+            if ( tree[nodeindex].persons[i].salary < TH_sal[0] ):
+                persons0 = np.append(persons0, tree[nodeindex].persons[i])
+            # If feature of person i is above threshold, person i goes into right node
+            else:
+                persons1 = np.append(persons1, tree[nodeindex].persons[i])
+    else:
+        for i in range(len(tree[nodeindex].persons)):
+            # If feature of person i is under threshold, person i goes into left node
+            if ( tree[nodeindex].persons[i].age < TH_age[0] ):
+                persons0 = np.append(persons0, tree[nodeindex].persons[i])
+            # If feature of person i is above threshold, person i goes into right node
+            else:
+                persons1 = np.append(persons1, tree[nodeindex].persons[i])            
+    # Create the two new nodes
+    node0 = node()
+    node0.position = 10
+    node0.persons = persons0
+    node0.label = -1
+    node0.prevnode = 
+    tree = np.append(tree,node0,axis=None)
+    print("Sub_node_0:")
+    print_persons(persons0)
+    print("Sub_node_1:")
+    print_persons(persons1)
+            
+                
+        
+        
     return 0
+
+DTreeTrain(tree, 0)
+
+#print_tree(tree1)
+
+
+
 
 
 
