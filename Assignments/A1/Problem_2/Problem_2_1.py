@@ -27,13 +27,13 @@ method = 0 # Standard error
 # If one of the denominators is 0 just set the whole term to 0
 def mutual_inf(n0, p0, n1, p1, D):
     mut_inf = 0
-    if ( (n0+p0)*(n0+n1) != 0 ):
+    if ( ((n0+p0)*(n0+n1)) != 0 and (D*n0)/((n0+p0)*(n0+n1)) != 0 ):
         mut_inf += (n0/D) * np.log10( (D*n0)/((n0+p0)*(n0+n1)) )
-    elif ( (n0+p0)*(p0+p1) != 0 ):
+    elif ( (n0+p0)*(p0+p1) != 0 and (D*p0)/((n0+p0)*(p0+p1)) != 0 ):
         mut_inf += (p0/D) * np.log10( (D*p0)/((n0+p0)*(p0+p1)) )
-    elif ( (n1+p1)*(n0+n1) != 0 ):
+    elif ( (n1+p1)*(n0+n1) != 0 and (D*n1)/((n1+p1)*(n0+n1)) != 0 ):
         mut_inf += (n1/D) * np.log10( (D*n1)/((n1+p1)*(n0+n1)) )
-    elif ( (n1+p1)*(p0+p1) != 0 ):
+    elif ( (n1+p1)*(p0+p1) != 0 and (D*p1)/((n1+p1)*(p0+p1)) != 0 ):
         mut_inf += (p1/D) * np.log10( (D*p1)/((n1+p1)*(p0+p1)) )
     return mut_inf
 # Function for calculating the error and printing the graph
@@ -85,8 +85,8 @@ def calc_error(j_max, steps, column, method, title):
 
 calc_error(100,1,0,0,"Age as feature (with normal error estimation)")
 calc_error(120000,1000,1,0,"Salary as feature (with normal error estimation)")
-calc_error(100,1,0,1,"Age as feature (with normal mutual error)")
-calc_error(120000,1000,1,1,"Salary as feature (with normal mutual error)")
+calc_error(100,1,0,1,"Age as feature (with normal mutual information)")
+calc_error(120000,1000,1,1,"Salary as feature (with normal mutual information)")
 
 
 

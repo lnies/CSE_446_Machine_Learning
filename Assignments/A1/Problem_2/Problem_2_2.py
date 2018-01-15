@@ -62,7 +62,7 @@ tree[0] = root
 def print_persons(persons):
     for i in range(len(persons)):
         print("Person ", persons[i].index, ", Age: ", persons[i].age, ", Salary: ", persons[i].salary, ", Degree: ", persons[i].degree, " Postition: ", persons[i].position)
-    return 0
+    return "++++++++++++++++++++++++++++++++++++++++"
 # Function to print the tree
 def print_tree(tree):
     for i in range(len(tree)):
@@ -75,16 +75,18 @@ method = 0 # Standard error
 # Function for calculating the mutual information
 # If one of the denominators is 0 just set the whole term to 0
 def mutual_inf(n0, p0, n1, p1, D):
+    #print(n0,p0,n1,p1)
     mut_inf = 0
-    if ( (n0+p0)*(n0+n1) != 0 ):
+    if ( ((n0+p0)*(n0+n1)) != 0 and (D*n0)/((n0+p0)*(n0+n1)) != 0 ):
         mut_inf += (n0/D) * np.log10( (D*n0)/((n0+p0)*(n0+n1)) )
-    elif ( (n0+p0)*(p0+p1) != 0 ):
+    elif ( (n0+p0)*(p0+p1) != 0 and (D*p0)/((n0+p0)*(p0+p1)) != 0 ):
         mut_inf += (p0/D) * np.log10( (D*p0)/((n0+p0)*(p0+p1)) )
-    elif ( (n1+p1)*(n0+n1) != 0 ):
+    elif ( (n1+p1)*(n0+n1) != 0 and (D*n1)/((n1+p1)*(n0+n1)) != 0 ):
         mut_inf += (n1/D) * np.log10( (D*n1)/((n1+p1)*(n0+n1)) )
-    elif ( (n1+p1)*(p0+p1) != 0 ):
+    elif ( (n1+p1)*(p0+p1) != 0 and (D*p1)/((n1+p1)*(p0+p1)) != 0 ):
         mut_inf += (p1/D) * np.log10( (D*p1)/((n1+p1)*(p0+p1)) )
-    return mut_inf
+    # Return negative mut_inf since the other algorithm searches for a minimum in the error array. 
+    return( (-1)*mut_inf )
 # Function for determining the Sign of a multivariante split
 #def multisplit(age, income):
 #    return np.sign( alpha*age + beta*income -1 )
@@ -142,6 +144,15 @@ def calc_error(persons, j_max, steps, feature, method, title):
                 err += n1 
             error.append([j,err])
         elif method == 1:
+             # Error is calculated by the non-majority answer in the subset 
+            if ( n0 > p0 ):
+                err += p0
+            else:
+                err += n0
+            if ( n1 > p1 ):
+                err += p1
+            else:
+                err += n1 
             error.append([j,mutual_inf(n0,p0,n1,p1,10)])
         else:
             print("WRONG PARAMETER FOR CHOOSING METHOD!")
@@ -159,6 +170,11 @@ def calc_error(persons, j_max, steps, feature, method, title):
     #plt.xlabel("Threshold")
     #plt.ylabel("Error")
     #plt.grid(True)
+    # Test if the node has to be split or if you already reached true 0 error
+    if ( err == 0  ):
+        # -1 encoudes this case and no split will be conducted
+        minimum = [-1,10000]
+        return minimum
     # Calculate best TH forsplitting
     minimum = [0,10000]
     for i in range(len(error)):
@@ -167,7 +183,38 @@ def calc_error(persons, j_max, steps, feature, method, title):
             minimum[0] = i
         else:
             continue 
-    return(minimum)
+    # Check for the case if no minimum can be found: if so, split at least one person to get a better error eventually
+    if ( minimum[0] == 0 ):
+        # Choose the right method
+        if ( method == 0 ):
+            # Search for youngest person
+            youngest = 1000
+            index_youngest = 0
+            for i in range(len(persons)):
+                if ( persons[i].age < youngest ):
+                    youngest = persons[i].age 
+                    index_youngest = i
+                else:
+                    continue
+            # Assign threshold for splitting above youngest person
+            minimum[0] = persons[index_youngest].age + 1
+        elif ( method == 1 ):
+            # Search for youngest person
+            best = 1000000
+            index_best = 0
+            for i in range(len(persons)):
+                if ( persons[i].salary < best ):
+                    best = persons[i].salary 
+                    index_best = i
+                else:
+                    continue
+            # Assign threshold for splitting above youngest person
+            minimum[0] = persons[index_best].salary + 1
+        else:
+            print("YOU CHOSE A WRONG PARAMETER FOR CHOOSING A METHOD")
+        return(minimum)
+    else:
+        return(minimum)
     
 #tree = np.append(tree,root,axis=None)
 # Command to delete i'th element of persons array
@@ -176,7 +223,7 @@ def calc_error(persons, j_max, steps, feature, method, title):
 
 # Built greedy tree
 # nodeindex is the index of the tree-array of the mothernode 
-def DTreeTrain(tree, nodeindex):
+def DTreeTrain(tree, nodeindex, method):
     # Initialize temporary arrays
     persons0 =  np.ndarray((0),dtype=np.object)
     persons1 =  np.ndarray((0),dtype=np.object)
@@ -185,8 +232,11 @@ def DTreeTrain(tree, nodeindex):
         persons0[i] = person()
         persons1[i] = person()
     # Search for a minimal error by scanning thresholds, choose feature with smallet error
-    TH_sal = calc_error(tree[nodeindex].persons,120000,1,1,0,"Salary as feature (with normal error estimation)")
-    TH_age = calc_error(tree[nodeindex].persons,100,1,0,0,"Age as feature (with normal error estimation)") 
+    TH_sal = calc_error(tree[nodeindex].persons,120000,1,1,method,"Salary as feature (with normal error estimation)")
+    TH_age = calc_error(tree[nodeindex].persons,100,1,0,method,"Age as feature (with normal error estimation)") 
+    # Test if node has to be split or not ( if -1 then don't split)
+    if ( TH_sal == -1 or TH_age == -1 ):
+        return tree
     # Create two new sub-nodes
     node0 = node()
     node1 = node()
@@ -234,17 +284,27 @@ def DTreeTrain(tree, nodeindex):
     #print_persons(persons1)
     return tree
 
-tree = DTreeTrain(tree, 0)
-tree = DTreeTrain(tree, 1)
-tree = DTreeTrain(tree, 2)
-tree = DTreeTrain(tree, 5)
+# Fill the whole tree
+i = 0
+while True:
+    #print("Length Tree: ", len(tree), ", Index: ", i)
+    if ( i == len(tree) ):
+        break
+    tree = DTreeTrain(tree,i,1)
+    # Test if there are any empty nodes, otherwise remove them
+    for j in range(len(tree)):
+        if ( tree[j-1].split_TH == -1 ):
+            tree = np.delete(tree,j-1,axis=None)
+        else:
+            continue
+    # Test if there are any node left to split by checking if the index overcounts the length of the tree
+    # since the length of tree doesn't change after it's completetly filled 
+    if ( i > len(tree) ):
+        break
+    else:
+        i += 1
+        continue
 print_tree(tree)
-
-print(calc_error(tree[1].persons,120000,1,1,0,"TEST SALARY"))
-print(calc_error(tree[1].persons,100,1,0,0,"TEST AGE"))
-
-
-#print_tree(tree1)
 
 
 
