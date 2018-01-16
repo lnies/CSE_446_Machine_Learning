@@ -4,6 +4,7 @@ K-means clustering.
 
 import numpy as np
 from matplotlib import pyplot as plt
+import time
 
 
 def analyze_kmeans(k):
@@ -20,18 +21,19 @@ def analyze_kmeans(k):
     errs = []
     ks = range(1, 11)
     ###
-    test = 53
+    """"
     Mu = initialize(X, k, N)
-    print(Mu[0][test])
-    for i in range(500):
-        z = assign(X, Mu, N, D)
-        Mu = update(X, z, k, D, Mu)
-        print(Mu[0][test])
+    for i in range(40):
+        z = assign(X, Mu, N, D)       # The vector of assignments z.
+        Mu = update(X, z, k, D, Mu)    # Update the centroids
+        distortion = compute_distortion(X, Mu, z, N, D)
+        print("Conv: ", Mu[0][53], "; Dist: ", distortion)
+    #cluster(X, y, k, N, D, n_starts=5)
+    """
     #cluster(X, y, k, N, D, n_starts=5)
     ###
-    """
     for k in ks:
-        distortion, err = analyze_one_k(X, y, k)
+        distortion, err = analyze_one_k(X, y, k, N, D, n_starts=5)
         distortions.append(distortion)
         errs.append(err)
     fig, ax = plt.subplots(2, figsize=(8, 6))
@@ -42,16 +44,15 @@ def analyze_kmeans(k):
     ax[1].set_ylabel("Mistake rate")
     ax[0].set_title("k-means performance")
     fig.savefig("kmeans.png")
-    """
 
 
-def analyze_one_k(X, y, k):
+def analyze_one_k(X, y, k, N, D, n_starts):
     """
     Run the k-means analysis for a single value of k. Return the distortion and
     the mistake rate.
     """
     #print "Running k-means with k={0}".format(k)
-    clust = cluster(X, y, k)
+    clust = cluster(X, y, k, N, D, n_starts)
     print( "Computing classification error." )
     err = compute_mistake_rate(y, clust)
     return clust["distortion"], err
@@ -85,12 +86,16 @@ def cluster(X, y, k, N, D, n_starts):
         Mu = initialize(X, k, N)
         N = X.shape[0]
         z = np.repeat(-1, N)        # So that initially all assignments change.
+        iterations = 0
         while True:
+            iterations += 1
             old_z = z
             z = assign(X, Mu, N, D)       # The vector of assignments z.
             Mu = update(X, z, k, D, Mu)    # Update the centroids
-            if np.all(z == old_z):
-                distortion = compute_distortion(X, Mu, z)
+            distortion = compute_distortion(X, Mu, z, N, D)
+            print(i, iterations, Mu[0][52], distortion)
+            if (np.all(z == old_z) or iterations > 50 ):
+                distortion = compute_distortion(X, Mu, z, N, D)
                 return dict(Mu=Mu, z=z, distortion=distortion)
 
     # Main function body
@@ -98,6 +103,10 @@ def cluster(X, y, k, N, D, n_starts):
     results = [loop(X, i, k, N, D) for i in range(n_starts)]
     best = min(results, key=lambda entry: entry["distortion"])
     best["digits"] = label_clusters(y, k, best["z"])
+    #print(best)
+    #print(best["digits"])
+    #print(best["z"])
+    #print(best["digits"],[best["z"]])
     return best
 
 
@@ -138,7 +147,7 @@ def assign(X, Mu, N, D):
     for i in range(N):
         min_dist = N*10000000000
         dist = 0
-        nearest = [0,0]
+        nearest = -1
         # Compare all datapoints with every centorid 
         for j in range(len(Mu)):
             # Calculate Eucledean distance between datapoints 
@@ -147,7 +156,7 @@ def assign(X, Mu, N, D):
             dist = np.sqrt(dist)
             #print(dist)
             if ( np.absolute(dist) < min_dist ):
-                nearest = [j,positions[j]]
+                nearest = j
                 min_dist = np.absolute(dist)
             else:
                 continue
@@ -165,7 +174,7 @@ def update(X, z, k, D, Mu):
     z is the Nx1 vector of cluster assignments.
     k is the number of clusters.
     """
-    # TODO: Compute the cluster centroids Mu.
+    # done TODO: Compute the cluster centroids Mu.
     # First we have to delete entries of the Mu array
     for i in range(len(Mu)):
         for j in range(D):
@@ -175,25 +184,41 @@ def update(X, z, k, D, Mu):
     for i in range(len(Mu)):
         # Compare withh all elements in X
         for j in range(len(z)):
-            if ( z[j][0] == i ):
+            if ( z[j] == i ):
                 sum_of_cluster += 1
                 # Calculate the sum of the vectors for calculating the new "center of weight"
                 for m in range(D):
                     Mu[i][m] += X[j][m]
-        for m in range(D):
-            Mu[i][m] /= sum_of_cluster
+        if ( sum_of_cluster == 0 ):
+            print("WARNING!: Sum of Clusters is 0")
+            for m in range(D):
+                Mu[i][m] /= 1
+        else:
+            for m in range(D):
+                Mu[i][m] /= sum_of_cluster
         sum_of_cluster = 0
     #print(Mu)
     return Mu
 
 
-def compute_distortion(X, Mu, z):
+def compute_distortion(X, Mu, z, N, D):
     """
     Compute the distortion (i.e. within-group sum of squares) implied by NxD
     data X, kxD centroids Mu, and Nx1 assignments z.
     """
-    # TODO: Compute the within-group sum of squares (the distortion).
-    distortion = None
+    # done TODO: Compute the within-group sum of squares (the distortion).
+    # When we start to calculate the distortion we already know the mean vector of every kth cluster: the centroid
+    # 
+    # Scan through all elements in Mu representing the cluster centroids
+    sum = 0
+    for i in range(len(Mu)):
+        # Compare withh all elements in X to get the correct assignments
+        for j in range(len(z)):
+            if ( z[j] == i ):
+                # Calculate the sum of the vectors for calculating the new "center of weight"
+                for m in range(D):
+                    sum += np.square( X[j][m] - Mu[i][m] )
+    distortion = sum
     return distortion
 
 
@@ -223,8 +248,35 @@ def label_clusters(y, k, z):
     k is the number of clusters
     z is the Nx1 vector of cluster assignments.
     """
-    # TODO: Compute the cluster labelings.
-    labels = None
+    # done TODO: Compute the cluster labelings.
+    labels = []
+    N_1 = 0
+    N_3 = 0
+    N_5 = 0
+    N_7 = 0
+    for i in range(k):
+        for j in range(len(z)):
+            if ( z[j] == i ):
+                if ( y[j] == 1 ):
+                    N_1 += 1
+                elif ( y[j] == 3 ):
+                    N_3 += 1
+                elif ( y[j] == 5 ):
+                    N_5 += 1
+                elif ( y[j] == 7 ):
+                    N_7 += 1
+        if ( N_1 >= ( N_3 and N_5 and N_7 ) ):
+            labels.append(1)
+        elif ( N_3 >= ( N_1 and N_5 and N_7 ) ):
+            labels.append(3)
+        elif ( N_5 > ( N_1 and N_3 and N_7 ) ):
+            labels.append(5)
+        elif ( N_7 > ( N_1 and N_3 and N_5 ) ):
+            labels.append(7)
+        N_1 = 0
+        N_3 = 0
+        N_5 = 0
+        N_7 = 0
     return labels
 
 
@@ -237,9 +289,21 @@ def compute_mistake_rate(y, clust):
     "z" is an Nx1 vector of final cluster assignments.
     """
     def zero_one_loss(xs, ys):
-        return sum(xs != ys) / float(len(xs))
+        err = 0
+        #return sum(xs != ys) / float(len(xs))
+        for i in range(len(ys[0])):
+            for j in range(len(ys[1])):
+                # Test if jth element of ys[1] (observation) is member of ith element of ys[0] (cluster)
+                if ( ys[1][j] == i ):
+                    # If yes, test if assigment of cluster is correct
+                    if ( ys[0][i] == xs[j] ):
+                        continue
+                    else:
+                        err += 1
+        return( err / len(ys[1]) )
 
-    y_hat = clust["digits"][clust["z"]]
+    y_hat = clust["digits"],clust["z"]
+    #print(y_hat)
     return zero_one_loss(y, y_hat)
 
 
