@@ -26,16 +26,17 @@ method = 0 # Standard error
 # Function for calculating the mutual information
 # If one of the denominators is 0 just set the whole term to 0
 def mutual_inf(n0, p0, n1, p1, D):
+    #print(n0,p0,n1,p1)
     mut_inf = 0
     if ( ((n0+p0)*(n0+n1)) != 0 and (D*n0)/((n0+p0)*(n0+n1)) != 0 ):
-        mut_inf += (n0/D) * np.log10( (D*n0)/((n0+p0)*(n0+n1)) )
-    elif ( (n0+p0)*(p0+p1) != 0 and (D*p0)/((n0+p0)*(p0+p1)) != 0 ):
-        mut_inf += (p0/D) * np.log10( (D*p0)/((n0+p0)*(p0+p1)) )
-    elif ( (n1+p1)*(n0+n1) != 0 and (D*n1)/((n1+p1)*(n0+n1)) != 0 ):
-        mut_inf += (n1/D) * np.log10( (D*n1)/((n1+p1)*(n0+n1)) )
-    elif ( (n1+p1)*(p0+p1) != 0 and (D*p1)/((n1+p1)*(p0+p1)) != 0 ):
-        mut_inf += (p1/D) * np.log10( (D*p1)/((n1+p1)*(p0+p1)) )
-    return mut_inf
+        mut_inf += (n0/D) * np.log2( (D*n0)/((n0+p0)*(n0+n1)) )
+    if ( (n0+p0)*(p0+p1) != 0 and (D*p0)/((n0+p0)*(p0+p1)) != 0 ):
+        mut_inf += (p0/D) * np.log2( (D*p0)/((n0+p0)*(p0+p1)) )
+    if ( (n1+p1)*(n0+n1) != 0 and (D*n1)/((n1+p1)*(n0+n1)) != 0 ):
+        mut_inf += (n1/D) * np.log2( (D*n1)/((n1+p1)*(n0+n1)) )
+    if ( (n1+p1)*(p0+p1) != 0 and (D*p1)/((n1+p1)*(p0+p1)) != 0 ):
+        mut_inf += (p1/D) * np.log2( (D*p1)/((n1+p1)*(p0+p1)) )
+    return( mut_inf )
 # Function for calculating the error and printing the graph
 def calc_error(j_max, steps, column, method, title):
     n0 = 0 # Number of people with age lower TH and no college degree
@@ -44,6 +45,7 @@ def calc_error(j_max, steps, column, method, title):
     p1 = 0 # Number of people with age higher TH and college degree
     # Error value storage array
     error = []
+    err = 0
     for j in range(0,j_max,steps):
         # Threshold
         TH = j
@@ -61,7 +63,15 @@ def calc_error(j_max, steps, column, method, title):
         # Calculate error for threshold TH
         if method == 0:
             #error.append([j,n1+p0])
-            error.append([j,n1+p0])
+            if ( n0 > p0 ):
+                err += p0
+            else:
+                err += n0
+            if ( n1 > p1 ):
+                err += p1
+            else:
+                err += n1 
+            error.append([j,err])
         elif method == 1:
             error.append([j,mutual_inf(n0,p0,n1,p1,10)])
         else:
@@ -72,6 +82,7 @@ def calc_error(j_max, steps, column, method, title):
         p0 = 0 # Number of people with age lower TH and college degree
         n1 = 0 # Number of people with age higher TH and no college degree
         p1 = 0 # Number of people with age higher TH and college degree
+        err = 0
     # Plot result
     #print(error)
     

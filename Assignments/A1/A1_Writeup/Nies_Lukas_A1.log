@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.10.13)  15 JAN 2018 18:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.10.13)  17 JAN 2018 17:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -71,6 +71,52 @@ File: pdftex.def 2017/06/24 v1.0g Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen104
 \Gin@req@width=\dimen105
+)
+(c:/texlive/2017/texmf-dist/tex/latex/oberdiek/grffile.sty
+Package: grffile 2016/05/16 v1.17 Extended file name support for graphics (HO)
+
+(c:/texlive/2017/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
+)
+(c:/texlive/2017/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+(c:/texlive/2017/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+(c:/texlive/2017/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)
+(c:/texlive/2017/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+
+(c:/texlive/2017/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+(c:/texlive/2017/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+
+(c:/texlive/2017/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+(c:/texlive/2017/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2017/03/19 v0.25 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+Package grffile Info: Option `multidot' is set to `true'.
+Package grffile Info: Option `extendedchars' is set to `false'.
+Package grffile Info: Option `space' is set to `true'.
+Package grffile Info: \Gin@ii of package `graphicx' fixed on input line 486.
 )
 (c:/texlive/2017/texmf-dist/tex/latex/subfig/subfig.sty
 Package: subfig 2005/06/28 ver: 1.3 subfig package
@@ -573,27 +619,17 @@ Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
 (c:/texlive/2017/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
 Package: hobsub-generic 2016/05/16 v1.14 Bundle oberdiek, subset generic (HO)
 Package: hobsub 2016/05/16 v1.14 Construct package bundles (HO)
-Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
-Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
-Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
-Package ifluatex Info: LuaTeX not detected.
+Package hobsub Info: Skipping package `infwarerr' (already loaded).
+Package hobsub Info: Skipping package `ltxcmds' (already loaded).
+Package hobsub Info: Skipping package `ifluatex' (already loaded).
 Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
 Package ifvtex Info: VTeX not detected.
 Package: intcalc 2016/05/16 v1.2 Expandable calculations with integers (HO)
-Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
-Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
-Package etexcmds Info: Could not find \expanded.
-(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
-(etexcmds)             that some package has redefined \expanded.
-(etexcmds)             In the latter case, load this package earlier.
-Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+Package hobsub Info: Skipping package `ifpdf' (already loaded).
+Package hobsub Info: Skipping package `etexcmds' (already loaded).
+Package hobsub Info: Skipping package `kvsetkeys' (already loaded).
 Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
-Package: pdftexcmds 2017/03/19 v0.25 Utility functions of pdfTeX for LuaTeX (HO
-)
-Package pdftexcmds Info: LuaTeX not detected.
-Package pdftexcmds Info: \pdf@primitive is available.
-Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode found.
+Package hobsub Info: Skipping package `pdftexcmds' (already loaded).
 Package: pdfescape 2016/05/16 v1.14 Implements pdfTeX's escape features (HO)
 Package: bigintcalc 2016/05/16 v1.4 Expandable calculations on big integers (HO
 )
@@ -610,14 +646,8 @@ Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
 Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
 Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
 )
-(c:/texlive/2017/texmf-dist/tex/generic/ifxetex/ifxetex.sty
-Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
-)
 (c:/texlive/2017/texmf-dist/tex/latex/oberdiek/auxhook.sty
 Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
-)
-(c:/texlive/2017/texmf-dist/tex/latex/oberdiek/kvoptions.sty
-Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
 )
 \@linkdim=\dimen174
 \Hy@linkcounter=\count293
@@ -733,20 +763,20 @@ File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
 (./Nies_Lukas_A1.aux)
 \openout1 = `Nies_Lukas_A1.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
 
 (c:/texlive/2017/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -795,7 +825,7 @@ Dictionary: translator-basic-dictionary, Language: English
 File: siunitx-abbreviations.cfg 2017/08/02 v2.7j siunitx: Abbreviated units
 )
 \AtBeginShipoutBox=\box57
-Package hyperref Info: Link coloring OFF on input line 50.
+Package hyperref Info: Link coloring OFF on input line 51.
 
 (c:/texlive/2017/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -805,9 +835,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count317
 )
-LaTeX Info: Redefining \ref on input line 50.
-LaTeX Info: Redefining \pageref on input line 50.
-LaTeX Info: Redefining \nameref on input line 50.
+LaTeX Info: Redefining \ref on input line 51.
+LaTeX Info: Redefining \pageref on input line 51.
+LaTeX Info: Redefining \nameref on input line 51.
 
 (./Nies_Lukas_A1.out) (./Nies_Lukas_A1.out)
 \@outlinefile=\write3
@@ -849,16 +879,16 @@ LaTeX Info: Redefining \nameref on input line 50.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 \c__siunitx_mathsf_int=\count318
-LaTeX Font Info:    Try loading font information for U+msa on input line 50.
+LaTeX Font Info:    Try loading font information for U+msa on input line 51.
 (c:/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 50.
+LaTeX Font Info:    Try loading font information for U+msb on input line 51.
 
 (c:/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+esvect on input line 50.
+LaTeX Font Info:    Try loading font information for U+esvect on input line 51.
 
 
 (c:/texlive/2017/texmf-dist/tex/latex/esvect/uesvect.fd
@@ -877,50 +907,140 @@ File: uesvect.fd
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.121 \end{align}
+l.122 \end{align}
                   [1]
-<../Problem_1/Figure_1.png, id=68, 462.528pt x 341.1144pt>
+<../Problem_1/Figure_1.png, id=129, 462.528pt x 341.1144pt>
 File: ../Problem_1/Figure_1.png Graphic file (type png)
 <use ../Problem_1/Figure_1.png>
-Package pdftex.def Info: ../Problem_1/Figure_1.png  used on input line 136. on 
-input line 136.
+Package pdftex.def Info: ../Problem_1/Figure_1.png  used on input line 137. on 
+input line 137.
 Package pdftex.def Info: Requested size: 277.41176pt x 204.60254pt on input lin
-e 136.
+e 137.
+ [2 <../Problem_1/Figure_1.png>]
+<../Problem_2/Figure_2.1_age_normal.png, id=145, 462.528pt x 341.1144pt>
+File: ../Problem_2/Figure_2.1_age_normal.png Graphic file (type png)
+<use ../Problem_2/Figure_2.1_age_normal.png>
+Package pdftex.def Info: ../Problem_2/Figure_2.1_age_normal.png  used on input 
+line 157. on input line 157.
+Package pdftex.def Info: Requested size: 192.0548pt x 141.6431pt on input line 
+157.
+<../Problem_2/Figure_2.1_sal_normal.png, id=146, 462.528pt x 341.1144pt>
+File: ../Problem_2/Figure_2.1_sal_normal.png Graphic file (type png)
+<use ../Problem_2/Figure_2.1_sal_normal.png>
+Package pdftex.def Info: ../Problem_2/Figure_2.1_sal_normal.png  used on input 
+line 159. on input line 159.
+Package pdftex.def Info: Requested size: 192.0548pt x 141.6431pt on input line 
+159.
+<../Problem_2/Figure_2.1_age_mut.png, id=147, 462.528pt x 341.1144pt>
+File: ../Problem_2/Figure_2.1_age_mut.png Graphic file (type png)
+<use ../Problem_2/Figure_2.1_age_mut.png>
+Package pdftex.def Info: ../Problem_2/Figure_2.1_age_mut.png  used on input lin
+e 161. on input line 161.
+Package pdftex.def Info: Requested size: 192.0548pt x 141.6431pt on input line 
+161.
+<../Problem_2/Figure_2.1_sal_mut.png, id=148, 462.528pt x 341.1144pt>
+File: ../Problem_2/Figure_2.1_sal_mut.png Graphic file (type png)
+<use ../Problem_2/Figure_2.1_sal_mut.png>
+Package pdftex.def Info: ../Problem_2/Figure_2.1_sal_mut.png  used on input lin
+e 163. on input line 163.
+Package pdftex.def Info: Requested size: 192.0548pt x 141.6431pt on input line 
+163.
+
+Underfull \hbox (badness 2119) in paragraph at lines 163--163
+[]\OT1/cmr/m/n/10 (d) |Mu-tual in-for-ma-tion for the fea-ture
+ []
+
+<../Problem_2/Figure_2.1_stamps.PNG, id=149, 950.3505pt x 166.221pt>
+File: ../Problem_2/Figure_2.1_stamps.PNG Graphic file (type png)
+<use ../Problem_2/Figure_2.1_stamps.PNG>
+Package pdftex.def Info: ../Problem_2/Figure_2.1_stamps.PNG  used on input line
+ 169. on input line 169.
+Package pdftex.def Info: Requested size: 426.79135pt x 74.64656pt on input line
+ 169.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<../Problem_2/2.2.png, id=152, 807.61725pt x 387.849pt>
+File: ../Problem_2/2.2.png Graphic file (type png)
+<use ../Problem_2/2.2.png>
+Package pdftex.def Info: ../Problem_2/2.2.png  used on input line 178. on input
+ line 178.
+Package pdftex.def Info: Requested size: 426.79135pt x 204.96126pt on input lin
+e 178.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+! Undefined control sequence.
+<argument>  \vec {w}=\text {rot}(90\degres 
+                                           ) 
+l.200 \end{align*}
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument>  \vec {w}=\text {rot}(90\degres 
+                                           ) 
+l.200 \end{align*}
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[3] [4 <../Problem_2/Figure_2.1_age_normal.png> <../Problem_2/Figure_2.1_sal_no
+rmal.png> <../Problem_2/Figure_2.1_age_mut.png> <../Problem_2/Figure_2.1_sal_mu
+t.png> <../Problem_2/Figure_2.1_stamps.PNG>]
+<../Problem_4/Run_2.png, id=179, 578.16pt x 427.8384pt>
+File: ../Problem_4/Run_2.png Graphic file (type png)
+<use ../Problem_4/Run_2.png>
+Package pdftex.def Info: ../Problem_4/Run_2.png  used on input line 233. on inp
+ut line 233.
+Package pdftex.def Info: Requested size: 426.79135pt x 315.8251pt on input line
+ 233.
  (./Nies_Lukas_A1.bbl
 
 LaTeX Warning: Empty `thebibliography' environment on input line 3.
 
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 160.
- [2 <../Problem_1/Figure_1.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 160.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 249.
+ [5 <../Problem_2/2.2.png>] [6 <../Problem_4/Run_2.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 249.
  (./Nies_Lukas_A1.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 160.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 160.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 249.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 249.
 Package rerunfilecheck Info: File `Nies_Lukas_A1.out' has not changed.
-(rerunfilecheck)             Checksum: 473C89358A1DB64A8EF7026DA3B96E48;509.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 160.
+(rerunfilecheck)             Checksum: D08ED85E749A2BAE3CAEE8960AE589A2;1326.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 249.
  ) 
 Here is how much of TeX's memory you used:
- 19968 strings out of 492990
- 375982 string characters out of 6136348
- 459309 words of memory out of 5000000
- 23316 multiletter control sequences out of 15000+600000
- 543340 words of font info for 77 fonts, out of 8000000 for 9000
+ 20133 strings out of 492990
+ 380007 string characters out of 6136348
+ 462796 words of memory out of 5000000
+ 23431 multiletter control sequences out of 15000+600000
+ 544405 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 44i,17n,58p,10394b,741s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 44i,17n,58p,10394b,745s stack positions out of 5000i,500n,10000p,200000b,80000s
 <c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/tex
-live/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2017
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2017/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2017/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2017/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmr8.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmsl12.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10
-.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on Nies_Lukas_A1.pdf (4 pages, 121399 bytes).
+live/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><c:/texlive/20
+17/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2017/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2017/texmf-dist/font
+s/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2017/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmr10.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmr12.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
+17.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/
+texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb><c:/texlive/2
+017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2017/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2017/texmf-dist/font
+s/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on Nies_Lukas_A1.pdf (8 pages, 405599 bytes).
 PDF statistics:
- 118 PDF objects out of 1000 (max. 8388607)
- 100 compressed objects within 1 object stream
- 21 named destinations out of 1000 (max. 500000)
- 70 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 251 PDF objects out of 1000 (max. 8388607)
+ 208 compressed objects within 3 object streams
+ 48 named destinations out of 1000 (max. 500000)
+ 201 words of extra memory for PDF output out of 10000 (max. 10000000)
 

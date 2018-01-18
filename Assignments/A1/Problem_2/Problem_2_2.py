@@ -78,14 +78,13 @@ def mutual_inf(n0, p0, n1, p1, D):
     #print(n0,p0,n1,p1)
     mut_inf = 0
     if ( ((n0+p0)*(n0+n1)) != 0 and (D*n0)/((n0+p0)*(n0+n1)) != 0 ):
-        mut_inf += (n0/D) * np.log10( (D*n0)/((n0+p0)*(n0+n1)) )
-    elif ( (n0+p0)*(p0+p1) != 0 and (D*p0)/((n0+p0)*(p0+p1)) != 0 ):
-        mut_inf += (p0/D) * np.log10( (D*p0)/((n0+p0)*(p0+p1)) )
-    elif ( (n1+p1)*(n0+n1) != 0 and (D*n1)/((n1+p1)*(n0+n1)) != 0 ):
-        mut_inf += (n1/D) * np.log10( (D*n1)/((n1+p1)*(n0+n1)) )
-    elif ( (n1+p1)*(p0+p1) != 0 and (D*p1)/((n1+p1)*(p0+p1)) != 0 ):
-        mut_inf += (p1/D) * np.log10( (D*p1)/((n1+p1)*(p0+p1)) )
-    # Return negative mut_inf since the other algorithm searches for a minimum in the error array. 
+        mut_inf += (n0/D) * np.log2( (D*n0)/((n0+p0)*(n0+n1)) )
+    if ( (n0+p0)*(p0+p1) != 0 and (D*p0)/((n0+p0)*(p0+p1)) != 0 ):
+        mut_inf += (p0/D) * np.log2( (D*p0)/((n0+p0)*(p0+p1)) )
+    if ( (n1+p1)*(n0+n1) != 0 and (D*n1)/((n1+p1)*(n0+n1)) != 0 ):
+        mut_inf += (n1/D) * np.log2( (D*n1)/((n1+p1)*(n0+n1)) )
+    if ( (n1+p1)*(p0+p1) != 0 and (D*p1)/((n1+p1)*(p0+p1)) != 0 ):
+        mut_inf += (p1/D) * np.log2( (D*p1)/((n1+p1)*(p0+p1)) )
     return( (-1)*mut_inf )
 # Function for determining the Sign of a multivariante split
 #def multisplit(age, income):

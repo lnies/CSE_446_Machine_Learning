@@ -230,6 +230,7 @@ def initialize(X, k, N):
     # done TODO: Initialize Mu.
     # Initialize np array as Mu (kxD matrix)
     Mu = []
+    np.array(Mu).reshape(3.4)
     # Fill matrix
     for i in range(k):
         Mu.append(X[np.random.randint(1,N)])

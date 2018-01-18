@@ -15,19 +15,34 @@ def error_red(n0, p0, n1, p1, D):
 
 # Function for calculating the mutual information
 # If one of the denominators is 0 just set the whole term to 0
+"""
+def mutual_inf(n0,p0,n1,p1,D):
+    mut_inf = 0
+    if ( n0 != 0 ):
+        mut_inf += (n0/D) * np.log2( (D*n0)/((n0+p0)*(n0+n1)) )
+    if ( p0 != 0 ):
+        mut_inf += (p0/D) * np.log2( (D*p0)/((n0+p0)*(p0+p1)) )
+    if ( n1 != 0 ):
+        mut_inf += (n1/D) * np.log2( (D*n1)/((n1+p1)*(n0+n1)) )
+    if ( p1 != 0 ):
+        mut_inf += (p1/D) * np.log2( (D*p1)/((n1+p1)*(p0+p1)) )
+    return mut_inf
+"""
+#"""
+#Old definition
 def mutual_inf(n0, p0, n1, p1, D):
     #print(n0,p0,n1,p1)
     mut_inf = 0
     if ( ((n0+p0)*(n0+n1)) != 0 and (D*n0)/((n0+p0)*(n0+n1)) != 0 ):
         mut_inf += (n0/D) * np.log2( (D*n0)/((n0+p0)*(n0+n1)) )
-    elif ( (n0+p0)*(p0+p1) != 0 and (D*p0)/((n0+p0)*(p0+p1)) != 0 ):
+    if ( (n0+p0)*(p0+p1) != 0 and (D*p0)/((n0+p0)*(p0+p1)) != 0 ):
         mut_inf += (p0/D) * np.log2( (D*p0)/((n0+p0)*(p0+p1)) )
-    elif ( (n1+p1)*(n0+n1) != 0 and (D*n1)/((n1+p1)*(n0+n1)) != 0 ):
+    if ( (n1+p1)*(n0+n1) != 0 and (D*n1)/((n1+p1)*(n0+n1)) != 0 ):
         mut_inf += (n1/D) * np.log2( (D*n1)/((n1+p1)*(n0+n1)) )
-    elif ( (n1+p1)*(p0+p1) != 0 and (D*p1)/((n1+p1)*(p0+p1)) != 0 ):
+    if ( (n1+p1)*(p0+p1) != 0 and (D*p1)/((n1+p1)*(p0+p1)) != 0 ):
         mut_inf += (p1/D) * np.log2( (D*p1)/((n1+p1)*(p0+p1)) )
     return( mut_inf )
-    
+#"""
 D = 1000
 mut_inf = np.ndarray(0)
 err_red = np.ndarray(0)
