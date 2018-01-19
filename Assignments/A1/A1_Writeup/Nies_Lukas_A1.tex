@@ -71,9 +71,13 @@
 
 \subsection{List of Collaborators}
 
+My collaborators were Edith Heiter (discussed Problem 1 and Problem 3) and Julia Hesss (discussed Problem 3 and Problem 4). The development of the answers though was completely independent and individually.
+
 \subsection{List of Acknowledgments}
 
-\subsection{RTFM}
+None.
+
+\subsection{Policies}
 
 I have read and understood these policies.
 
@@ -93,7 +97,7 @@ If we are at the bottom of our decision tree and don't have any features left to
 	\end{cases}
 \end{align}
 
-The achieve the minimum the node must be labeled accordingly, with $1$ if $n'< p'$ or with $0$ if $n'> p'$. 
+To achieve the minimum the node must be labeled accordingly, with $1$ if $n'< p'$ or with $0$ if $n'> p'$. 
 
 \subsection{Splitting}
 
@@ -150,7 +154,7 @@ For increasing indices the information gain and the error reduction rate decreas
 In figure \ref{fig:2.1} the comparison of of error rates and mutual information for different threshold splits and features are plotted. \par 
 The top row shows the error as a function threshold. The feature "age" generates two minimums corresponding to two possible splits to minimize the error when splitting. For feature "salary" we get only one minimum but the error reduction is larger. \par 
 The mutual information is plotted in the bottom row. Since the mutual information gives the information gain for a split we have to search for maximums. Both features give one maximal values which we can choose as a threshold to split the node. \par
-In figure \ref{fig:stumps} the decision stumps are plotted for the best thresholds found in figure \ref{fig:2.1}. The error rate depends on choosing a feature to split and on the method to calculate the best threshold. An 
+In figure \ref{fig:stumps} the decision stumps are plotted for the best thresholds found in figure \ref{fig:2.1}. The error rate depends on choosing a feature to split and on the method to calculate the best threshold. The best errors after splitting only once were achieved by choosing mutual information as a criteria (both features) or choosing "salary" when counting errors (again, see figure \ref{fig:stumps}).
 
 \begin{figure}[t!]
 	\centering
@@ -196,10 +200,45 @@ Since we work in two dimensions it's most convenient to just "guess" the hyperpl
 \end{align*}
 where the first component corresponds to the age and the second component corresponds to the salary. According the the Perceptron the weight vector $\vec{w}$ is perpendicular to the hyperplane. To get $\vec{w}$ we can perform a rotation of $\vec{h}$ by applying a 2D rotation matrix:
 \begin{align*}
-\vec{w}=\text{rot}(90\degres)
+\vec{w}=\text{rot}(90^{\circ})\cdot \vec{h} = 
+	\begin{pmatrix}
+		\cos(90^{\circ}) & \sin(90^{\circ}) \\
+		-\sin(90^{\circ}) & \cos(90^{\circ}) 
+	\end{pmatrix} \cdot
+	\begin{pmatrix}
+		35 \\ 40000
+	\end{pmatrix} =
+	\begin{pmatrix}
+		40000 \\ -35
+	\end{pmatrix}
 \end{align*}
+We can norm this vector to get some smaller values (not necessary but for the sake of readability):
+\begin{align*}
+\vec{w}_n = \frac{1}{\sqrt{(40000)^2+(-35)^2}}
+\begin{pmatrix}
+	40000 \\ -35
+\end{pmatrix} =
+\begin{pmatrix}
+	0.999999617 \\ -8.75\times 10^{-4}
+\end{pmatrix}
+\end{align*}
+This weight vector (which we "learned" by manually looking at the data) gives us now the hypothesis $f$ to test on the trainings set. The decision now is
+\begin{align}
+f(\vec{x})=\text{sign}\left[0.99999961\cdot x_\text{age}-8.75\times 10^{-4}\cdot x_\text{salary}-1\right].
+\end{align}
+In figure \ref{fig:multi} the multivariate approach is shown. We can see that it only takes one split to get an error of zero (note: this might not be true for real life data, in this case it is just coincidence of the constructed data). Because of this, the information gain is $1$.  
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.35\linewidth]{../Problem_2/Figure_2.3.png}
+	\caption{Decision tree built by using a multivariate approach.}
+	\label{fig:multi}
+\end{figure}
 
 \subsection{Discussion}
+
+Some thoughts on univariate and multivariate decision trees: considering 2D data (like in our example above) we can clearly see that the multivariate approach in this cases works very efficiently. This is because the data points are easily separable by one straight line. If the data appears to be clustered then this algorithm works very efficient. \par 
+However, if the data is mixed and no distinct clustering can be found then this approach might be very inefficient. In this case univariate decision trees might be a better choice.   
 
 \section{A "Baby" no Free Lunch Theorem}
 
@@ -219,19 +258,31 @@ and for the length $m=5$ we have $32$ different input strings.
 
 \subsection{The Number of Function}
 
-The number of possible functions to map the input string to a label is given by:
+Each bit in input string $\{0,1\}^m$ can be mapped to two possible labels, either $0$ or $1$. The input bit itself can be either $0$ or $1$, giving now two times two possibilities of mapping. Since we have $m$ input bits we get 
+\begin{align}
+	N_\text{functions}=\left(2\cdot 2\right)^{m}=(2^2)^m=2^{2m}
+\end{align}
+mappings functions. For $m=5$ we have 1024 different functions. 
 
 \subsection{Obtaining low expected loss}
 
+If we consider Alice to give Bob only uniformly and randomly distributed distinct inputs from the set of inputs $\{0,1\}^m$ then Bob can learn for each new distinct input, which he has never seen before, a new mapping from this input to the true label. So far, so good. If Bob wants to learn Alice' function with an expected misclassification rate of 50\% or better, then he hast to see at least 50\% of all possible distinct inputs out of the input set $\{0,1\}^m$. This corresponds to $\mathcal{O}(\frac{1}{2}\cdot 2^m)$ distinct inputs. For $m=5$ this will be around $16$ distinct inputs. But as always: more is better!\par 
+This is only true if the test set which tests Bob's knowledge is equally generated as the uniformly distributed trainings set. If Alice gives Bob only inputs for testing which he has never seen before than his error rate will never be better then simply guessing. 
+
 \subsection{Discussion}
 
-\section{Implementation: \textit{K}-Means}
-The script loops over $K \in \{1,2,\dots,10\}$, randomly initializes five times for each $K$ and returns the result with the lowest within-group sum of squares. 
-\subsection{Putting it all Together}
-\begin{figure}
-	\centering
-	\includegraphics[width=\linewidth]{../Problem_4/Run_2.png}
+The only possible way Bob has learned Alice' function with less inputs then discussed in previous section is that he knows the fundamentally distribution after how Alice generates the randomly distributed distinct inputs. By this knowledge Bob is able to predict the distinct inputs with correct labels with a misclassification rate better than guessing. He can convince Janet by correctly predicting further input samples provided by Alice without ever having seen them before.
 
+\section{Implementation: \textit{K}-Means}
+The script loops over $K \in \{1,2,\dots,10\}$, randomly initializes five times for each $K$ and returns the result with the lowest within-group sum of squares. \par 
+The upper panel of figure \ref{fig:Kmeans} shows the distortion as a function of K. For an increasing number of centroids the distortion decreases. This is expected since we need at least four centroids to get a good prediction for the four possible labels. We can assume that the distortion converges for higher numbers of K around 150000 to 200000.\par 
+The lower panel shows the mistake rate as a function of K. Again, the error rate decreases with increasing numbers of centroids. This also is due to the number of possible labels. The rate seems to converge around 20\%. \par 
+Both graphs have the same shape: the performance gets better for larger numbers of K. This is as expected. 
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.8\linewidth]{../Problem_4/Run_5.png}
+	\caption{Result of the K-means routine. Top panel: within-group-sum-of-squares as a function ok K. Bottom panel: mistake rate as a function of K. }
+	\label{fig:Kmeans}
 \end{figure}
 
 
@@ -239,8 +290,8 @@ The script loops over $K \in \{1,2,\dots,10\}$, randomly initializes five times 
 %\chapter*{Bibliography}
 %\addcontentsline{toc}{chapter}{Bibliography}%	
 
-\bibliographystyle{unsrt}
-\bibliography{./bib}
+%\bibliographystyle{unsrt}
+%\bibliography{./bib}
 
 
 

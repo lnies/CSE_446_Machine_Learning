@@ -2,7 +2,7 @@
 \contentsline {section}{\numberline {0}Policies}{1}{section.0}
 \contentsline {subsection}{\numberline {0.1}List of Collaborators}{1}{subsection.0.1}
 \contentsline {subsection}{\numberline {0.2}List of Acknowledgments}{1}{subsection.0.2}
-\contentsline {subsection}{\numberline {0.3}RTFM}{1}{subsection.0.3}
+\contentsline {subsection}{\numberline {0.3}Policies}{1}{subsection.0.3}
 \contentsline {section}{\numberline {1}Problem: Criteria for Choosing a Feature to Split}{1}{section.1}
 \contentsline {subsection}{\numberline {1.1}Not Splitting}{1}{subsection.1.1}
 \contentsline {subsection}{\numberline {1.2}Splitting}{1}{subsection.1.2}
@@ -11,11 +11,10 @@
 \contentsline {subsection}{\numberline {2.1}Built two decision stumps}{3}{subsection.2.1}
 \contentsline {subsection}{\numberline {2.2}Build Decision Tree}{3}{subsection.2.2}
 \contentsline {subsection}{\numberline {2.3}Multivariate Decision Tree}{3}{subsection.2.3}
-\contentsline {subsection}{\numberline {2.4}Discussion}{4}{subsection.2.4}
-\contentsline {section}{\numberline {3}A "Baby" no Free Lunch Theorem}{4}{section.3}
-\contentsline {subsection}{\numberline {3.1}The Number of Inputs}{5}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}The Number of Function}{5}{subsection.3.2}
-\contentsline {subsection}{\numberline {3.3}Obtaining low expected loss}{5}{subsection.3.3}
-\contentsline {subsection}{\numberline {3.4}Discussion}{5}{subsection.3.4}
-\contentsline {section}{\numberline {4}Implementation: \textit {K}-Means}{5}{section.4}
-\contentsline {subsection}{\numberline {4.1}Putting it all Together}{6}{subsection.4.1}
+\contentsline {subsection}{\numberline {2.4}Discussion}{5}{subsection.2.4}
+\contentsline {section}{\numberline {3}A "Baby" no Free Lunch Theorem}{6}{section.3}
+\contentsline {subsection}{\numberline {3.1}The Number of Inputs}{6}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}The Number of Function}{6}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Obtaining low expected loss}{6}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}Discussion}{7}{subsection.3.4}
+\contentsline {section}{\numberline {4}Implementation: \textit {K}-Means}{7}{section.4}

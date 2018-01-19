@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.10.13)  17 JAN 2018 17:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.10.13)  18 JAN 2018 23:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -907,124 +907,105 @@ File: uesvect.fd
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.122 \end{align}
+l.130 \end{align}
                   [1]
-<../Problem_1/Figure_1.png, id=129, 462.528pt x 341.1144pt>
+<../Problem_1/Figure_1.png, id=125, 462.528pt x 341.1144pt>
 File: ../Problem_1/Figure_1.png Graphic file (type png)
 <use ../Problem_1/Figure_1.png>
-Package pdftex.def Info: ../Problem_1/Figure_1.png  used on input line 137. on 
-input line 137.
+Package pdftex.def Info: ../Problem_1/Figure_1.png  used on input line 141. on 
+input line 141.
 Package pdftex.def Info: Requested size: 277.41176pt x 204.60254pt on input lin
-e 137.
+e 141.
  [2 <../Problem_1/Figure_1.png>]
-<../Problem_2/Figure_2.1_age_normal.png, id=145, 462.528pt x 341.1144pt>
+<../Problem_2/Figure_2.1_age_normal.png, id=141, 462.528pt x 341.1144pt>
 File: ../Problem_2/Figure_2.1_age_normal.png Graphic file (type png)
 <use ../Problem_2/Figure_2.1_age_normal.png>
 Package pdftex.def Info: ../Problem_2/Figure_2.1_age_normal.png  used on input 
-line 157. on input line 157.
+line 161. on input line 161.
 Package pdftex.def Info: Requested size: 192.0548pt x 141.6431pt on input line 
-157.
-<../Problem_2/Figure_2.1_sal_normal.png, id=146, 462.528pt x 341.1144pt>
+161.
+<../Problem_2/Figure_2.1_sal_normal.png, id=142, 462.528pt x 341.1144pt>
 File: ../Problem_2/Figure_2.1_sal_normal.png Graphic file (type png)
 <use ../Problem_2/Figure_2.1_sal_normal.png>
 Package pdftex.def Info: ../Problem_2/Figure_2.1_sal_normal.png  used on input 
-line 159. on input line 159.
+line 163. on input line 163.
 Package pdftex.def Info: Requested size: 192.0548pt x 141.6431pt on input line 
-159.
-<../Problem_2/Figure_2.1_age_mut.png, id=147, 462.528pt x 341.1144pt>
+163.
+<../Problem_2/Figure_2.1_age_mut.png, id=143, 462.528pt x 341.1144pt>
 File: ../Problem_2/Figure_2.1_age_mut.png Graphic file (type png)
 <use ../Problem_2/Figure_2.1_age_mut.png>
 Package pdftex.def Info: ../Problem_2/Figure_2.1_age_mut.png  used on input lin
-e 161. on input line 161.
+e 165. on input line 165.
 Package pdftex.def Info: Requested size: 192.0548pt x 141.6431pt on input line 
-161.
-<../Problem_2/Figure_2.1_sal_mut.png, id=148, 462.528pt x 341.1144pt>
+165.
+<../Problem_2/Figure_2.1_sal_mut.png, id=144, 462.528pt x 341.1144pt>
 File: ../Problem_2/Figure_2.1_sal_mut.png Graphic file (type png)
 <use ../Problem_2/Figure_2.1_sal_mut.png>
 Package pdftex.def Info: ../Problem_2/Figure_2.1_sal_mut.png  used on input lin
-e 163. on input line 163.
+e 167. on input line 167.
 Package pdftex.def Info: Requested size: 192.0548pt x 141.6431pt on input line 
-163.
+167.
 
-Underfull \hbox (badness 2119) in paragraph at lines 163--163
+Underfull \hbox (badness 2119) in paragraph at lines 167--167
 []\OT1/cmr/m/n/10 (d) |Mu-tual in-for-ma-tion for the fea-ture
  []
 
-<../Problem_2/Figure_2.1_stamps.PNG, id=149, 950.3505pt x 166.221pt>
+<../Problem_2/Figure_2.1_stamps.PNG, id=145, 950.3505pt x 166.221pt>
 File: ../Problem_2/Figure_2.1_stamps.PNG Graphic file (type png)
 <use ../Problem_2/Figure_2.1_stamps.PNG>
 Package pdftex.def Info: ../Problem_2/Figure_2.1_stamps.PNG  used on input line
- 169. on input line 169.
+ 173. on input line 173.
 Package pdftex.def Info: Requested size: 426.79135pt x 74.64656pt on input line
- 169.
+ 173.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<../Problem_2/2.2.png, id=152, 807.61725pt x 387.849pt>
+<../Problem_2/2.2.png, id=148, 807.61725pt x 387.849pt>
 File: ../Problem_2/2.2.png Graphic file (type png)
 <use ../Problem_2/2.2.png>
-Package pdftex.def Info: ../Problem_2/2.2.png  used on input line 178. on input
- line 178.
+Package pdftex.def Info: ../Problem_2/2.2.png  used on input line 182. on input
+ line 182.
 Package pdftex.def Info: Requested size: 426.79135pt x 204.96126pt on input lin
-e 178.
+e 182.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
-
-! Undefined control sequence.
-<argument>  \vec {w}=\text {rot}(90\degres 
-                                           ) 
-l.200 \end{align*}
-                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-<argument>  \vec {w}=\text {rot}(90\degres 
-                                           ) 
-l.200 \end{align*}
-                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
 
 [3] [4 <../Problem_2/Figure_2.1_age_normal.png> <../Problem_2/Figure_2.1_sal_no
 rmal.png> <../Problem_2/Figure_2.1_age_mut.png> <../Problem_2/Figure_2.1_sal_mu
 t.png> <../Problem_2/Figure_2.1_stamps.PNG>]
-<../Problem_4/Run_2.png, id=179, 578.16pt x 427.8384pt>
-File: ../Problem_4/Run_2.png Graphic file (type png)
-<use ../Problem_4/Run_2.png>
-Package pdftex.def Info: ../Problem_4/Run_2.png  used on input line 233. on inp
-ut line 233.
-Package pdftex.def Info: Requested size: 426.79135pt x 315.8251pt on input line
- 233.
- (./Nies_Lukas_A1.bbl
-
-LaTeX Warning: Empty `thebibliography' environment on input line 3.
-
-)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 249.
- [5 <../Problem_2/2.2.png>] [6 <../Problem_4/Run_2.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 249.
+<../Problem_2/Figure_2.3.png, id=176, 170.43675pt x 125.87025pt>
+File: ../Problem_2/Figure_2.3.png Graphic file (type png)
+<use ../Problem_2/Figure_2.3.png>
+Package pdftex.def Info: ../Problem_2/Figure_2.3.png  used on input line 233. o
+n input line 233.
+Package pdftex.def Info: Requested size: 149.37958pt x 110.32825pt on input lin
+e 233.
+ [5 <../Problem_2/2.2.png> <../Problem_2/Figure_2.3.png>] [6]
+<../Problem_4/Run_5.png, id=192, 578.16pt x 427.8384pt>
+File: ../Problem_4/Run_5.png Graphic file (type png)
+<use ../Problem_4/Run_5.png>
+Package pdftex.def Info: ../Problem_4/Run_5.png  used on input line 283. on inp
+ut line 283.
+Package pdftex.def Info: Requested size: 341.43437pt x 252.65747pt on input lin
+e 283.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 300.
+ [7 <../Problem_4/Run_5.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 300.
  (./Nies_Lukas_A1.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 249.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 249.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 300.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 300.
 Package rerunfilecheck Info: File `Nies_Lukas_A1.out' has not changed.
-(rerunfilecheck)             Checksum: D08ED85E749A2BAE3CAEE8960AE589A2;1326.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 249.
+(rerunfilecheck)             Checksum: 20F32462C5BBC79EB1D29D98C04FEF11;1257.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 300.
  ) 
 Here is how much of TeX's memory you used:
- 20133 strings out of 492990
- 380007 string characters out of 6136348
- 462796 words of memory out of 5000000
- 23431 multiletter control sequences out of 15000+600000
+ 20137 strings out of 492990
+ 380137 string characters out of 6136348
+ 464796 words of memory out of 5000000
+ 23436 multiletter control sequences out of 15000+600000
  544405 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 44i,17n,58p,10394b,745s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 44i,17n,58p,10394b,741s stack positions out of 5000i,500n,10000p,200000b,80000s
 <c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/tex
 live/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><c:/texlive/20
 17/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2017/texmf-
@@ -1037,10 +1018,10 @@ texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb><c:/texlive/2
 017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2017/texmf
 -dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2017/texmf-dist/font
 s/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on Nies_Lukas_A1.pdf (8 pages, 405599 bytes).
+Output written on Nies_Lukas_A1.pdf (9 pages, 414898 bytes).
 PDF statistics:
- 251 PDF objects out of 1000 (max. 8388607)
- 208 compressed objects within 3 object streams
- 48 named destinations out of 1000 (max. 500000)
- 201 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 257 PDF objects out of 1000 (max. 8388607)
+ 212 compressed objects within 3 object streams
+ 50 named destinations out of 1000 (max. 500000)
+ 198 words of extra memory for PDF output out of 10000 (max. 10000000)
 

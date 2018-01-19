@@ -64,6 +64,8 @@ plt.title("Mutual information")
 plt.xlabel("Index i")
 plt.ylabel("")
 plt.grid(True)
+
+print(mutual_inf(4,0,0,6,10))
     
 
 

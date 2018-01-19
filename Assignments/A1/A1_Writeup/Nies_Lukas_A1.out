@@ -1,7 +1,7 @@
 \BOOKMARK [1][-]{section.0}{Policies}{}% 1
 \BOOKMARK [2][-]{subsection.0.1}{List of Collaborators}{section.0}% 2
 \BOOKMARK [2][-]{subsection.0.2}{List of Acknowledgments}{section.0}% 3
-\BOOKMARK [2][-]{subsection.0.3}{RTFM}{section.0}% 4
+\BOOKMARK [2][-]{subsection.0.3}{Policies}{section.0}% 4
 \BOOKMARK [1][-]{section.1}{Problem: Criteria for Choosing a Feature to Split}{}% 5
 \BOOKMARK [2][-]{subsection.1.1}{Not Splitting}{section.1}% 6
 \BOOKMARK [2][-]{subsection.1.2}{Splitting}{section.1}% 7
@@ -17,4 +17,3 @@
 \BOOKMARK [2][-]{subsection.3.3}{Obtaining low expected loss}{section.3}% 17
 \BOOKMARK [2][-]{subsection.3.4}{Discussion}{section.3}% 18
 \BOOKMARK [1][-]{section.4}{Implementation: K-Means}{}% 19
-\BOOKMARK [2][-]{subsection.4.1}{Putting it all Together}{section.4}% 20
