@@ -27,14 +27,14 @@ def plot_err(training_error, test_error, MaxIter):
     plt.plot(np.log10(x), test_error, color="red", label="Test error")
     plt.legend()
     plt.xlabel("Number of epoch (log scale)")
-    plt.ylabel("Errors rate per Epoch in %")
+    plt.ylabel("Error rate per Epoch in %")
     plt.grid(True)
     plt.figure()
     plt.plot(x, training_error, color="blue", label="Training error")
     plt.plot(x, test_error, color="red", label="Test error")
     plt.legend()
     plt.xlabel("Number of epoch")
-    plt.ylabel("Errors rate per Epoch in %")
+    plt.ylabel("Error rate per Epoch in %")
     plt.grid(True)
     plt.figure()
     x = np.asarray(x)
@@ -44,7 +44,18 @@ def plot_err(training_error, test_error, MaxIter):
     plt.plot(x, sp_test(x), color="red", label="Spline interpolation of Test error")
     plt.legend()
     plt.xlabel("Number of epoch")
-    plt.ylabel("Errors rate per Epoch in %")
+    plt.ylabel("Error rate per Epoch in %")
+    plt.grid(True)
+    plt.show()
+    
+def plot_inner_loop(inner_train_err, inner_test_err, length):
+    x = np.arange(length)
+    plt.figure()
+    plt.plot(x, inner_train_err, color="blue", label="Training error")
+    plt.plot(x, inner_test_err, color="red", label="Test error")
+    plt.legend()
+    plt.xlabel("Number of feature in epoch")
+    plt.ylabel("Error rate per feature in %")
     plt.grid(True)
     plt.show()
 
@@ -72,12 +83,23 @@ def perceptron_train(d_train, d_test, MaxIter):
     a = 0  # Initialize activiation variable
     # Start the training
     for it in range(MaxIter):
+        inner_train_err = np.array(0)
+        inner_test_err = np.array(0)
+        # Inner Loop to train perceptron on each feature per epoch
         for i in range(len(d_train)): 
             a = np.dot(w,d_train[i][1:]) + b
             # If the prediction is incorrect, update the weight vector
             if ( d_train[i][0] * a <= 0 ):
                 w += d_train[i][0] * d_train[i][1:]
                 b += d_train[i][0]
+            # Test for a certain epoch the error after each iteration in inner loop
+            if ( it == MaxIter/10 or it == 7/10 * MaxIter ):
+                val = perceptron_test(d_train, d_test, w, b)
+                inner_train_err = np.append(inner_train_err, val[0])
+                inner_test_err = np.append(inner_test_err, val[1])
+                # Only print at the end of the inner loop
+                if ( i == len(d_train)-1):
+                    plot_inner_loop( inner_train_err, inner_test_err , len(d_train)+1)
         # Test of the performance of the current perceptron status
         val = perceptron_test(d_train, d_test, w, b)
         # and storing the information in an array to be plotted later

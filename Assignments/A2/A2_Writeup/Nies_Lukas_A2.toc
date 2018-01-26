@@ -1,0 +1,12 @@
+\select@language {english}
+\contentsline {section}{\numberline {0}Policies}{1}{section.0}
+\contentsline {subsection}{\numberline {0.1}List of Collaborators}{1}{subsection.0.1}
+\contentsline {subsection}{\numberline {0.2}List of Acknowledgments}{1}{subsection.0.2}
+\contentsline {subsection}{\numberline {0.3}Policies}{1}{subsection.0.3}
+\contentsline {section}{\numberline {1}Perceptron Exercise}{1}{section.1}
+\contentsline {section}{\numberline {2}Implementation: Perceptron}{1}{section.2}
+\contentsline {section}{\numberline {3}Beat the Perceptron}{2}{section.3}
+\contentsline {section}{\numberline {4}PCA on Digits}{2}{section.4}
+\contentsline {section}{\numberline {5}Bayes Optimal Classifier}{2}{section.5}
+\contentsline {section}{\numberline {6}Bonus: Dimensionality Reduction}{2}{section.6}
+\contentsline {section}{\numberline {7}Bonus: The Bayes Optimal Hypothesis for Regression}{2}{section.7}
