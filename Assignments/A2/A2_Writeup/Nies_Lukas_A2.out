@@ -6,6 +6,11 @@
 \BOOKMARK [1][-]{section.2}{Implementation: Perceptron}{}% 6
 \BOOKMARK [1][-]{section.3}{Beat the Perceptron}{}% 7
 \BOOKMARK [1][-]{section.4}{PCA on Digits}{}% 8
-\BOOKMARK [1][-]{section.5}{Bayes Optimal Classifier}{}% 9
-\BOOKMARK [1][-]{section.6}{Bonus: Dimensionality Reduction}{}% 10
-\BOOKMARK [1][-]{section.7}{Bonus: The Bayes Optimal Hypothesis for Regression}{}% 11
+\BOOKMARK [2][-]{subsection.4.1}{Convariance matrix construction}{section.4}% 9
+\BOOKMARK [2][-]{subsection.4.2}{Eigen-Analysis}{section.4}% 10
+\BOOKMARK [2][-]{subsection.4.3}{Pseudocode for Reconstruction}{section.4}% 11
+\BOOKMARK [2][-]{subsection.4.4}{Visualization and Reconstruction}{section.4}% 12
+\BOOKMARK [1][-]{section.5}{Bayes Optimal Classifier}{}% 13
+\BOOKMARK [1][-]{section.6}{Bonus: Dimensionality Reduction}{}% 14
+\BOOKMARK [1][-]{section.7}{Bonus: The Bayes Optimal Hypothesis for Regression}{}% 15
+\BOOKMARK [0][-]{section.7}{Bibliography}{}% 16

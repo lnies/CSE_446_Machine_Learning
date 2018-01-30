@@ -54,7 +54,7 @@ def plot_inner_loop(inner_train_err, inner_test_err, length):
     plt.plot(x, inner_train_err, color="blue", label="Training error")
     plt.plot(x, inner_test_err, color="red", label="Test error")
     plt.legend()
-    plt.xlabel("Number of feature in epoch")
+    plt.xlabel("Index of observation in epoch")
     plt.ylabel("Error rate per feature in %")
     plt.grid(True)
     plt.show()
@@ -77,6 +77,8 @@ def perceptron_train(d_train, d_test, MaxIter):
     Algorithm for training the perceptron (according to CIML Algortithm 5, Chapter 4)
     """
     w = np.zeros(len(d_train[0])-1) # Initialize weight vector
+    d = len(d_train[0])
+    n = len(d_train)
     training_error = np.array(0)
     test_error = np.array(0)
     b = 0 # Initialize bias
@@ -85,21 +87,25 @@ def perceptron_train(d_train, d_test, MaxIter):
     for it in range(MaxIter):
         inner_train_err = np.array(0)
         inner_test_err = np.array(0)
+        # Randomly shuffle the elements in the training set after each epoch
+        np.random.shuffle(d_train)
         # Inner Loop to train perceptron on each feature per epoch
-        for i in range(len(d_train)): 
+        for i in range(len(d_train)):
+            # Use dot product to calculate activation function 
             a = np.dot(w,d_train[i][1:]) + b
             # If the prediction is incorrect, update the weight vector
             if ( d_train[i][0] * a <= 0 ):
                 w += d_train[i][0] * d_train[i][1:]
                 b += d_train[i][0]
             # Test for a certain epoch the error after each iteration in inner loop
-            if ( it == MaxIter/10 or it == 7/10 * MaxIter ):
+            if ( it == MaxIter/10 or it == 9/10 * MaxIter ):
                 val = perceptron_test(d_train, d_test, w, b)
                 inner_train_err = np.append(inner_train_err, val[0])
                 inner_test_err = np.append(inner_test_err, val[1])
                 # Only print at the end of the inner loop
                 if ( i == len(d_train)-1):
                     plot_inner_loop( inner_train_err, inner_test_err , len(d_train)+1)
+                    print("Weight vector:", w)
         # Test of the performance of the current perceptron status
         val = perceptron_test(d_train, d_test, w, b)
         # and storing the information in an array to be plotted later
