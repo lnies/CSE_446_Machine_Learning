@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on Tue Jan 23 18:45:11 2018
+Created on Wed Jan 31 19:31:21 2018
 
 @author: Lukas
 """
@@ -16,7 +16,7 @@ import matplotlib.pyplot as plt
 from scipy.interpolate import UnivariateSpline
 import math
 
-def plot_err(training_error, test_error, MaxIter, args):
+def plot_err(training_error, test_error, MaxIter):
     """
     Plots the error rate of the
     """
@@ -28,7 +28,7 @@ def plot_err(training_error, test_error, MaxIter, args):
     plt.xlabel("Number of epoch (log scale)")
     plt.ylabel("Error rate per Epoch in %")
     plt.grid(True)
-    plt.savefig(str(args.train)+'full_log.png', bbox_inches='tight')
+    plt.savefig("A2.10.train.tsv"+'full_log.png', bbox_inches='tight')
     plt.figure()
     plt.plot(x, training_error, color="blue", label="Training error")
     plt.plot(x, test_error, color="red", label="Test error")
@@ -36,7 +36,7 @@ def plot_err(training_error, test_error, MaxIter, args):
     plt.xlabel("Number of epoch")
     plt.ylabel("Error rate per Epoch in %")
     plt.grid(True)
-    plt.savefig(str(args.train)+'.full.png', bbox_inches='tight')
+    plt.savefig("A2.10.train.tsv"+'.full.png', bbox_inches='tight')
     plt.figure()
     plt.plot(x, training_error, color="blue", label="Training error")
     plt.plot(x, test_error, color="red", label="Test error")
@@ -45,7 +45,7 @@ def plot_err(training_error, test_error, MaxIter, args):
     plt.xlabel("Number of epoch")
     plt.ylabel("Error rate per Epoch in %")
     plt.grid(True)
-    plt.savefig(str(args.train)+'.early.png', bbox_inches='tight')
+    plt.savefig("A2.10.train.tsv"+'.early.png', bbox_inches='tight')
     plt.figure()
     plt.plot(x, training_error, color="blue", label="Training error")
     plt.plot(x, test_error, color="red", label="Test error")
@@ -54,9 +54,9 @@ def plot_err(training_error, test_error, MaxIter, args):
     plt.xlabel("Number of epoch")
     plt.ylabel("Error rate per Epoch in %")
     plt.grid(True)
-    plt.savefig(str(args.train)+'.late.png', bbox_inches='tight')
+    plt.savefig("A2.10.train.tsv"+'.late.png', bbox_inches='tight')
     
-def plot_inner_loop(inner_train_err, inner_test_err, length, args, wo):
+def plot_inner_loop(inner_train_err, inner_test_err, length, wo):
     x = np.arange(length)
     plt.figure()
     plt.plot(x, inner_train_err, color="blue", label="Training error")
@@ -65,7 +65,7 @@ def plot_inner_loop(inner_train_err, inner_test_err, length, args, wo):
     plt.xlabel("Index of observation in epoch")
     plt.ylabel("Error rate per feature in %")
     plt.grid(True)
-    plt.savefig(str(args.train)+'.inner_loop_at_'+str(wo)+'.png', bbox_inches='tight')
+    plt.savefig("A2.10.train.tsv"+'.inner_loop_at_'+str(wo)+'.png', bbox_inches='tight')
 
 def perceptron_test(d_train, d_test, d_dev, w, b):
     """
@@ -83,7 +83,7 @@ def perceptron_test(d_train, d_test, d_dev, w, b):
             error[2] += 1
     return error
 
-def train_perceptron(d_train, d_test, MaxIter, args):
+def train_perceptron(d_train, d_test, MaxIter):
     """
     Algorithm for training the perceptron (according to CIML Algortithm 5, Chapter 4)
     """
@@ -130,7 +130,7 @@ def train_perceptron(d_train, d_test, MaxIter, args):
                         wo = 90
                         w_norm = w/np.linalg.norm(w)
                         print("Normed weight vector at 90 percent:", w_norm)
-                    plot_inner_loop( inner_train_err, inner_test_err , len(d_train)+1, args, wo)
+                    plot_inner_loop( inner_train_err, inner_test_err , len(d_train)+1, wo)
             # Test for the smalles margin
             if ( smallest_margin > np.abs(np.dot(w,d_train[i][1:])) ):
                 smallest_margin = np.abs(np.dot(w,d_train[i][1:]))
@@ -151,10 +151,10 @@ def train_perceptron(d_train, d_test, MaxIter, args):
     training_error /= ( len(d_train) * 0.01 )
     test_error /= ( len(d_test) * 0.01 )
     # Plotting the error rates
-    plot_err(training_error, test_error, MaxIter, args)
+    plot_err(training_error, test_error, MaxIter)
     return(w, b)
     
-def tune_perceptron(d_train, d_test, MaxIter, args):
+def tune_perceptron(d_train, d_test, MaxIter):
     """
     Algorithm tuning the maximum number of iterations based on the algorithm 
     for training the perceptron (according to CIML Algortithm 5, Chapter 4)
@@ -196,7 +196,7 @@ def tune_perceptron(d_train, d_test, MaxIter, args):
     argmin_dev = np.argmin(dev_error)
     return(argmin_dev)
     
-def train_tuned_perceptron(d_train, d_test, MaxIter_tuned, args):
+def train_tuned_perceptron(d_train, d_test, MaxIter_tuned):
     """
     Algorithm for training the tuned perceptron (according to CIML Algortithm 5, Chapter 4)
     """
@@ -229,38 +229,31 @@ def train_tuned_perceptron(d_train, d_test, MaxIter_tuned, args):
     
 def main():
     """
-    Main function reads in the files from commandline.
+    Main function reads in the files.
     Then starts the routines to train the Perceptron
     """
-    # Generating parser to read the filenames (and verbosity level)
-    parser = argparse.ArgumentParser(description='Training and testing the Perceptron. Written by Lukas Nies for CSE446 Assignment 2')
-    parser.add_argument("--train", "-tr", type=str, required=True, help="Training data file")
-    parser.add_argument("--test", "-te", type=str, required=True, help="Test data file")
-    parser.add_argument("--niter", "-i", type=int, required=True, help="Maximal Number of Iterations")
-    parser.add_argument("--verbosity", "-v", type=int, required=False, help="Increase output verbosity (might not be used in this program)")
-    args = parser.parse_args()
+    
     """
     Uncommend this when using command line please
     """
     print("++++++++++ START ++++++++++" )
     print(" ")
     print("Train Perceptron without any optimizing with full training set:" )
-    if ( Path(str(args.train)).is_file() != True ):
-        print(" WARNING: Training file can not be found! ")
-        return 0
-    if ( Path(str(args.test)).is_file() != True ):
-        print(" WARNING: Test file can not be found! ")
-        return 0
+    
     # Read data from ttraining data
-    d_train = np.genfromtxt(args.train)
-    d_test = np.genfromtxt(args.test)
-    MaxIter = args.niter
-    """
-    d_train = np.genfromtxt("A2.2.train.tsv")
-    d_test = np.genfromtxt("A2.2.test.tsv")
-    """
+    d_train_1 = np.genfromtxt("A2.6.train.tsv")
+    d_train_2 = np.genfromtxt("A2.7.train.tsv")
+    d_train_3 = np.genfromtxt("A2.8.train.tsv")
+    # Combine the three data files to greate a larger trainings set
+    d_train_1 = np.append(d_train_1, d_train_2).reshape(len(d_train_1)+len(d_train_2), len(d_train_1[0]))
+    d_train_1 = np.append(d_train_1, d_train_3).reshape(len(d_train_1)+len(d_train_3), len(d_train_1[0]))
+    d_train = d_train_1[:]
+    
+    d_test = np.genfromtxt("A2.6.test.tsv")
+    MaxIter = 2500
+
     # Train the perceptron
-    w, b = train_perceptron(d_train, d_test, MaxIter, args)
+    w, b = train_perceptron(d_train, d_test, MaxIter)
     
     # Tune the perceptron by searching for the MaxIter which yields lowest error
     # Calculate MaxIter several times and compute mean 
@@ -269,15 +262,16 @@ def main():
     MaxIter_tuned = 0
     runs = 5
     for i in range(runs):
-        MaxIter_tuned += tune_perceptron(d_train, d_test, MaxIter, args)
+        MaxIter_tuned += tune_perceptron(d_train, d_test, MaxIter)
     MaxIter_tuned /= runs
     MaxIter_tuned = math.ceil(MaxIter_tuned)
     print("Tuned amount of interations for the main perceptron:", MaxIter_tuned)
-    val = train_tuned_perceptron(d_train, d_test, MaxIter_tuned, args)
+    val = train_tuned_perceptron(d_train, d_test, MaxIter_tuned)
     print(" ")
     print("Now test perceptron with amount of calculated iterations:")
     print("Training error: %3.1f%%, Test error: %3.1f%%, Development error: %3.1f%%" % (val[0], val[1], val[2]))
     #print(w, b)
+
     return 0
     
     

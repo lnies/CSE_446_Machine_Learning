@@ -8,10 +8,10 @@
 \contentsline {section}{\numberline {3}Beat the Perceptron}{2}{section.3}
 \contentsline {section}{\numberline {4}PCA on Digits}{2}{section.4}
 \contentsline {subsection}{\numberline {4.1}Convariance matrix construction}{2}{subsection.4.1}
-\contentsline {subsection}{\numberline {4.2}Eigen-Analysis}{4}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.2}Eigen-Analysis}{3}{subsection.4.2}
 \contentsline {subsection}{\numberline {4.3}Pseudocode for Reconstruction}{6}{subsection.4.3}
 \contentsline {subsection}{\numberline {4.4}Visualization and Reconstruction}{6}{subsection.4.4}
-\contentsline {section}{\numberline {5}Bayes Optimal Classifier}{6}{section.5}
-\contentsline {section}{\numberline {6}Bonus: Dimensionality Reduction}{6}{section.6}
-\contentsline {section}{\numberline {7}Bonus: The Bayes Optimal Hypothesis for Regression}{6}{section.7}
-\contentsline {chapter}{Bibliography}{6}{section.7}
+\contentsline {section}{\numberline {5}Bayes Optimal Classifier}{8}{section.5}
+\contentsline {section}{\numberline {6}Bonus: Dimensionality Reduction}{8}{section.6}
+\contentsline {section}{\numberline {7}Bonus: The Bayes Optimal Hypothesis for Regression}{8}{section.7}
+\contentsline {chapter}{Bibliography}{8}{section.7}

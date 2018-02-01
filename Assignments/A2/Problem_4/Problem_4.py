@@ -113,7 +113,7 @@ def mat_vs_vec(train_set):
 
 def eigen_analysis(train_set):
     """
-    Problem 4.2.1 Calculates the Eigenvalues of the data using SVD
+    Problem 4.2.1 Calculate the Eigenvalues of the data using SVD
     """
     sigma = calc_cov_mat(train_set)
     u, lamda, v = np.linalg.svd(sigma, full_matrices=1, compute_uv = 1)
@@ -215,7 +215,7 @@ def reconstruct(train_set, k) :
     u, lamda, v = eigen_analysis(train_set) 
     # Center matrix by subtracting each row with the mean value
     Xc = X - mu  
-    # Create eigenvector matrix
+    # Create eigenvector matrix of top k eigenvecors
     U_hat = np.array(0)
     U_hat = np.delete(U_hat, 0)
     for i in range(0, k):
@@ -272,7 +272,7 @@ def main():
     #plot_reconstructed(train_set, k = 5)
     #plot_reconstructed(train_set, k = 10)
     #plot_reconstructed(train_set, k = 25)
-    #plot_reconstructed(train_set, k = 50)
+    plot_reconstructed(train_set, k = 50)
     #plot_reconstructed(train_set, k = 200)
     #plot_reconstructed(train_set, k = 500)
     #plot_reconstructed(train_set, k = 784)

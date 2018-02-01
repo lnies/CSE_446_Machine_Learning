@@ -20,8 +20,6 @@ def plot_err(training_error, test_error, MaxIter):
     Plots the error rate of the
     """
     x = range(1, MaxIter+2 )
-    print(x)
-    print(np.shape(x))
     plt.figure()
     plt.plot(np.log10(x), training_error, color="blue", label="Training error")
     plt.plot(np.log10(x), test_error, color="red", label="Test error")
@@ -29,6 +27,7 @@ def plot_err(training_error, test_error, MaxIter):
     plt.xlabel("Number of epoch (log scale)")
     plt.ylabel("Error rate per Epoch in %")
     plt.grid(True)
+    plt.savefig("A2.11.train.tsv"+'full_log.png', bbox_inches='tight')
     plt.figure()
     plt.plot(x, training_error, color="blue", label="Training error")
     plt.plot(x, test_error, color="red", label="Test error")
@@ -36,19 +35,27 @@ def plot_err(training_error, test_error, MaxIter):
     plt.xlabel("Number of epoch")
     plt.ylabel("Error rate per Epoch in %")
     plt.grid(True)
+    plt.savefig("A2.11.train.tsv"+'.full.png', bbox_inches='tight')
     plt.figure()
-    x = np.asarray(x)
-    sp_training = UnivariateSpline(x,training_error,s=1*10e+0)
-    sp_test = UnivariateSpline(x,test_error,s=1*10e+1)
-    plt.plot(x, sp_training(x), color="blue", label="Spline interpolation of Training error")
-    plt.plot(x, sp_test(x), color="red", label="Spline interpolation of Test error")
+    plt.plot(x, training_error, color="blue", label="Training error")
+    plt.plot(x, test_error, color="red", label="Test error")
     plt.legend()
+    plt.xlim(0,30)
     plt.xlabel("Number of epoch")
     plt.ylabel("Error rate per Epoch in %")
     plt.grid(True)
-    plt.show()
+    plt.savefig("A2.11.train.tsv"+'.early.png', bbox_inches='tight')
+    plt.figure()
+    plt.plot(x, training_error, color="blue", label="Training error")
+    plt.plot(x, test_error, color="red", label="Test error")
+    plt.legend()
+    plt.xlim(MaxIter-30,MaxIter)
+    plt.xlabel("Number of epoch")
+    plt.ylabel("Error rate per Epoch in %")
+    plt.grid(True)
+    plt.savefig("A2.11.train.tsv"+'.late.png', bbox_inches='tight')
     
-def plot_inner_loop(inner_train_err, inner_test_err, length):
+def plot_inner_loop(inner_train_err, inner_test_err, length, wo):
     x = np.arange(length)
     plt.figure()
     plt.plot(x, inner_train_err, color="blue", label="Training error")
@@ -57,13 +64,14 @@ def plot_inner_loop(inner_train_err, inner_test_err, length):
     plt.xlabel("Index of observation in epoch")
     plt.ylabel("Error rate per feature in %")
     plt.grid(True)
-    plt.show()
+    plt.savefig("A2.11.train.tsv"+'.inner_loop_at_'+str(wo)+'.png', bbox_inches='tight')
 
-def perceptron_test(d_train, d_test, w, b, old_weigths, votes):
+def perceptron_test(d_train, d_test, d_dev, w, b, old_weigths, votes):
     """
     Calculates the error on the trainings set and the error on the testset
+    weigthed with the votes of the total of all weight vectors
     """
-    error = np.zeros(2)
+    error = np.zeros(3)
     for i in range(len(d_train)):
         activation = 0
         for j in range(len(old_weigths)):
@@ -76,12 +84,16 @@ def perceptron_test(d_train, d_test, w, b, old_weigths, votes):
             activation += votes[j] * np.sign(np.dot(old_weigths[j],d_test[i][1:]) + b) 
         if ( np.sign(activation) != d_test[i][0] ):
             error[1] += 1
+    for i in range(len(d_dev)):
+        activation = 0
+        for j in range(len(old_weigths)):
+            activation += votes[j] * np.sign(np.dot(old_weigths[j],d_dev[i][1:]) + b) 
+        if ( np.sign(activation) != d_dev[i][0] ):
+            error[2] += 1
     return error
 
+
 def perceptron_train(d_train, d_test, MaxIter):
-    """
-    Algorithm for training the perceptron (according to CIML Algortithm 5, Chapter 4)
-    """
     w = np.zeros(len(d_train[0])-1) # Initialize weight vector
     training_error = np.array(0)
     test_error = np.array(0)
@@ -114,21 +126,10 @@ def perceptron_train(d_train, d_test, MaxIter):
             else:
                 # If prediction is correct, don't update weight vector and increase current counts for vectro by 1
                 votes[len(votes)-1] += 1
-            """
-            # Test for a certain epoch the error after each iteration in inner loop
-            if ( it == MaxIter/10 or it == 9/10 * MaxIter ):
-                val = perceptron_test(d_train, d_test, w, b)
-                inner_train_err = np.append(inner_train_err, val[0])
-                inner_test_err = np.append(inner_test_err, val[1])
-                # Only print at the end of the inner loop
-                if ( i == len(d_train)-1):
-                    plot_inner_loop( inner_train_err, inner_test_err , len(d_train)+1)
-                    print("Weight vector:", w)
-            """
         # Save last weight vector in the list
         old_weights = np.append(old_weights, w).reshape(len(votes), len(w))
         # Test of the performance of the current perceptron status
-        val = perceptron_test(d_train, d_test, w, b, old_weights, votes)
+        val = perceptron_test(d_train, d_test, d_test, w, b, old_weights, votes)
         # and storing the information in an array to be plotted later
         training_error = np.append(training_error, val[0])
         test_error = np.append(test_error, val[1])
@@ -137,38 +138,17 @@ def perceptron_train(d_train, d_test, MaxIter):
     test_error /= ( len(d_test) * 0.01 )
     # Plotting the error rates
     plot_err(training_error, test_error, MaxIter)
-    return(w, b)
+    return(w, b)   
 
 def main():
     """
     Main function reads in the files from commandline.
     Then starts the routines to train the Perceptron
     """
-    # Generating parser to read the filenames (and verbosity level)
-    parser = argparse.ArgumentParser(description='Training and testing the Perceptron. Written by Lukas Nies for CSE446 Assignment 2')
-    parser.add_argument("--train", "-tr", type=str, required=False, help="Training data file")
-    parser.add_argument("--test", "-te", type=str, required=False, help="Test data file")
-    parser.add_argument("--niter", "-i", type=int, required=False, help="Maximal Number of Iterations")
-    parser.add_argument("--verbosity", "-v", type=int, required=False, help="Increase output verbosity (might not be used in this program)")
-    args = parser.parse_args()
 
-    # Uncommend this when using command line please
-    """
-    print( args.train, args.test, args.niter, args.verbosity )
-    if ( Path(str(args.train)).is_file() != True ):
-        print(" WARNING: Training file can not be found! ")
-        return 0
-    if ( Path(str(args.test)).is_file() != True ):
-        print(" WARNING: Test file can not be found! ")
-        return 0
-    # Read data from ttraining data
-    d_train = np.genfromtxt(args.train)
-    d_test = np.genfromtxt(args.test)
-    MaxIter = args.niter
-    """
-    d_train = np.genfromtxt("A2.9.train.tsv")
-    d_test = np.genfromtxt("A2.9.test.tsv")
-    MaxIter = 500 
+    d_train = np.genfromtxt("A2.2.train.tsv")
+    d_test = np.genfromtxt("A2.2.test.tsv")
+    MaxIter = 5
     
     # Train the perceptron
     w, b = perceptron_train(d_train, d_test, MaxIter)
