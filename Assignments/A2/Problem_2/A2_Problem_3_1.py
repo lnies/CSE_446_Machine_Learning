@@ -93,55 +93,6 @@ def perceptron_test(d_train, d_test, d_dev, w, b, old_weigths, votes):
             error[2] += 1
     return error
 
-"""
-def perceptron_train(d_train, d_test, MaxIter):
-    w = np.zeros(len(d_train[0])-1) # Initialize weight vector
-    training_error = np.array(0)
-    test_error = np.array(0)
-    b = 0 # Initialize bias
-    a = 0  # Initialize activiation variable
-    # Start the training
-    for it in range(MaxIter):
-        print("Iteration step:", it)
-        inner_train_err = np.array(0)
-        inner_test_err = np.array(0)
-        # Implement voted perceptron
-        votes = np.array(0).reshape(1,)
-        old_weights = np.array(0)
-        old_weights = np.delete(old_weights, 0)
-        # If a weight vector gets updated immediatly then he gets one vote
-        votes[0] = 1 
-        # Inner Loop to train perceptron on each feature per epoch
-        for i in range(len(d_train)):
-            # Use dot product to calculate activation function 
-            a = np.dot(w,d_train[i][1:]) + b
-            # If the prediction is incorrect, update the weight vector
-            if ( d_train[i][0] * a <= 0 ):
-                # Update the votes vector for the new weight vector
-                votes = np.append(votes, 1)
-                # Store old weightvector on array of old weight vectors
-                old_weights = np.append(old_weights, w).reshape(len(votes)-1, len(w))
-                # Update old weight vector to get a new one
-                w += d_train[i][0] * d_train[i][1:]
-                b += d_train[i][0]
-            else:
-                # If prediction is correct, don't update weight vector and increase current counts for vectro by 1
-                votes[len(votes)-1] += 1
-        # Save last weight vector in the list
-        old_weights = np.append(old_weights, w).reshape(len(votes), len(w))
-        # Test of the performance of the current perceptron status
-        val = perceptron_test(d_train, d_test, w, b, old_weights, votes)
-        # and storing the information in an array to be plotted later
-        training_error = np.append(training_error, val[0])
-        test_error = np.append(test_error, val[1])
-    # Normalize errors to get error rate in percent
-    training_error /= ( len(d_train) * 0.01 )
-    test_error /= ( len(d_test) * 0.01 )
-    # Plotting the error rates
-    plot_err(training_error, test_error, MaxIter)
-    return(w, b)
-"""
-
 def train_perceptron(d_train, d_test, MaxIter):
     """
     Algorithm for training the perceptron (according to CIML Algortithm 5, Chapter 4)
@@ -359,8 +310,8 @@ def main():
     #d_train_1 = np.append(d_train_1, d_train_3).reshape(len(d_train_1)+len(d_train_3), len(d_train_1[0]))
     #d_train = d_train_1[:]
     
-    d_train = np.genfromtxt("A2.2.train.tsv")
-    d_test = np.genfromtxt("A2.2.test.tsv")
+    d_train = np.genfromtxt("A2.5.train.tsv")
+    d_test = np.genfromtxt("A2.5.test.tsv")
     MaxIter = 549
 
     # Train the perceptron

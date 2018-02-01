@@ -1,5 +1,12 @@
 # -*- coding: utf-8 -*-
 """
+Created on Thu Feb  1 13:29:05 2018
+
+@author: Lukas
+"""
+
+# -*- coding: utf-8 -*-
+"""
 Created on Fri Jan 26 21:32:15 2018
 
 @author: Lukas
@@ -86,14 +93,10 @@ def calc_cov_mat(train_set):
     d = len(X[0])
     # First center the matrix X by substracting the mean
     # We do this by transposing and re transposing
-    Xc = np.zeros(n*d).reshape(d,n)
-    Xt = np.transpose(X)
-    for i in range(d):
-        Xc[i] = np.subtract(Xt[i],(np.mean(Xt[i])))
-    Xc = np.transpose(Xc)
+    Xc = X - np.mean(X, axis = 0)
     sigma = np.dot(np.transpose(Xc), Xc)
     sigma /= n
-    return sigma
+    return Xc
 
 def mat_vs_vec(train_set):
     """
@@ -218,9 +221,10 @@ def reconstruct(train_set, k) :
     Xt = np.transpose(X)
     for i in range(d):
         Xc[i] = Xt[i] - np.mean(Xt[i])
-    Xc = np.transpose(Xc)
+    Xc = X - np.mean(X, axis = 0)
     # Apply SVD for getting eigenvalues and vectors
     u, lamda, v = eigen_analysis(train_set) 
+    
     # Create eigenvector matrix of top k eigenvecors
     U_hat = np.array(0)
     U_hat = np.delete(U_hat, 0)
@@ -230,11 +234,7 @@ def reconstruct(train_set, k) :
     X_hat = np.dot(Xc, U_hat) 
     # Now reconstruct data
     # Add the mean back to the data
-    X_rec = np.dot(X_hat,np.transpose(U_hat))
-    X_rec_t = np.transpose(X_rec)
-    for i in range(d):
-        X_rec_t[i] = X_rec_t[i] + np.mean(Xt[i])
-    X_rec = np.transpose(X_rec_t)
+    X_rec = np.dot(X_hat,np.transpose(U_hat)) + np.mean(X, axis = 0)
     end = timer()
     print("Reconstruction time %f3.2s" % (end-start))
     return X_rec
