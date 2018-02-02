@@ -4,45 +4,45 @@ The top-level auxiliary file: Nies_Lukas_A2.aux
 The style file: unsrt.bst
 Database file #1: ./bib.bib
 Warning--empty publisher in CIML
-You've used 1 entry,
+You've used 2 entries,
             1791 wiz_defined-function locations,
-            450 strings with 3611 characters,
-and the built_in function-call counts, 167 in all, are:
-= -- 11
-> -- 4
+            455 strings with 3731 characters,
+and the built_in function-call counts, 296 in all, are:
+= -- 22
+> -- 8
 < -- 0
-+ -- 2
-- -- 1
-* -- 7
-:= -- 31
-add.period$ -- 3
-call.type$ -- 1
-change.case$ -- 0
++ -- 4
+- -- 2
+* -- 8
+:= -- 51
+add.period$ -- 6
+call.type$ -- 2
+change.case$ -- 1
 chr.to.int$ -- 0
-cite$ -- 2
-duplicate$ -- 10
-empty$ -- 20
-format.name$ -- 1
-if$ -- 35
+cite$ -- 3
+duplicate$ -- 15
+empty$ -- 38
+format.name$ -- 2
+if$ -- 66
 int.to.chr$ -- 0
-int.to.str$ -- 1
+int.to.str$ -- 2
 missing$ -- 2
-newline$ -- 8
-num.names$ -- 1
-pop$ -- 8
+newline$ -- 13
+num.names$ -- 2
+pop$ -- 14
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 2
+skip$ -- 5
 stack$ -- 0
 substring$ -- 0
-swap$ -- 1
+swap$ -- 2
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 1
-while$ -- 1
-width$ -- 2
-write$ -- 11
+while$ -- 2
+width$ -- 3
+write$ -- 21
 (There was 1 warning)

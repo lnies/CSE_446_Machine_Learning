@@ -4,14 +4,13 @@
 \contentsline {subsection}{\numberline {0.2}List of Acknowledgments}{1}{subsection.0.2}
 \contentsline {subsection}{\numberline {0.3}Policies}{1}{subsection.0.3}
 \contentsline {section}{\numberline {1}Perceptron Exercise}{1}{section.1}
-\contentsline {section}{\numberline {2}Implementation: Perceptron}{2}{section.2}
-\contentsline {section}{\numberline {3}Beat the Perceptron}{2}{section.3}
-\contentsline {section}{\numberline {4}PCA on Digits}{2}{section.4}
-\contentsline {subsection}{\numberline {4.1}Convariance matrix construction}{2}{subsection.4.1}
-\contentsline {subsection}{\numberline {4.2}Eigen-Analysis}{3}{subsection.4.2}
-\contentsline {subsection}{\numberline {4.3}Pseudocode for Reconstruction}{6}{subsection.4.3}
-\contentsline {subsection}{\numberline {4.4}Visualization and Reconstruction}{6}{subsection.4.4}
-\contentsline {section}{\numberline {5}Bayes Optimal Classifier}{8}{section.5}
-\contentsline {section}{\numberline {6}Bonus: Dimensionality Reduction}{8}{section.6}
-\contentsline {section}{\numberline {7}Bonus: The Bayes Optimal Hypothesis for Regression}{8}{section.7}
-\contentsline {chapter}{Bibliography}{8}{section.7}
+\contentsline {section}{\numberline {2}Implementation: Perceptron}{3}{section.2}
+\contentsline {section}{\numberline {3}Beat the Perceptron}{7}{section.3}
+\contentsline {section}{\numberline {4}PCA on Digits}{8}{section.4}
+\contentsline {subsection}{\numberline {4.1}Convariance matrix construction}{8}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Eigen-Analysis}{8}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Pseudocode for Reconstruction}{9}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}Visualization and Reconstruction}{10}{subsection.4.4}
+\contentsline {section}{\numberline {5}Bayes Optimal Classifier}{13}{section.5}
+\contentsline {section}{\numberline {6}Bonus: Dimensionality Reduction}{14}{section.6}
+\contentsline {chapter}{Bibliography}{14}{figure.caption.17}

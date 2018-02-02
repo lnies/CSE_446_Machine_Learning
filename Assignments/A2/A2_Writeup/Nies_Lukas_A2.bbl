@@ -5,4 +5,10 @@ Hal~Daume III.
 \newblock {\em A Course in Machine Learning}.
 \newblock Secondary printing, January 2017.
 
+\bibitem{wikip}
+Wikipedia.org.
+\newblock Array programming.
+\newblock Retrieved online:
+  \url{https://en.wikipedia.org/wiki/Array_programming}, February, 2018.
+
 \end{thebibliography}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2018.2.1)  1 FEB 2018 13:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2018.2.1)  1 FEB 2018 23:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1324,27 +1324,27 @@ File: uesvect.fd
 \openout4 = `Nies_Lukas_A2.toc'.
 
  [0]
-<../Problem_1/step_1.png, id=98, 377.0085pt x 396.88275pt>
+<../Problem_1/step_1.png, id=94, 377.0085pt x 396.88275pt>
 File: ../Problem_1/step_1.png Graphic file (type png)
 <use ../Problem_1/step_1.png>
 Package pdftex.def Info: ../Problem_1/step_1.png  used on input line 98.
 (pdftex.def)             Requested size: 102.43227pt x 107.83197pt.
-<../Problem_1/step_2.png, id=99, 374.5995pt x 393.8715pt>
+<../Problem_1/step_2.png, id=95, 374.5995pt x 393.8715pt>
 File: ../Problem_1/step_2.png Graphic file (type png)
 <use ../Problem_1/step_2.png>
 Package pdftex.def Info: ../Problem_1/step_2.png  used on input line 100.
 (pdftex.def)             Requested size: 102.43227pt x 107.69896pt.
-<../Problem_1/step_3.png, id=100, 383.031pt x 394.47375pt>
+<../Problem_1/step_3.png, id=96, 383.031pt x 394.47375pt>
 File: ../Problem_1/step_3.png Graphic file (type png)
 <use ../Problem_1/step_3.png>
 Package pdftex.def Info: ../Problem_1/step_3.png  used on input line 102.
 (pdftex.def)             Requested size: 102.43227pt x 105.49208pt.
-<../Problem_1/step_4.png, id=101, 378.213pt x 399.894pt>
+<../Problem_1/step_4.png, id=97, 378.213pt x 399.894pt>
 File: ../Problem_1/step_4.png Graphic file (type png)
 <use ../Problem_1/step_4.png>
 Package pdftex.def Info: ../Problem_1/step_4.png  used on input line 104.
 (pdftex.def)             Requested size: 102.43227pt x 108.3023pt.
-<../Problem_1/opt.png, id=102, 378.213pt x 399.894pt>
+<../Problem_1/opt.png, id=98, 378.213pt x 399.894pt>
 File: ../Problem_1/opt.png Graphic file (type png)
 <use ../Problem_1/opt.png>
 Package pdftex.def Info: ../Problem_1/opt.png  used on input line 106.
@@ -1360,1026 +1360,1200 @@ Overfull \hbox (5.7046pt too wide) detected at line 124
 []
  []
 
-<../Problem_2/A2.2.train.tsv.full.png, id=118, 402.5439pt x 315.0972pt>
+[2]
+<../Problem_2/A2.2.train.tsv.full.png, id=129, 402.5439pt x 315.0972pt>
 File: ../Problem_2/A2.2.train.tsv.full.png Graphic file (type png)
 <use ../Problem_2/A2.2.train.tsv.full.png>
 Package pdftex.def Info: ../Problem_2/A2.2.train.tsv.full.png  used on input li
-ne 139.
+ne 143.
 (pdftex.def)             Requested size: 102.43227pt x 80.17802pt.
-<../Problem_2/A2.3.train.tsv.full.png, id=120, 402.5439pt x 315.0972pt>
+<../Problem_2/A2.3.train.tsv.full.png, id=131, 402.5439pt x 315.0972pt>
 File: ../Problem_2/A2.3.train.tsv.full.png Graphic file (type png)
 <use ../Problem_2/A2.3.train.tsv.full.png>
 Package pdftex.def Info: ../Problem_2/A2.3.train.tsv.full.png  used on input li
-ne 141.
+ne 145.
 (pdftex.def)             Requested size: 102.43227pt x 80.17802pt.
-<../Problem_2/A2.4.train.tsv.full.png, id=121, 402.5439pt x 315.0972pt>
+<../Problem_2/A2.4.train.tsv.full.png, id=132, 402.5439pt x 315.0972pt>
 File: ../Problem_2/A2.4.train.tsv.full.png Graphic file (type png)
 <use ../Problem_2/A2.4.train.tsv.full.png>
 Package pdftex.def Info: ../Problem_2/A2.4.train.tsv.full.png  used on input li
-ne 143.
+ne 147.
 (pdftex.def)             Requested size: 102.43227pt x 80.17802pt.
-<../Problem_2/A2.5.train.tsv.full.png, id=122, 402.5439pt x 315.0972pt>
+<../Problem_2/A2.5.train.tsv.full.png, id=133, 402.5439pt x 315.0972pt>
 File: ../Problem_2/A2.5.train.tsv.full.png Graphic file (type png)
 <use ../Problem_2/A2.5.train.tsv.full.png>
 Package pdftex.def Info: ../Problem_2/A2.5.train.tsv.full.png  used on input li
-ne 145.
+ne 149.
 (pdftex.def)             Requested size: 102.43227pt x 80.17802pt.
-<../Problem_2/A2.6.train.tsv.full.png, id=123, 402.5439pt x 315.0972pt>
+<../Problem_2/A2.6.train.tsv.full.png, id=134, 402.5439pt x 315.0972pt>
 File: ../Problem_2/A2.6.train.tsv.full.png Graphic file (type png)
 <use ../Problem_2/A2.6.train.tsv.full.png>
 Package pdftex.def Info: ../Problem_2/A2.6.train.tsv.full.png  used on input li
-ne 147.
+ne 151.
 (pdftex.def)             Requested size: 102.43227pt x 80.17802pt.
-<../Problem_2/A2.7.train.tsv.full.png, id=124, 402.5439pt x 315.0972pt>
+<../Problem_2/A2.7.train.tsv.full.png, id=135, 402.5439pt x 315.0972pt>
 File: ../Problem_2/A2.7.train.tsv.full.png Graphic file (type png)
 <use ../Problem_2/A2.7.train.tsv.full.png>
 Package pdftex.def Info: ../Problem_2/A2.7.train.tsv.full.png  used on input li
-ne 149.
+ne 153.
 (pdftex.def)             Requested size: 102.43227pt x 80.17802pt.
-<../Problem_2/A2.8.train.tsv.full.png, id=125, 402.5439pt x 315.0972pt>
+<../Problem_2/A2.8.train.tsv.full.png, id=136, 402.5439pt x 315.0972pt>
 File: ../Problem_2/A2.8.train.tsv.full.png Graphic file (type png)
 <use ../Problem_2/A2.8.train.tsv.full.png>
 Package pdftex.def Info: ../Problem_2/A2.8.train.tsv.full.png  used on input li
-ne 151.
+ne 155.
 (pdftex.def)             Requested size: 102.43227pt x 80.17802pt.
-<../Problem_2/A2.9.train.tsv.full.png, id=126, 409.0482pt x 315.0972pt>
+<../Problem_2/A2.9.train.tsv.full.png, id=137, 409.0482pt x 315.0972pt>
 File: ../Problem_2/A2.9.train.tsv.full.png Graphic file (type png)
 <use ../Problem_2/A2.9.train.tsv.full.png>
 Package pdftex.def Info: ../Problem_2/A2.9.train.tsv.full.png  used on input li
-ne 153.
+ne 157.
 (pdftex.def)             Requested size: 102.43227pt x 78.90392pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 173--173
+Underfull \hbox (badness 1803) in paragraph at lines 181--181
+[]|\OT1/cmr/m/n/12 Is lin-ear sep-a-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 181--181
+\OT1/cmr/m/n/12 ra-ble be-cause
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 181--181
+\OT1/cmr/m/n/12 er-ror rates
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 181--181
+\OT1/cmr/m/n/12 don't change
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 181--181
+\OT1/cmr/m/n/12 af-ter $\OMS/cmsy/m/n/12 ^^Y \OT1/cmr/m/n/12 380$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 181--181
+\OT1/cmr/m/n/12 epochs, the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 181--181
+\OT1/cmr/m/n/12 small-est mar-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 181--181
+\OT1/cmr/m/n/12 gin found is
+ []
+
+
+Underfull \hbox (badness 4254) in paragraph at lines 181--181
+\OMS/cmsy/m/n/12 ^^Y \OT1/cmr/m/n/12 0\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 005$, s
+ee
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 181--181
 []|\OT1/cmr/m/n/12 Does over-fit
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 173--173
+Underfull \hbox (badness 10000) in paragraph at lines 181--181
 \OT1/cmr/m/n/12 slightly since
  []
 
 
-Underfull \hbox (badness 6575) in paragraph at lines 173--173
+Underfull \hbox (badness 6575) in paragraph at lines 181--181
 \OT1/cmr/m/n/12 test set er-ror
  []
 
 
-Underfull \hbox (badness 3098) in paragraph at lines 173--173
+Underfull \hbox (badness 3098) in paragraph at lines 181--181
 \OT1/cmr/m/n/12 longer train-ing
  []
 
 
-Underfull \hbox (badness 1540) in paragraph at lines 173--173
+Underfull \hbox (badness 10000) in paragraph at lines 181--181
+\OT1/cmr/m/n/12 and doesn't
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 181--181
+\OT1/cmr/m/n/12 match the
+ []
+
+
+Underfull \hbox (badness 1540) in paragraph at lines 181--181
 []|\OT1/cmr/m/n/12 Weight of fea-
  []
 
 
-Underfull \hbox (badness 2799) in paragraph at lines 173--173
+Underfull \hbox (badness 2799) in paragraph at lines 181--181
 \OT1/cmr/m/n/12 ture 9 is one
  []
 
 
-Underfull \hbox (badness 4492) in paragraph at lines 173--173
+Underfull \hbox (badness 4492) in paragraph at lines 181--181
 \OT1/cmr/m/n/12 to two or-ders
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 173--173
+Underfull \hbox (badness 10000) in paragraph at lines 181--181
 \OT1/cmr/m/n/12 of mag-ni-tude
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 173--173
+Underfull \hbox (badness 10000) in paragraph at lines 181--181
 \OT1/cmr/m/n/12 smaller than
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 173--173
+Underfull \hbox (badness 10000) in paragraph at lines 181--181
 \OT1/cmr/m/n/12 the oth-ers,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 173--173
+Underfull \hbox (badness 10000) in paragraph at lines 181--181
 []|\OT1/cmr/m/n/12 Tuned max-i-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 173--173
+Underfull \hbox (badness 10000) in paragraph at lines 181--181
 \OT1/cmr/m/n/12 mum num-ber
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 173--173
+Underfull \hbox (badness 10000) in paragraph at lines 181--181
 \OT1/cmr/m/n/12 of it-er-a-tions,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 173--173
-\OT1/cmr/m/n/12 10%$ train-ing
+Underfull \hbox (badness 5548) in paragraph at lines 181--181
+\OT1/cmr/m/n/12 set it to $94$,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 173--173
+Underfull \hbox (badness 10000) in paragraph at lines 181--181
 \OT1/cmr/m/n/12 er-ror, $19%$
  []
 
 
-Underfull \hbox (badness 1688) in paragraph at lines 173--173
-\OT1/cmr/m/n/12 test er-ror, $5%$
+Underfull \hbox (badness 1688) in paragraph at lines 181--181
+\OT1/cmr/m/n/12 test er-ror, $4%$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 173--173
+Underfull \hbox (badness 10000) in paragraph at lines 181--181
 \OT1/cmr/m/n/12 de-vel-op-ment
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 173--173
+Underfull \hbox (badness 10000) in paragraph at lines 181--181
 []|\OT1/cmr/m/n/12 Is not lin-ear
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 173--173
+Underfull \hbox (badness 10000) in paragraph at lines 181--181
 \OT1/cmr/m/n/12 sep-a-ra-ble be-
  []
 
 
-Underfull \hbox (badness 6995) in paragraph at lines 173--173
+Underfull \hbox (badness 6995) in paragraph at lines 181--181
 \OT1/cmr/m/n/12 cause it does
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 173--173
+Underfull \hbox (badness 10000) in paragraph at lines 181--181
 \OT1/cmr/m/n/12 not con-verge
  []
 
 
-Underfull \hbox (badness 1694) in paragraph at lines 173--173
+Underfull \hbox (badness 1694) in paragraph at lines 181--181
 \OT1/cmr/m/n/12 and er-ror rate
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 173--173
+Underfull \hbox (badness 10000) in paragraph at lines 181--181
 \OT1/cmr/m/n/12 rises a lit-tle
  []
 
 
-Underfull \hbox (badness 3907) in paragraph at lines 173--173
+Underfull \hbox (badness 3907) in paragraph at lines 181--181
 \OT1/cmr/m/n/12 af-ter $\OMS/cmsy/m/n/12 ^^Y \OT1/cmr/m/n/12 1500$
  []
 
 
-Underfull \hbox (badness 2111) in paragraph at lines 173--173
-[]|\OT1/cmr/m/n/12 Does over-fit a
+Underfull \hbox (badness 10000) in paragraph at lines 181--181
+[]|\OT1/cmr/m/n/12 Does over-fit
  []
 
 
-Underfull \hbox (badness 1540) in paragraph at lines 173--173
+Underfull \hbox (badness 10000) in paragraph at lines 181--181
+\OT1/cmr/m/n/12 a lit-tle, see
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 181--181
+\OT1/cmr/m/n/12 with grow-ing
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 181--181
+\OT1/cmr/m/n/12 num-bers of
+ []
+
+
+Underfull \hbox (badness 1540) in paragraph at lines 181--181
 []|\OT1/cmr/m/n/12 Weight of fea-
  []
 
 
-Underfull \hbox (badness 1005) in paragraph at lines 173--173
+Underfull \hbox (badness 1005) in paragraph at lines 181--181
 \OT1/cmr/m/n/12 ture 6 and 19
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 173--173
+Underfull \hbox (badness 10000) in paragraph at lines 181--181
 \OT1/cmr/m/n/12 ni-tude smaller
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 173--173
+Underfull \hbox (badness 10000) in paragraph at lines 181--181
 []|\OT1/cmr/m/n/12 Tuned max-i-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 173--173
+Underfull \hbox (badness 10000) in paragraph at lines 181--181
 \OT1/cmr/m/n/12 it-er-a-tions, set
  []
 
 
-Underfull \hbox (badness 1215) in paragraph at lines 173--173
+Underfull \hbox (badness 1215) in paragraph at lines 181--181
 \OT1/cmr/m/n/12 it to $176$, got
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 173--173
+Underfull \hbox (badness 10000) in paragraph at lines 181--181
 \OT1/cmr/m/n/12 10%$ train-ing
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 173--173
+Underfull \hbox (badness 10000) in paragraph at lines 181--181
 \OT1/cmr/m/n/12 er-ror, $10%$
  []
 
 
-Underfull \hbox (badness 1688) in paragraph at lines 173--173
+Underfull \hbox (badness 1688) in paragraph at lines 181--181
 \OT1/cmr/m/n/12 test er-ror, $3%$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 173--173
+Underfull \hbox (badness 10000) in paragraph at lines 181--181
 \OT1/cmr/m/n/12 de-vel-op-ment
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 173--173
+Underfull \hbox (badness 10000) in paragraph at lines 181--181
 []|\OT1/cmr/m/n/12 Is not lin-ear
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 173--173
+Underfull \hbox (badness 10000) in paragraph at lines 181--181
 \OT1/cmr/m/n/12 sep-a-ra-ble be-
  []
 
 
-Underfull \hbox (badness 6995) in paragraph at lines 173--173
+Underfull \hbox (badness 6995) in paragraph at lines 181--181
 \OT1/cmr/m/n/12 cause it does
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 173--173
+Underfull \hbox (badness 10000) in paragraph at lines 181--181
 \OT1/cmr/m/n/12 not con-verge
  []
 
 
-Underfull \hbox (badness 1694) in paragraph at lines 173--173
+Underfull \hbox (badness 1694) in paragraph at lines 181--181
 \OT1/cmr/m/n/12 and er-ror rate
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 173--173
+Underfull \hbox (badness 10000) in paragraph at lines 181--181
 \OT1/cmr/m/n/12 rises a lit-tle
  []
 
 
-Underfull \hbox (badness 3907) in paragraph at lines 173--173
+Underfull \hbox (badness 3907) in paragraph at lines 181--181
 \OT1/cmr/m/n/12 af-ter $\OMS/cmsy/m/n/12 ^^Y \OT1/cmr/m/n/12 1500$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 173--173
+Underfull \hbox (badness 10000) in paragraph at lines 181--181
+\OT1/cmr/m/n/12 match the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 181--181
+\OT1/cmr/m/n/12 train-ing er-ror,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 181--181
 []|\OT1/cmr/m/n/12 Does over-fit
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 173--173
+Underfull \hbox (badness 6125) in paragraph at lines 181--181
+\OT1/cmr/m/n/12 strongly train-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 181--181
+\OT1/cmr/m/n/12 ing and test
+ []
+
+
+Underfull \hbox (badness 2443) in paragraph at lines 181--181
+\OT1/cmr/m/n/12 er-ror don't fit
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 181--181
+[]|\OT1/cmr/m/n/12 No ob-vi-ous
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 181--181
 []|\OT1/cmr/m/n/12 Tuned max-i-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 173--173
+Underfull \hbox (badness 10000) in paragraph at lines 181--181
 \OT1/cmr/m/n/12 it-er-a-tions, set
  []
 
 
-Underfull \hbox (badness 1215) in paragraph at lines 173--173
+Underfull \hbox (badness 1215) in paragraph at lines 181--181
 \OT1/cmr/m/n/12 it to $815$, got
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 173--173
+Underfull \hbox (badness 10000) in paragraph at lines 181--181
 \OT1/cmr/m/n/12 20%$ train-ing
  []
 
 
-Underfull \hbox (badness 3668) in paragraph at lines 173--173
+Underfull \hbox (badness 3668) in paragraph at lines 181--181
 \OT1/cmr/m/n/12 er-ror, $7%$ de-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 173--173
+Underfull \hbox (badness 10000) in paragraph at lines 181--181
 \OT1/cmr/m/n/12 (over-all bad
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 173--173
+Underfull \hbox (badness 10000) in paragraph at lines 181--181
 []|\OT1/cmr/m/n/12 Is not lin-ear
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 173--173
+Underfull \hbox (badness 10000) in paragraph at lines 181--181
 \OT1/cmr/m/n/12 sep-a-ra-ble be-
  []
 
 
-Underfull \hbox (badness 6995) in paragraph at lines 173--173
+Underfull \hbox (badness 6995) in paragraph at lines 181--181
 \OT1/cmr/m/n/12 cause it does
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 173--173
+Underfull \hbox (badness 10000) in paragraph at lines 181--181
 \OT1/cmr/m/n/12 not con-verge
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 173--173
+Underfull \hbox (badness 10000) in paragraph at lines 181--181
 \OT1/cmr/m/n/12 steadily above
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 173--173
+Underfull \hbox (badness 10000) in paragraph at lines 181--181
 \OT1/cmr/m/n/12 train-ing er-ror
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 173--173
+Underfull \hbox (badness 10000) in paragraph at lines 181--181
 []|\OT1/cmr/m/n/12 Does over-fit
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 173--173
+Underfull \hbox (badness 10000) in paragraph at lines 181--181
+\OT1/cmr/m/n/12 don't match
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 181--181
+[]|\OT1/cmr/m/n/12 No ob-vi-ous
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 181--181
 []|\OT1/cmr/m/n/12 Tuned max-i-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 173--173
+Underfull \hbox (badness 10000) in paragraph at lines 181--181
 \OT1/cmr/m/n/12 it-er-a-tions, set
  []
 
 
-Underfull \hbox (badness 1215) in paragraph at lines 173--173
+Underfull \hbox (badness 1215) in paragraph at lines 181--181
 \OT1/cmr/m/n/12 it to $632$, got
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 173--173
+Underfull \hbox (badness 10000) in paragraph at lines 181--181
 \OT1/cmr/m/n/12 17%$ train-ing
  []
 
 
-Underfull \hbox (badness 3668) in paragraph at lines 173--173
+Underfull \hbox (badness 3668) in paragraph at lines 181--181
 \OT1/cmr/m/n/12 er-ror, $8%$ de-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 173--173
+Underfull \hbox (badness 10000) in paragraph at lines 181--181
 \OT1/cmr/m/n/12 (over-all bad
  []
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 193--193
+[3 <../Problem_2/A2.2.train.tsv.full.png> <../Problem_2/A2.3.train.tsv.full.png
+> <../Problem_2/A2.4.train.tsv.full.png> <../Problem_2/A2.5.train.tsv.full.png>
+ <../Problem_2/A2.6.train.tsv.full.png> <../Problem_2/A2.7.train.tsv.full.png> 
+<../Problem_2/A2.8.train.tsv.full.png> <../Problem_2/A2.9.train.tsv.full.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 201--201
 []|\OT1/cmr/m/n/12 The data is
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 193--193
-\OT1/cmr/m/n/12 af-ter roughly
+Underfull \hbox (badness 10000) in paragraph at lines 201--201
+\OT1/cmr/m/n/12 lin-ear sep-a-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 193--193
-\OT1/cmr/m/n/12 the small-est
+Underfull \hbox (badness 10000) in paragraph at lines 201--201
+\OT1/cmr/m/n/12 ra-ble since
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 193--193
+Underfull \hbox (badness 10000) in paragraph at lines 201--201
+\OT1/cmr/m/n/12 the al-go-rithm
+ []
+
+
+Underfull \hbox (badness 2142) in paragraph at lines 201--201
+\OT1/cmr/m/n/12 con-verges af-ter
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 201--201
+\OT1/cmr/m/n/12 epochs, the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 201--201
+[]|\OT1/cmr/m/n/12 Does over-fit
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 201--201
+\OT1/cmr/m/n/12 slightly for
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 201--201
 \OT1/cmr/m/n/12 larger epochs
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 193--193
+Underfull \hbox (badness 3884) in paragraph at lines 201--201
+\OT1/cmr/m/n/12 is larger than
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 201--201
 []|\OT1/cmr/m/n/12 Feature 12
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 193--193
+Underfull \hbox (badness 10000) in paragraph at lines 201--201
 \OT1/cmr/m/n/12 gen-er-ates a
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 193--193
+Underfull \hbox (badness 10000) in paragraph at lines 201--201
 \OT1/cmr/m/n/12 ni-tude smaller
  []
 
 
-Underfull \hbox (badness 3884) in paragraph at lines 193--193
+Underfull \hbox (badness 3884) in paragraph at lines 201--201
 \OT1/cmr/m/n/12 this might be
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 193--193
+Underfull \hbox (badness 10000) in paragraph at lines 201--201
 []|\OT1/cmr/m/n/12 Tuned max-i-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 193--193
+Underfull \hbox (badness 10000) in paragraph at lines 201--201
 \OT1/cmr/m/n/12 mum num-ber
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 193--193
+Underfull \hbox (badness 10000) in paragraph at lines 201--201
 \OT1/cmr/m/n/12 of it-er-a-tions,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 193--193
+Underfull \hbox (badness 10000) in paragraph at lines 201--201
 \OT1/cmr/m/n/12 13%$ train-ing
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 193--193
+Underfull \hbox (badness 10000) in paragraph at lines 201--201
 \OT1/cmr/m/n/12 er-ror, $28%$
  []
 
 
-Underfull \hbox (badness 1688) in paragraph at lines 193--193
+Underfull \hbox (badness 1688) in paragraph at lines 201--201
 \OT1/cmr/m/n/12 test er-ror, $4%$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 193--193
+Underfull \hbox (badness 10000) in paragraph at lines 201--201
 \OT1/cmr/m/n/12 de-vel-op-ment
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 193--193
+Underfull \hbox (badness 10000) in paragraph at lines 201--201
 []|\OT1/cmr/m/n/12 The data is
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 193--193
-\OT1/cmr/m/n/12 af-ter roughly
+Underfull \hbox (badness 10000) in paragraph at lines 201--201
+\OT1/cmr/m/n/12 lin-ear sep-a-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 193--193
-\OT1/cmr/m/n/12 the small-est
+Underfull \hbox (badness 10000) in paragraph at lines 201--201
+\OT1/cmr/m/n/12 ra-ble since
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 193--193
+Underfull \hbox (badness 10000) in paragraph at lines 201--201
+\OT1/cmr/m/n/12 the al-go-rithm
+ []
+
+
+Underfull \hbox (badness 2142) in paragraph at lines 201--201
+\OT1/cmr/m/n/12 con-verges af-ter
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 201--201
+\OT1/cmr/m/n/12 epochs, the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 201--201
 \OT1/cmr/m/n/12 fit for larger
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 193--193
+Underfull \hbox (badness 7522) in paragraph at lines 201--201
+\OT1/cmr/m/n/12 rates are not
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 201--201
 \OT1/cmr/m/n/12 weights which
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 193--193
+Underfull \hbox (badness 10000) in paragraph at lines 201--201
 \OT1/cmr/m/n/12 of mag-ni-tude
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 193--193
+Underfull \hbox (badness 10000) in paragraph at lines 201--201
 \OT1/cmr/m/n/12 smaller then
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 193--193
+Underfull \hbox (badness 10000) in paragraph at lines 201--201
 []|\OT1/cmr/m/n/12 Tuned max-i-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 193--193
+Underfull \hbox (badness 10000) in paragraph at lines 201--201
 \OT1/cmr/m/n/12 mum num-ber
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 193--193
+Underfull \hbox (badness 10000) in paragraph at lines 201--201
 \OT1/cmr/m/n/12 of it-er-a-tions,
  []
 
 
-Underfull \hbox (badness 2229) in paragraph at lines 193--193
+Underfull \hbox (badness 2229) in paragraph at lines 201--201
 \OT1/cmr/m/n/12 set it to $224$,
  []
 
 
-Underfull \hbox (badness 3942) in paragraph at lines 193--193
+Underfull \hbox (badness 3942) in paragraph at lines 201--201
 \OT1/cmr/m/n/12 got $6%$ train-
  []
 
 
-Underfull \hbox (badness 3668) in paragraph at lines 193--193
+Underfull \hbox (badness 3668) in paragraph at lines 201--201
 \OT1/cmr/m/n/12 ing er-ror, $6%$
  []
 
 
-Underfull \hbox (badness 1688) in paragraph at lines 193--193
+Underfull \hbox (badness 1688) in paragraph at lines 201--201
 \OT1/cmr/m/n/12 test er-ror, $3%$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 193--193
+Underfull \hbox (badness 10000) in paragraph at lines 201--201
 \OT1/cmr/m/n/12 de-vel-op-ment
  []
 
 
-Underfull \hbox (badness 3601) in paragraph at lines 193--193
-\OT1/cmr/m/n/12 be lin-ear sep-
+Underfull \hbox (badness 10000) in paragraph at lines 201--201
+[]|\OT1/cmr/m/n/12 The data is
  []
 
 
-Underfull \hbox (badness 1117) in paragraph at lines 193--193
-\OT1/cmr/m/n/12 a-ra-ble but the
+Underfull \hbox (badness 10000) in paragraph at lines 201--201
+\OT1/cmr/m/n/12 lin-ear sep-a-
  []
 
 
-Underfull \hbox (badness 2547) in paragraph at lines 193--193
-\OT1/cmr/m/n/12 al-go-rithm does
+Underfull \hbox (badness 10000) in paragraph at lines 201--201
+\OT1/cmr/m/n/12 ra-ble since
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 193--193
-\OT1/cmr/m/n/12 2500 it-er-a-tion
+Underfull \hbox (badness 10000) in paragraph at lines 201--201
+\OT1/cmr/m/n/12 the al-go-rithm
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 193--193
-\OT1/cmr/m/n/12 steps (might
+Underfull \hbox (badness 2142) in paragraph at lines 201--201
+\OT1/cmr/m/n/12 con-verges af-ter
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 193--193
-\OT1/cmr/m/n/12 take longer
+Underfull \hbox (badness 10000) in paragraph at lines 201--201
+\OT1/cmr/m/n/12 epochs, the
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 193--193
-\OT1/cmr/m/n/12 since more
- []
-
-
-Underfull \hbox (badness 4492) in paragraph at lines 193--193
-\OT1/cmr/m/n/12 data must be
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 193--193
-\OT1/cmr/m/n/12 to the same
- []
-
-
-Underfull \hbox (badness 4673) in paragraph at lines 193--193
+Underfull \hbox (badness 4673) in paragraph at lines 201--201
 \OT1/cmr/m/n/12 fit, test er-ror
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 193--193
+Underfull \hbox (badness 4120) in paragraph at lines 201--201
+\OT1/cmr/m/n/12 ing er-ror, see
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 201--201
 \OT1/cmr/m/n/12 er-ate weights
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 193--193
+Underfull \hbox (badness 10000) in paragraph at lines 201--201
 \OT1/cmr/m/n/12 ni-tude smaller
  []
 
 
-Underfull \hbox (badness 3884) in paragraph at lines 193--193
+Underfull \hbox (badness 3884) in paragraph at lines 201--201
 \OT1/cmr/m/n/12 this might be
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 193--193
+Underfull \hbox (badness 10000) in paragraph at lines 201--201
 []|\OT1/cmr/m/n/12 Tuned max-i-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 193--193
+Underfull \hbox (badness 10000) in paragraph at lines 201--201
 \OT1/cmr/m/n/12 mum num-ber
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 193--193
+Underfull \hbox (badness 10000) in paragraph at lines 201--201
 \OT1/cmr/m/n/12 of it-er-a-tions,
  []
 
 
-Underfull \hbox (badness 2229) in paragraph at lines 193--193
+Underfull \hbox (badness 2229) in paragraph at lines 201--201
 \OT1/cmr/m/n/12 set it to $806$,
  []
 
 
-Underfull \hbox (badness 3942) in paragraph at lines 193--193
+Underfull \hbox (badness 3942) in paragraph at lines 201--201
 \OT1/cmr/m/n/12 got $8%$ train-
  []
 
 
-Underfull \hbox (badness 3668) in paragraph at lines 193--193
+Underfull \hbox (badness 3668) in paragraph at lines 201--201
 \OT1/cmr/m/n/12 ing er-ror, $2%$
  []
 
 
-Underfull \hbox (badness 1688) in paragraph at lines 193--193
+Underfull \hbox (badness 1688) in paragraph at lines 201--201
 \OT1/cmr/m/n/12 test er-ror, $4%$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 193--193
+Underfull \hbox (badness 10000) in paragraph at lines 201--201
 \OT1/cmr/m/n/12 de-vel-op-ment
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 193--193
+Underfull \hbox (badness 10000) in paragraph at lines 201--201
 []|\OT1/cmr/m/n/12 Is not lin-ear
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 193--193
+Underfull \hbox (badness 10000) in paragraph at lines 201--201
 \OT1/cmr/m/n/12 sep-a-ra-ble be-
  []
 
 
-Underfull \hbox (badness 6995) in paragraph at lines 193--193
+Underfull \hbox (badness 6995) in paragraph at lines 201--201
 \OT1/cmr/m/n/12 cause it does
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 193--193
+Underfull \hbox (badness 10000) in paragraph at lines 201--201
 \OT1/cmr/m/n/12 not con-verge
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 193--193
+Underfull \hbox (badness 10000) in paragraph at lines 201--201
 \OT1/cmr/m/n/12 and er-ror is
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 193--193
-\OT1/cmr/m/n/12 fit since test
+Underfull \hbox (badness 7433) in paragraph at lines 201--201
+\OT1/cmr/m/n/12 since test er-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 193--193
+Underfull \hbox (badness 2573) in paragraph at lines 201--201
+\OT1/cmr/m/n/12 ror is steadily
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 201--201
 \OT1/cmr/m/n/12 roughly two
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 193--193
+Underfull \hbox (badness 10000) in paragraph at lines 201--201
 \OT1/cmr/m/n/12 per-cent worse
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 193--193
+Underfull \hbox (badness 10000) in paragraph at lines 201--201
 \OT1/cmr/m/n/12 than train-ing
  []
 
 
-Underfull \hbox (badness 1540) in paragraph at lines 193--193
+Underfull \hbox (badness 1360) in paragraph at lines 201--201
+\OT1/cmr/m/n/12 er-ror rate (see
+ []
+
+
+Underfull \hbox (badness 1540) in paragraph at lines 201--201
 []|\OT1/cmr/m/n/12 Weight of fea-
  []
 
 
-Underfull \hbox (badness 1005) in paragraph at lines 193--193
+Underfull \hbox (badness 1005) in paragraph at lines 201--201
 \OT1/cmr/m/n/12 ture 1 and 20
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 193--193
+Underfull \hbox (badness 10000) in paragraph at lines 201--201
 \OT1/cmr/m/n/12 ni-tude smaller
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 193--193
+Underfull \hbox (badness 10000) in paragraph at lines 201--201
 []|\OT1/cmr/m/n/12 Tuned max-i-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 193--193
+Underfull \hbox (badness 10000) in paragraph at lines 201--201
 \OT1/cmr/m/n/12 it-er-a-tions, set
  []
 
 
-Underfull \hbox (badness 1215) in paragraph at lines 193--193
+Underfull \hbox (badness 1215) in paragraph at lines 201--201
 \OT1/cmr/m/n/12 it to $409$, got
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 193--193
+Underfull \hbox (badness 10000) in paragraph at lines 201--201
 \OT1/cmr/m/n/12 80%$ train-ing
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 193--193
+Underfull \hbox (badness 10000) in paragraph at lines 201--201
 \OT1/cmr/m/n/12 er-ror, $154%$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 193--193
+Underfull \hbox (badness 10000) in paragraph at lines 201--201
 \OT1/cmr/m/n/12 de-vel-op-ment
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 193--193
+Underfull \hbox (badness 10000) in paragraph at lines 201--201
 \OT1/cmr/m/n/12 per-for-mance,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 193--193
+Underfull \hbox (badness 10000) in paragraph at lines 201--201
 \OT1/cmr/m/n/12 prob-lem solv-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 193--193
+Underfull \hbox (badness 10000) in paragraph at lines 201--201
 \OT1/cmr/m/n/12 able by the
  []
 
-
-LaTeX Warning: Float too large for page by 102.22601pt on input line 196.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+[4]
+Overfull \vbox (0.72601pt too high) has occurred while \output is active []
 
 
-LaTeX Warning: Reference `fig:2.surprise' on page 2 undefined on input line 200
-.
-
-
-Underfull \hbox (badness 4673) in paragraph at lines 211--211
+[5]
+Underfull \hbox (badness 4673) in paragraph at lines 215--215
 \OT1/cmr/m/n/12 fit, test er-ror
  []
 
 
-Underfull \hbox (badness 4120) in paragraph at lines 211--211
+Underfull \hbox (badness 4120) in paragraph at lines 215--215
 \OT1/cmr/m/n/12 seems to per-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 211--211
+Underfull \hbox (badness 10000) in paragraph at lines 215--215
 \OT1/cmr/m/n/12 form equally
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 211--211
+Underfull \hbox (badness 10000) in paragraph at lines 215--215
 \OT1/cmr/m/n/12 good, maybe
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 211--211
+Underfull \hbox (badness 10000) in paragraph at lines 215--215
 \OT1/cmr/m/n/12 even bet-ter
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 211--211
+Underfull \hbox (badness 10000) in paragraph at lines 215--215
 \OT1/cmr/m/n/12 than train-ing
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 211--211
-[]|\OT1/cmr/m/n/12 Feature 10,
+Underfull \hbox (badness 10000) in paragraph at lines 215--215
+[]|\OT1/cmr/m/n/12 Since the
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 211--211
-\OT1/cmr/m/n/12 12, 18, and
+Underfull \hbox (badness 3138) in paragraph at lines 215--215
+\OT1/cmr/m/n/12 were not con-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 211--211
-\OT1/cmr/m/n/12 19 gen-er-ate
+Underfull \hbox (badness 10000) in paragraph at lines 215--215
+\OT1/cmr/m/n/12 sid-ered while
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 211--211
-\OT1/cmr/m/n/12 weights which
+Underfull \hbox (badness 10000) in paragraph at lines 215--215
+\OT1/cmr/m/n/12 train-ing and
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 211--211
-\OT1/cmr/m/n/12 of mag-ni-tude
+Underfull \hbox (badness 10000) in paragraph at lines 215--215
+\OT1/cmr/m/n/12 test-ing, no
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 211--211
-\OT1/cmr/m/n/12 smaller then
+Underfull \hbox (badness 10000) in paragraph at lines 215--215
+\OT1/cmr/m/n/12 small weights
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 211--211
+Underfull \hbox (badness 10000) in paragraph at lines 215--215
 []|\OT1/cmr/m/n/12 Tuned max-i-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 211--211
+Underfull \hbox (badness 10000) in paragraph at lines 215--215
 \OT1/cmr/m/n/12 mum num-ber
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 211--211
+Underfull \hbox (badness 10000) in paragraph at lines 215--215
 \OT1/cmr/m/n/12 of it-er-a-tions,
  []
 
 
-Underfull \hbox (badness 2229) in paragraph at lines 211--211
+Underfull \hbox (badness 2229) in paragraph at lines 215--215
 \OT1/cmr/m/n/12 set it to $631$,
  []
 
 
-Underfull \hbox (badness 3668) in paragraph at lines 211--211
+Underfull \hbox (badness 3668) in paragraph at lines 215--215
 \OT1/cmr/m/n/12 ing er-ror, $2%$
  []
 
 
-Underfull \hbox (badness 1688) in paragraph at lines 211--211
+Underfull \hbox (badness 1688) in paragraph at lines 215--215
 \OT1/cmr/m/n/12 test er-ror, $7%$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 211--211
+Underfull \hbox (badness 10000) in paragraph at lines 215--215
 \OT1/cmr/m/n/12 de-vel-op-ment
  []
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<../Problem_2/A2.5.train.tsv.early.png, id=135, 406.1574pt x 315.0972pt>
+<../Problem_2/A2.5.train.tsv.early.png, id=204, 406.1574pt x 315.0972pt>
 File: ../Problem_2/A2.5.train.tsv.early.png Graphic file (type png)
 <use ../Problem_2/A2.5.train.tsv.early.png>
 Package pdftex.def Info: ../Problem_2/A2.5.train.tsv.early.png  used on input l
-ine 218.
+ine 222.
 (pdftex.def)             Requested size: 102.43227pt x 79.46645pt.
-<../Problem_2/A2.10.train.tsv.early.png, id=136, 406.1574pt x 315.0972pt>
+<../Problem_2/A2.10.train.tsv.early.png, id=205, 406.1574pt x 315.0972pt>
 File: ../Problem_2/A2.10.train.tsv.early.png Graphic file (type png)
 <use ../Problem_2/A2.10.train.tsv.early.png>
 Package pdftex.def Info: ../Problem_2/A2.10.train.tsv.early.png  used on input 
-line 220.
+line 224.
 (pdftex.def)             Requested size: 102.43227pt x 79.46645pt.
-<../Problem_2/A2.8.train.tsv.inner_loop_at_10.png, id=137, 409.0482pt x 315.097
-2pt>
-File: ../Problem_2/A2.8.train.tsv.inner_loop_at_10.png Graphic file (type png)
-<use ../Problem_2/A2.8.train.tsv.inner_loop_at_10.png>
-Package pdftex.def Info: ../Problem_2/A2.8.train.tsv.inner_loop_at_10.png  used
- on input line 222.
-(pdftex.def)             Requested size: 102.43227pt x 78.90392pt.
-<../Problem_2/A2.8.train.tsv.inner_loop_at_90.png, id=138, 409.0482pt x 315.097
-2pt>
-File: ../Problem_2/A2.8.train.tsv.inner_loop_at_90.png Graphic file (type png)
-<use ../Problem_2/A2.8.train.tsv.inner_loop_at_90.png>
-Package pdftex.def Info: ../Problem_2/A2.8.train.tsv.inner_loop_at_90.png  used
- on input line 224.
-(pdftex.def)             Requested size: 102.43227pt x 78.90392pt.
+<../Problem_2/A2.10.train.tsv.inner_loop_at_10.png, id=206, 409.0482pt x 315.09
+72pt>
+File: ../Problem_2/A2.10.train.tsv.inner_loop_at_10.png Graphic file (type png)
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+<use ../Problem_2/A2.10.train.tsv.inner_loop_at_10.png>
+Package pdftex.def Info: ../Problem_2/A2.10.train.tsv.inner_loop_at_10.png  use
+d on input line 226.
+(pdftex.def)             Requested size: 102.43227pt x 78.90392pt.
+<../Problem_2/A2.10.train.tsv.inner_loop_at_90.png, id=207, 409.0482pt x 315.09
+72pt>
+File: ../Problem_2/A2.10.train.tsv.inner_loop_at_90.png Graphic file (type png)
 
+<use ../Problem_2/A2.10.train.tsv.inner_loop_at_90.png>
+Package pdftex.def Info: ../Problem_2/A2.10.train.tsv.inner_loop_at_90.png  use
+d on input line 228.
+(pdftex.def)             Requested size: 102.43227pt x 78.90392pt.
 File: ../Problem_2/A2.6.train.tsv.full.png Graphic file (type png)
 <use ../Problem_2/A2.6.train.tsv.full.png>
 Package pdftex.def Info: ../Problem_2/A2.6.train.tsv.full.png  used on input li
-ne 231.
+ne 235.
 (pdftex.def)             Requested size: 102.43227pt x 80.17802pt.
 File: ../Problem_2/A2.7.train.tsv.full.png Graphic file (type png)
 <use ../Problem_2/A2.7.train.tsv.full.png>
 Package pdftex.def Info: ../Problem_2/A2.7.train.tsv.full.png  used on input li
-ne 233.
+ne 237.
 (pdftex.def)             Requested size: 102.43227pt x 80.17802pt.
 File: ../Problem_2/A2.8.train.tsv.full.png Graphic file (type png)
 <use ../Problem_2/A2.8.train.tsv.full.png>
 Package pdftex.def Info: ../Problem_2/A2.8.train.tsv.full.png  used on input li
-ne 235.
+ne 239.
 (pdftex.def)             Requested size: 102.43227pt x 80.17802pt.
-<../Problem_2/A2.10.train.tsv.full.png, id=139, 402.5439pt x 315.0972pt>
+<../Problem_2/A2.10.train.tsv.full.png, id=208, 402.5439pt x 315.0972pt>
 File: ../Problem_2/A2.10.train.tsv.full.png Graphic file (type png)
 <use ../Problem_2/A2.10.train.tsv.full.png>
 Package pdftex.def Info: ../Problem_2/A2.10.train.tsv.full.png  used on input l
-ine 237.
+ine 241.
 (pdftex.def)             Requested size: 102.43227pt x 80.17802pt.
+[6 <../Problem_2/A2.5.train.tsv.early.png> <../Problem_2/A2.10.train.tsv.early.
+png> <../Problem_2/A2.10.train.tsv.inner_loop_at_10.png> <../Problem_2/A2.10.tr
+ain.tsv.inner_loop_at_90.png> <../Problem_2/A2.10.train.tsv.full.png>]
+File: ../Problem_2/A2.9.train.tsv.full.png Graphic file (type png)
+<use ../Problem_2/A2.9.train.tsv.full.png>
+Package pdftex.def Info: ../Problem_2/A2.9.train.tsv.full.png  used on input li
+ne 258.
+(pdftex.def)             Requested size: 209.1301pt x 161.0965pt.
+<../Problem_2/A2.11.train.tsv.full.png, id=228, 418.4433pt x 315.0972pt>
+File: ../Problem_2/A2.11.train.tsv.full.png Graphic file (type png)
+<use ../Problem_2/A2.11.train.tsv.full.png>
+Package pdftex.def Info: ../Problem_2/A2.11.train.tsv.full.png  used on input l
+ine 260.
+(pdftex.def)             Requested size: 209.1301pt x 157.4809pt.
+ [7 <../Problem_2/A2.11.train.tsv.full.png>]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 276.
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<../Problem_4/Problem_4.1.1.png, id=142, 839.7774pt x 341.1144pt>
-File: ../Problem_4/Problem_4.1.1.png Graphic file (type png)
-<use ../Problem_4/Problem_4.1.1.png>
-Package pdftex.def Info: ../Problem_4/Problem_4.1.1.png  used on input line 257
-.
-(pdftex.def)             Requested size: 426.79135pt x 173.36224pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<../Problem_4/Problem_4.1.3_2.png, id=143, 462.528pt x 341.1144pt>
-File: ../Problem_4/Problem_4.1.3_2.png Graphic file (type png)
-<use ../Problem_4/Problem_4.1.3_2.png>
-Package pdftex.def Info: ../Problem_4/Problem_4.1.3_2.png  used on input line 2
-64.
-(pdftex.def)             Requested size: 281.68385pt x 207.75154pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 271.
 
 (c:/Program Files/texlive/2017/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 271.
- [2]
-[3 <../Problem_2/A2.2.train.tsv.full.png> <../Problem_2/A2.3.train.tsv.full.png
-> <../Problem_2/A2.4.train.tsv.full.png> <../Problem_2/A2.5.train.tsv.full.png>
- <../Problem_2/A2.6.train.tsv.full.png> <../Problem_2/A2.7.train.tsv.full.png> 
-<../Problem_2/A2.8.train.tsv.full.png> <../Problem_2/A2.9.train.tsv.full.png>]
-[4]
-<../Problem_4/Problem_4.2.2.png, id=193, 462.528pt x 341.1144pt>
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 276.
+<../Problem_4/Problem_4.2.2.png, id=241, 462.528pt x 341.1144pt>
 File: ../Problem_4/Problem_4.2.2.png Graphic file (type png)
 <use ../Problem_4/Problem_4.2.2.png>
-Package pdftex.def Info: ../Problem_4/Problem_4.2.2.png  used on input line 300
+Package pdftex.def Info: ../Problem_4/Problem_4.2.2.png  used on input line 306
 .
 (pdftex.def)             Requested size: 281.68385pt x 207.75154pt.
- [5 <../Problem_2/A2.5.train.tsv.early.png> <../Problem_2/A2.10.train.tsv.early
-.png> <../Problem_2/A2.8.train.tsv.inner_loop_at_10.png> <../Problem_2/A2.8.tra
-in.tsv.inner_loop_at_90.png> <../Problem_2/A2.10.train.tsv.full.png> <../Proble
-m_4/Problem_4.1.1.png>]
-<../Problem_4/Problem_4.2.4.png, id=216, 819.5418pt x 341.1144pt>
+ [8]
+<../Problem_4/Problem_4.2.4.png, id=254, 819.5418pt x 341.1144pt>
 File: ../Problem_4/Problem_4.2.4.png Graphic file (type png)
 <use ../Problem_4/Problem_4.2.4.png>
-Package pdftex.def Info: ../Problem_4/Problem_4.2.4.png  used on input line 310
+Package pdftex.def Info: ../Problem_4/Problem_4.2.4.png  used on input line 316
 .
 (pdftex.def)             Requested size: 281.68385pt x 117.24216pt.
-<../Problem_4/Problem_4.4.1.png, id=219, 940.2327pt x 378.6948pt>
-File: ../Problem_4/Problem_4.4.1.png Graphic file (type png)
-<use ../Problem_4/Problem_4.4.1.png>
-Package pdftex.def Info: ../Problem_4/Problem_4.4.1.png  used on input line 336
-.
-(pdftex.def)             Requested size: 375.57846pt x 151.2672pt.
-<../Problem_4/Problem_4.4.3.png, id=220, 939.51pt x 380.8629pt>
-File: ../Problem_4/Problem_4.4.3.png Graphic file (type png)
-<use ../Problem_4/Problem_4.4.3.png>
-Package pdftex.def Info: ../Problem_4/Problem_4.4.3.png  used on input line 338
-.
-(pdftex.def)             Requested size: 375.57846pt x 152.24947pt.
-<../Problem_4/Problem_4.4.5.png, id=221, 934.4511pt x 377.2494pt>
-File: ../Problem_4/Problem_4.4.5.png Graphic file (type png)
-<use ../Problem_4/Problem_4.4.5.png>
-Package pdftex.def Info: ../Problem_4/Problem_4.4.5.png  used on input line 340
-.
-(pdftex.def)             Requested size: 375.57846pt x 151.62238pt.
-<../Problem_4/Problem_4.4.10.png, id=222, 936.6192pt x 378.6948pt>
-File: ../Problem_4/Problem_4.4.10.png Graphic file (type png)
-<use ../Problem_4/Problem_4.4.10.png>
-Package pdftex.def Info: ../Problem_4/Problem_4.4.10.png  used on input line 34
-2.
-(pdftex.def)             Requested size: 375.57846pt x 151.8566pt.
 
-
-LaTeX Warning: Float too large for page by 54.1653pt on input line 345.
+[9 <../Problem_4/Problem_4.2.2.png> <../Problem_4/Problem_4.2.4.png>]
+<../Problem_4/Problem_4.1.1.png, id=267, 839.7774pt x 341.1144pt>
+File: ../Problem_4/Problem_4.1.1.png Graphic file (type png)
+<use ../Problem_4/Problem_4.1.1.png>
+Package pdftex.def Info: ../Problem_4/Problem_4.1.1.png  used on input line 342
+.
+(pdftex.def)             Requested size: 426.79135pt x 173.36224pt.
+<../Problem_4/Problem_4.1.3_2.png, id=268, 462.528pt x 341.1144pt>
+File: ../Problem_4/Problem_4.1.3_2.png Graphic file (type png)
+<use ../Problem_4/Problem_4.1.3_2.png>
+Package pdftex.def Info: ../Problem_4/Problem_4.1.3_2.png  used on input line 3
+49.
+(pdftex.def)             Requested size: 281.68385pt x 207.75154pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[6 <../Problem_4/Problem_4.1.3_2.png>] [7 <../Problem_4/Problem_4.2.2.png> <../
-Problem_4/Problem_4.2.4.png>]
-<../Problem_4/Problem_4.4.25.png, id=242, 937.3419pt x 375.804pt>
+<../Problem_4/Problem_4.4.1.png, id=269, 462.528pt x 344.0052pt>
+File: ../Problem_4/Problem_4.4.1.png Graphic file (type png)
+<use ../Problem_4/Problem_4.4.1.png>
+Package pdftex.def Info: ../Problem_4/Problem_4.4.1.png  used on input line 356
+.
+(pdftex.def)             Requested size: 209.1301pt x 155.54102pt.
+<../Problem_4/Problem_4.4.3.png, id=270, 462.528pt x 344.0052pt>
+File: ../Problem_4/Problem_4.4.3.png Graphic file (type png)
+<use ../Problem_4/Problem_4.4.3.png>
+Package pdftex.def Info: ../Problem_4/Problem_4.4.3.png  used on input line 358
+.
+(pdftex.def)             Requested size: 209.1301pt x 155.54102pt.
+<../Problem_4/Problem_4.4.5.png, id=271, 462.528pt x 344.0052pt>
+File: ../Problem_4/Problem_4.4.5.png Graphic file (type png)
+<use ../Problem_4/Problem_4.4.5.png>
+Package pdftex.def Info: ../Problem_4/Problem_4.4.5.png  used on input line 360
+.
+(pdftex.def)             Requested size: 209.1301pt x 155.54102pt.
+<../Problem_4/Problem_4.4.10.png, id=272, 462.528pt x 344.0052pt>
+File: ../Problem_4/Problem_4.4.10.png Graphic file (type png)
+<use ../Problem_4/Problem_4.4.10.png>
+Package pdftex.def Info: ../Problem_4/Problem_4.4.10.png  used on input line 36
+2.
+(pdftex.def)             Requested size: 209.1301pt x 155.54102pt.
+[10 <../Problem_4/Problem_4.1.1.png>]
+<../Problem_4/Problem_4.4.25.png, id=283, 462.528pt x 344.0052pt>
 File: ../Problem_4/Problem_4.4.25.png Graphic file (type png)
 <use ../Problem_4/Problem_4.4.25.png>
-Package pdftex.def Info: ../Problem_4/Problem_4.4.25.png  used on input line 35
-1.
-(pdftex.def)             Requested size: 375.57846pt x 150.58272pt.
-<../Problem_4/Problem_4.4.50.png, id=243, 938.0646pt x 377.2494pt>
+Package pdftex.def Info: ../Problem_4/Problem_4.4.25.png  used on input line 36
+9.
+(pdftex.def)             Requested size: 209.1301pt x 155.54102pt.
+<../Problem_4/Problem_4.4.50.png, id=284, 462.528pt x 344.0052pt>
 File: ../Problem_4/Problem_4.4.50.png Graphic file (type png)
 <use ../Problem_4/Problem_4.4.50.png>
-Package pdftex.def Info: ../Problem_4/Problem_4.4.50.png  used on input line 35
-3.
-(pdftex.def)             Requested size: 375.57846pt x 151.04099pt.
-<../Problem_4/Problem_4.4.200.png, id=244, 937.3419pt x 377.9721pt>
+Package pdftex.def Info: ../Problem_4/Problem_4.4.50.png  used on input line 37
+1.
+(pdftex.def)             Requested size: 209.1301pt x 155.54102pt.
+<../Problem_4/Problem_4.4.200.png, id=285, 462.528pt x 344.0052pt>
 File: ../Problem_4/Problem_4.4.200.png Graphic file (type png)
 <use ../Problem_4/Problem_4.4.200.png>
 Package pdftex.def Info: ../Problem_4/Problem_4.4.200.png  used on input line 3
-55.
-(pdftex.def)             Requested size: 375.57846pt x 151.45146pt.
-<../Problem_4/Problem_4.4.500.png, id=245, 938.0646pt x 378.6948pt>
+73.
+(pdftex.def)             Requested size: 209.1301pt x 155.54102pt.
+<../Problem_4/Problem_4.4.500.png, id=286, 462.528pt x 344.0052pt>
 File: ../Problem_4/Problem_4.4.500.png Graphic file (type png)
 <use ../Problem_4/Problem_4.4.500.png>
 Package pdftex.def Info: ../Problem_4/Problem_4.4.500.png  used on input line 3
-57.
-(pdftex.def)             Requested size: 375.57846pt x 151.61969pt.
-
-
-LaTeX Warning: Float too large for page by 66.36452pt on input line 360.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-(./Nies_Lukas_A2.bbl)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 386.
- [8] [9] [10] [11 <../Problem_4/Problem_4.4.1.png> <../Problem_4/Problem_4.4.3.
-png> <../Problem_4/Problem_4.4.5.png> <../Problem_4/Problem_4.4.10.png>] [12 <.
-./Problem_4/Problem_4.4.25.png> <../Problem_4/Problem_4.4.50.png> <../Problem_4
-/Problem_4.4.200.png> <../Problem_4/Problem_4.4.500.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 386.
-
-(./Nies_Lukas_A2.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 386.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 386.
+75.
+(pdftex.def)             Requested size: 209.1301pt x 155.54102pt.
+ [11 <../Problem_4/Problem_4.1.3_2.png> <../Problem_4/Problem_4.4.1.png> <../Pr
+oblem_4/Problem_4.4.3.png> <../Problem_4/Problem_4.4.5.png> <../Problem_4/Probl
+em_4.4.10.png>] [12 <../Problem_4/Problem_4.4.25.png> <../Problem_4/Problem_4.4
+.50.png> <../Problem_4/Problem_4.4.200.png> <../Problem_4/Problem_4.4.500.png>]
+ [13]
+<../Problem_6/A2.10.train_5.tsv.full.png, id=323, 409.0482pt x 315.0972pt>
+File: ../Problem_6/A2.10.train_5.tsv.full.png Graphic file (type png)
+<use ../Problem_6/A2.10.train_5.tsv.full.png>
+Package pdftex.def Info: ../Problem_6/A2.10.train_5.tsv.full.png  used on input
+ line 412.
+(pdftex.def)             Requested size: 106.69783pt x 82.18777pt.
+<../Problem_6/A2.10.train_15.tsv.full.png, id=324, 418.4433pt x 315.0972pt>
+File: ../Problem_6/A2.10.train_15.tsv.full.png Graphic file (type png)
+<use ../Problem_6/A2.10.train_15.tsv.full.png>
+Package pdftex.def Info: ../Problem_6/A2.10.train_15.tsv.full.png  used on inpu
+t line 414.
+(pdftex.def)             Requested size: 106.69783pt x 80.34631pt.
+<../Problem_6/A2.10.train_17.tsv.full.png, id=325, 409.0482pt x 315.0972pt>
+File: ../Problem_6/A2.10.train_17.tsv.full.png Graphic file (type png)
+<use ../Problem_6/A2.10.train_17.tsv.full.png>
+Package pdftex.def Info: ../Problem_6/A2.10.train_17.tsv.full.png  used on inpu
+t line 416.
+(pdftex.def)             Requested size: 106.69783pt x 82.18777pt.
+<../Problem_6/A2.10.train_20.tsv.full.png, id=326, 409.0482pt x 315.0972pt>
+File: ../Problem_6/A2.10.train_20.tsv.full.png Graphic file (type png)
+<use ../Problem_6/A2.10.train_20.tsv.full.png>
+Package pdftex.def Info: ../Problem_6/A2.10.train_20.tsv.full.png  used on inpu
+t line 418.
+(pdftex.def)             Requested size: 106.69783pt x 82.18777pt.
+File: ../Problem_2/A2.11.train.tsv.full.png Graphic file (type png)
+<use ../Problem_2/A2.11.train.tsv.full.png>
+Package pdftex.def Info: ../Problem_2/A2.11.train.tsv.full.png  used on input l
+ine 427.
+(pdftex.def)             Requested size: 128.0387pt x 96.41461pt.
+File: ../Problem_6/A2.10.train_20.tsv.full.png Graphic file (type png)
+<use ../Problem_6/A2.10.train_20.tsv.full.png>
+Package pdftex.def Info: ../Problem_6/A2.10.train_20.tsv.full.png  used on inpu
+t line 429.
+(pdftex.def)             Requested size: 128.0387pt x 98.62628pt.
+ (./Nies_Lukas_A2.bbl)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 444.
+ [14 <../Problem_6/A2.10.train_5.tsv.full.png> <../Problem_6/A2.10.train_15.tsv
+.full.png> <../Problem_6/A2.10.train_17.tsv.full.png> <../Problem_6/A2.10.train
+_20.tsv.full.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 444.
+ (./Nies_Lukas_A2.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 444.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 444.
 Package rerunfilecheck Info: File `Nies_Lukas_A2.out' has not changed.
-(rerunfilecheck)             Checksum: B66A9E57E118E1439591D0B7C24415C3;1025.
-
-
-LaTeX Warning: There were undefined references.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 386.
+(rerunfilecheck)             Checksum: 63A5B7BEFBABBF7412DE168B6ED9AE24;947.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 444.
  ) 
 Here is how much of TeX's memory you used:
- 21127 strings out of 492980
- 396596 string characters out of 6129672
- 495027 words of memory out of 5000000
- 24372 multiletter control sequences out of 15000+600000
+ 21178 strings out of 492980
+ 398066 string characters out of 6129672
+ 486027 words of memory out of 5000000
+ 24406 multiletter control sequences out of 15000+600000
  544885 words of font info for 84 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 44i,12n,58p,10394b,820s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 44i,12n,58p,10394b,825s stack positions out of 5000i,500n,10000p,200000b,80000s
 <c:/Program Files/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx
 12.pfb><c:/Program Files/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmex10.pfb><c:/Program Files/texlive/2017/texmf-dist/fonts/type1/public/amsfon
@@ -2395,13 +2569,14 @@ f-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb><c:/Program Files/texlive/2017
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/Program Files/texlive
 /2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/Program Files/tex
 live/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/Program File
-s/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb><c:/Pr
-ogram Files/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.
-pfb>
-Output written on Nies_Lukas_A2.pdf (14 pages, 1208543 bytes).
+s/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb><c:/Program
+ Files/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb><
+c:/Program Files/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/symbols/ms
+bm10.pfb>
+Output written on Nies_Lukas_A2.pdf (16 pages, 1549545 bytes).
 PDF statistics:
- 357 PDF objects out of 1000 (max. 8388607)
- 263 compressed objects within 3 object streams
- 82 named destinations out of 1000 (max. 500000)
- 279 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 425 PDF objects out of 1000 (max. 8388607)
+ 303 compressed objects within 4 object streams
+ 99 named destinations out of 1000 (max. 500000)
+ 296 words of extra memory for PDF output out of 10000 (max. 10000000)
 
