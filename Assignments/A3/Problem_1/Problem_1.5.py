@@ -19,21 +19,19 @@ import pickle
 import matplotlib.image as mpimg
 from timeit import default_timer as timer
 
-def calc_miscl_err(Y, Y_est):
+def calc_miscl_err(Y, X, w):
     """
-    Calculate the misclassification error
+    Calculate the misclassification error as posted on class canvas
     """
     # Define dimensionality
     d = len(Y)
+    # Threshold 
+    b = 0.5
     # Calculate the error
-    error = 0
-    for i in range(d):
-        if ( Y[i] != Y_est[i] ):
-            error += 1
-    error /= d
-    error *= 100
-    # Return error
-    return error
+    Yhat = np.dot(X,w)
+    Yhat_labels = ( Yhat - b ) >= 0
+    errors = np.abs(Yhat_labels - Y)
+    return (100*sum(errors)/(Yhat.shape[0]*1.0))
     
 def calc_avg_sq_err(X, Y, w):
     """
@@ -47,85 +45,54 @@ def calc_avg_sq_err(X, Y, w):
     
     return error
 
-def estimate(X, Y, wstar, TH):
-    """
-    Function for estimating the true label
-    """
-    # Define dimensionality
-    N = len(X)
-    d = len(X[0])
-    # Estimate the label 
-    Y_est = np.zeros(N)
-    for i in range(N):
-        if ( np.dot(X[i],wstar) >= TH ) :
-            Y_est[i] = 1
-        else:
-            Y_est[i] = 0
-    # Return estimation
-    return Y_est
-
 def update_w(X, Y, w, eta, lamda):
     """
-    Function for updating w to perform the stochastical descent with mini batches 
+    Function for updating w to perform the stochastical descent
     """
     # Define dimensionality
     N = len(X)
     d = len(X[0])
-    # Create mini batch consisting of 100 random data points
-    M = 100
-    mini_batch = np.array(0)
-    mini_batch = np.delete(mini_batch, 0)
-    Y_mini = np.array(0)
-    Y_mini = np.delete(Y_mini, 0)
-    for m in range(M):
-        i = np.random.randint(0,N-1)
-        mini_batch = np.append(mini_batch, X[i]).reshape(m+1,d)
-        Y_mini = np.append(Y_mini, Y[i])
+    # Select random datapoint
+    i = np.random.randint(0,N-1)
     # Update w
-    updated_w = w + eta * ( (1/M) * np.dot( np.transpose(mini_batch), ( Y_mini - np.dot(mini_batch, w) ) ) + np.dot(lamda, w) )
+    updated_w = w + eta * ( np.dot((Y[i] - np.dot(w,X[i])),X[i]) + np.dot(lamda,w) )
     return updated_w
 
-def gen_pol_feat(X):
-    N = len(X)
-    d = len(X[0])
-    d_pol = int(1 + d + d + (1/2)*(d**2-d))
-    X_pol = np.array(0)
-    X_pol = np.delete(X_pol, 0)
-    for feature in range(180):
-        # Add bias
-        X_pol = np.append(X_pol, 1)
-        # Add linear feature
-        for i in range(d):
-            X_pol = np.append(X_pol, X[feature][i]) 
-        # Add quadratic features
-        for i in range(d):
-            for j in range(i, d):
-                X_pol = np.append(X_pol, (X[feature][i] * X[feature][j])) 
-        X_pol = X_pol.reshape(feature+1, d_pol)
-    return X_pol
+def gen_pol_feat(Xtrain_small, Xdev_small, Xtest_small):
+    ## Function taken from class canvas
+    # Compute nxdxd matrices containing the outer product x^Tx for all n entries
+    Xtrain_outer = np.einsum('ij, ik -> ijk', Xtrain_small, Xtrain_small, optimize=True)
+    Xdev_outer = np.einsum('ij, ik -> ijk', Xdev_small, Xdev_small, optimize=True)
+    Xtest_outer = np.einsum('ij, ik -> ijk', Xtest_small, Xtest_small, optimize=True)
+    # Compute arrays of indices for upper triangle part of a dxd matrix
+    j, k = np.triu_indices(Xtrain_small.shape[1])
+    # Flatten the three dimensional array and keep only the upper triangle
+    Xtrain = Xtrain_outer[:, j, k]
+    Xdev = Xdev_outer[:, j, k]
+    Xtest = Xtest_outer[:, j, k]
+    
+    return Xtrain, Xdev, Xtest
+  
 
-def miniSGD(Xtrain, Ytrain, Xtest, Ytest, Xdev, Ydev):
+def SGD(Xtrain, Ytrain, Xtest, Ytest, Xdev, Ydev):
     """
-    Function for performing the gradient descent to find best w
+    Function for performing the stochastic gradient descent to find best w
     """
     # Define dimensionality
     d = len(Xtrain[0])
     # initialize starting stepsize eta(0) = 10 and starting w(0)=0
     w = np.zeros(d)
-    eta = 1e-1 
-    lamda = 1
+    eta = 1e-5 #*(1/4)
+    lamda = 0.0001
     error_train = calc_avg_sq_err(Xtrain, Ytrain, w)
     error_dev = calc_avg_sq_err(Xdev, Ydev, w)
     error_test = calc_avg_sq_err(Xtest, Ytest, w)
-    Y_est_train = estimate(Xtrain, Ytrain, w, TH = 0.5)
-    Y_est_dev = estimate(Xdev, Ydev, w, TH = 0.5)
-    Y_est_test = estimate(Xtest, Ytest, w, TH = 0.5)
-    misc_train = calc_miscl_err(Ytrain, Y_est_train)
-    misc_dev = calc_miscl_err(Ydev, Y_est_dev)
-    misc_test = calc_miscl_err(Ytest, Y_est_test)
+    misc_train = calc_miscl_err(Ytrain, Xtrain, w)
+    misc_dev = calc_miscl_err(Ydev, Xdev, w)
+    misc_test = calc_miscl_err(Ytest, Xtest, w)
     print("Initial error: %3.5f" % error_train)
     # Start loop for finding optimal w
-    K = 3000 # Parameter to tune in order to find good convergence
+    K = 300000 # Parameter to tune in order to find good convergence
     error_train_arr = np.array(0)
     error_train_arr = np.delete(error_train_arr, 0)
     error_train_arr = np.append(error_train_arr, error_train)
@@ -144,57 +111,58 @@ def miniSGD(Xtrain, Ytrain, Xtest, Ytest, Xdev, Ydev):
     misc_test_arr = np.array(0)
     misc_test_arr = np.delete(misc_test_arr, 0)
     misc_test_arr = np.append(misc_test_arr, misc_test)
-    for k in range(K):
+    for k in range(K+1):
+        # Update w for each loop
         w = update_w(Xtrain, Ytrain, w, eta, lamda)
-        Y_est_train = estimate(Xtrain, Ytrain, w, TH = 0.5)
-        Y_est_dev = estimate(Xdev, Ydev, w, TH = 0.5)
-        Y_est_test = estimate(Xtest, Ytest, w, TH = 0.5)
-        misc_train = calc_miscl_err(Ytrain, Y_est_train)
-        misc_dev = calc_miscl_err(Ydev, Y_est_dev)
-        misc_test = calc_miscl_err(Ytest, Y_est_test)
-        misc_train_arr = np.append(misc_train_arr, misc_train)
-        misc_dev_arr = np.append(misc_dev_arr, misc_dev)
-        misc_test_arr = np.append(misc_test_arr, misc_test)
-        error_train = calc_avg_sq_err(Xtrain, Ytrain, w)
-        error_train_arr = np.append(error_train_arr, error_train)
-        error_dev = calc_avg_sq_err(Xdev, Ydev, w)
-        error_dev_arr = np.append(error_dev_arr, error_dev)
-        error_test = calc_avg_sq_err(Xtest, Ytest, w)
-        error_test_arr = np.append(error_test_arr, error_test)
         # Print some runtime control
-        if ( k % 10 == 0 and k != 0 ):
+        if ( k % 1000 == 0 and k != 0 ):
             print("Loop number %i/%i" % (k,K))
             print("Squared Error: %3.5f, Miscl. Error %3.2f%%" % (error_dev,misc_dev))
-        # Print error growth after steps of P k
+        # Calculate errors after every 500th iteration
         P = 500
         if ( k % P == 0 and k != 0):
-            x = np.arange(k-P,k+1,1)
-            fig = plt.figure(figsize=(16,6))
+            misc_train = calc_miscl_err(Ytrain, Xtrain, w)
+            misc_dev = calc_miscl_err(Ydev, Xdev, w)
+            misc_test = calc_miscl_err(Ytest, Xtest, w)
+            misc_train_arr = np.append(misc_train_arr, misc_train)
+            misc_dev_arr = np.append(misc_dev_arr, misc_dev)
+            misc_test_arr = np.append(misc_test_arr, misc_test)
+            error_train = calc_avg_sq_err(Xtrain, Ytrain, w)
+            error_train_arr = np.append(error_train_arr, error_train)
+            error_dev = calc_avg_sq_err(Xdev, Ydev, w)
+            error_dev_arr = np.append(error_dev_arr, error_dev)
+            error_test = calc_avg_sq_err(Xtest, Ytest, w)
+            error_test_arr = np.append(error_test_arr, error_test)
             
-            plt.subplot(1,2,1)
-            plt.semilogy(x, error_train_arr[k-P:k+1], label = "Training error", linewidth=2)
-            plt.semilogy(x, error_dev_arr[k-P:k+1], label = "Dev error", linewidth=2)
-            plt.semilogy(x, error_test_arr[k-P:k+1], label = "Test error", linewidth=2)
-            plt.grid(True)
-            plt.xlabel("Iteration step K")
-            plt.ylabel("Averaged squared error")
-            plt.legend()
             
-            plt.subplot(1,2,2)
-            axes = plt.gca()
-            axes.set_ylim([0,5])
-            plt.plot(x, misc_train_arr[k-P:k+1], label = "Training misclassification", linewidth=2)
-            plt.plot(x, misc_dev_arr[k-P:k+1], label = "Dev misclassification", linewidth=2)
-            plt.plot(x, misc_test_arr[k-P:k+1], label = "Test misclassification", linewidth=2)
-            plt.grid(True)
-            plt.xlabel("Iteration step K")
-            plt.ylabel("Misclassification rate in %")
-            plt.legend()
+    x = np.arange(1,K/P+2,1)
+    fig = plt.figure(figsize=(16,6))
+            
+    plt.subplot(1,2,1)
+    plt.semilogy(x, error_train_arr, label = "Training error", linewidth=2)
+    plt.semilogy(x, error_dev_arr, label = "Dev error", linewidth=2)
+    plt.semilogy(x, error_test_arr, label = "Test error", linewidth=2)
+    plt.grid(True)
+    plt.xlabel("Iteration step K in 500x axis value")
+    plt.ylabel("Averaged squared error")
+    plt.legend()
+            
+    plt.subplot(1,2,2)
+    axes = plt.gca()
+    axes.set_ylim([0,5])
+    plt.plot(x, misc_train_arr, label = "Training misclassification", linewidth=2)
+    plt.plot(x, misc_dev_arr, label = "Dev misclassification", linewidth=2)
+    plt.plot(x, misc_test_arr, label = "Test misclassification", linewidth=2)
+    plt.grid(True)
+    plt.xlabel("Iteration step K in 500x axis value")
+    plt.ylabel("Misclassification rate in %")
+    plt.legend()
         
-            plt.savefig("Problem_1.4_"+str(k)+".png", bbox_inches='tight')
+    plt.savefig("Problem_1.5.png", bbox_inches='tight')
 
-            plt.close(fig)
-
+    plt.close(fig)
+    
+    
 def main():
     """
     Main function: main sequence of programm is controlled and called here
@@ -203,14 +171,10 @@ def main():
     with gzip.open("mnist_2_vs_9_with_40_PCA_features.gz") as f:
         data = pickle.load(f, encoding="bytes")
     Xtrain, Ytrain, Xtest, Ytest, Xdev, Ydev = data[b"Xtrain"], data[b"Ytrain"], data[b"Xtest"], data[b"Ytest"], data[b"Xdev"], data[b"Ydev"]
-    
-    start = timer()
-    Xtrain_pol = gen_pol_feat(Xtrain)
-    print("Time:", timer()-start )
-    print(np.shape(Xtrain_pol))
-    
-    
-    #miniSGD(Xtrain, Ytrain, Xtest, Ytest, Xdev, Ydev)
+    # Generate new feature vectors
+    Xtrain_pol, Xdev_pol, Xtest_pol  = gen_pol_feat(Xtrain, Xdev, Xtest)
+    # Use gradient descent for searching for optimum
+    SGD(Xtrain_pol, Ytrain, Xtest_pol, Ytest, Xdev_pol, Ydev)
     
     
     

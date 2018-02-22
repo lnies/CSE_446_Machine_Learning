@@ -63,7 +63,7 @@
 	
 	\title{
 		\textbf{\huge{CSE 446: Machine Learning Winter 2018 }} \\[2cm]
-		\LARGE{Assignment 3}\\[1cm]
+		\LARGE{Assignment 3 \\ \textcolor{red}{w/o bonus questions}}\\[1cm]
 	}
 	\author{from \\ Lukas Nies \\ University of Washington}
 	\date{02/22/18}
@@ -92,6 +92,10 @@ None.
 
 I have read and understood these policies.
 
+\subsection{Note: Bonus not included!}
+
+I will include some of the \textcolor{red}{bonus questions} in the same .pdf file as assignment 3 for better readability. Maybe not in this upload but in the upload until Monday 26th.  
+
 \newpage
 
 \section{Problem: Linear Regression on MNIST}
@@ -102,21 +106,21 @@ I have read and understood these policies.
 	\item If one runs the Closed Form Estimator with $\lambda = 0$ one encounters trying to invert a singular matrix ($X^TX$) which is not possible per definition since the determinant is $\det(X^TX)=0$. The matrix is therefore not invertible. To avoid this we introduce a regularization by adding the term $\lambda\mathbbm{1}_d$. This is intuitively clear by considering the data itself: one digit consists of $28\times 28$ pixels where most pixels (at the edges and in the corners) don't carry any information about the digit itself. When calculating $X^TX$ we get the same result: we have more "dimensions" than information for those "dimensions". In mathematical terms: $X^TX$ is underdetermined.
 	\item For this part a grid search was implemented to search for different values of $\lambda$ and the threshold to optimize the performance on the development set:
 		\begin{enumerate}[label=(\alph*)]
-			\item The best result was found with $\lambda=101$ and a threshold of $0.4$. The grid search ran for $\lambda$ from 1 to 250, the treshold ran from 0.1 to 1.0.
+			\item The best result was found with $\lambda=0.02$ and a threshold of $0.5$. The grid search ran for $\lambda$ from 0.01 to 1 with steps of 0.01, the treshold ran from 0.1 to 1.0 in steps of 0.1.
 			\item The average squared error using the parameters stated above is as follows:
 				\begin{itemize}
-					\item $\text{Training error}=0.09165$
-					\item $\text{Development error}=0.01907$
-					\item $\text{Test error}=0.02132$
+					\item $\text{Training error}=0.013045$
+					\item $\text{Development error}=0.01420$
+					\item $\text{Test error}=0.01626$
 				\end{itemize}
 			\item The misclassification error using the parameters stated above is as follows:
 			\begin{itemize}
-				\item $\text{Training error}=1.88\%$
-				\item $\text{Development error}=1.64\%$
-				\item $\text{Test error}=2.30\%$
+				\item $\text{Training error}=0.93\%$
+				\item $\text{Development error}=1.08\%$
+				\item $\text{Test error}=1.76\%$
 			\end{itemize}
 		\end{enumerate}
-	\item Samples with large values (far off the mean of the rest of the data points) have a strong influence on linear polynomial functions fitted through regression. This leads to large misclassification on most of the data points. 
+	\item Samples with large values (far off the mean of the rest of the data points) have a strong influence on linear polynomial functions fitted through regression. This leads to large misclassification on most of the data points. A better model would be using a higher order polynomial to fit those samples more efficiently.
 \end{enumerate}
 
 \subsection{Linear regression using gradient descent}
@@ -124,7 +128,7 @@ I have read and understood these policies.
 \begin{enumerate}
 	\item The proof is as follows:
 		\begin{align*}
-			\frac{\partial \mathcal{L}_w}{\partial w} &= \frac{\partial}{\partial w} \left( \frac{1}{N} \sum_{n=1}^{N} \frac{1}{2} \left( y_n - w^Tx_n \right)^2 + \frac{\lambda}{2} \lVert w \rVert^2 \right) \\
+			\frac{\partial \mathcal{L}_\lambda}{\partial w} &= \frac{\partial}{\partial w} \left( \frac{1}{N} \sum_{n=1}^{N} \frac{1}{2} \left( y_n - w^Tx_n \right)^2 + \frac{\lambda}{2} \lVert w \rVert^2 \right) \\
 			&= \frac{1}{N} \sum_{n=1}^{N} \left( -\frac{2x_n}{2} \right) \left( y_n - w^Tx_n \right) + \left( \frac{2\lambda}{2} \textbf{w}  \right) \\
 			&= -\frac{1}{N} \sum_{n=1}^{N} \left( y_n - \hat{y}_n \right) x_n + \lambda \textbf{w}
 		\end{align*}
@@ -132,19 +136,149 @@ I have read and understood these policies.
 		\begin{align*}
 			\frac{\partial \mathcal{L}_w}{\partial w} = -\frac{1}{N} \sum_{n=1}^{N} \left( y_n - \hat{y}_n \right) x_n + \lambda \textbf{w} = - \frac{1}{N} X^T \cdot \left( Y - \hat{Y} \right) + \lambda \textbf{w}
 		\end{align*}
-	\item Stepsizes $ 10^{-3} \leq \eta \leq 10^{-2} $ worked well for this problem. For the error rate see figure \ref{fig:1.2}. For generating the plots, $\lambda=1$ and $\eta=10^{-2}$ were chosen.
+	\item Stepsizes $ -10^{-2} \leq \eta \leq -10^{-1} $ worked well for this problem. For the error rate see figure \ref{fig:1.2}. For generating the plots, $\eta = \frac{1}{4}\times 10^{-1}$ and $\eta=10^{-2}$ were chosen.
 		\begin{figure}[h!]
 			\centering
-			\includegraphics[width=\linewidth]{./Problem_1/Problem_1.2_10-2.png}
-			\caption{Plot of averaged squared errors (left, note the logarithmic vertical axis) and misclassification loss in percent (right). For generating the plots, $\lambda=1$ and $\eta=10^{-2}$ were chosen.}
+			\includegraphics[width=\linewidth]{./Problem_1/Problem_1.2.png}
+			\caption{Plot of averaged squared errors (left) and misclassification loss in percent (right) for the gradient descent algorithm. For generating the plots, $\eta = \frac{1}{4}\times 10^{-1}$ and $\eta=10^{-2}$ were chosen.}
 			\label{fig:1.2}
 		\end{figure}
+	The lowest error I achieved is comparable to the closed form estimator, with $1.08\%$ on the development set. 
 \end{enumerate}
 
 \subsection{Linear Regression Using Stochastic Gradient Descent}
 
+\begin{enumerate}
+	\item The stochastic gradient descent diverges in this case with a learning rate for about $\eta=-0.1$ at $\lambda=0.005$. For too large values of $\eta$ the algorithm might never find the global minimum and therefore the gradient gets larger and larger which leads to divergence. 
+	\item  Stepsizes $\eta \le -10^{-1} $ worked well for this problem. For the error rate see figure \ref{fig:1.3}. For generating the plots, constant $\eta = \frac{1}{4}\times 10^{-1}$ and $\eta=0.005$ were chosen.
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.85\linewidth]{./Problem_1/Problem_1.3.png}
+		\caption{Plot of averaged squared errors (left, note the logarithmic vertical axis) and misclassification loss in percent (right) for the stochastic gradient descent algorithm. The horizontal axis shows the iteration steps for every 500th step. For generating the plots, $\eta = \frac{1}{4}\times 10^{-1}$ and $\eta=0.005$ were chosen.}
+		\label{fig:1.3}
+	\end{figure}
+	The lowest error I achieved is comparable to the closed form estimator, with $1.03\%$ on the development set. 
+	
+	
+	
+	
+\end{enumerate}
+
 
 \newpage
+
+\section{Binary Classification with Logistic Regression}
+
+\begin{enumerate}
+	\item For proofing this, we look at the cases $y_n=1$ and $y_n = 0$ separately.\\
+	\noindent
+	\underline{Case $y_n = 1$:}
+	\begin{align*}
+	\frac{\partial \mathcal{L}_\lambda}{\partial w} &= \frac{\partial}{\partial w} \left( -\frac{1}{N} \sum_{n=1}^{N} \log p_w (y_n = 1|x_n) + \frac{\lambda}{2}\lVert \textbf{w} \rVert^2  \right) \\
+	&= \frac{\partial}{\partial w} \left( -\frac{1}{N} \sum_{n=1}^{N} \frac{1}{1+\exp(-wx_n)} + \frac{\lambda}{2}\lVert \textbf{w} \rVert^2  \right) \\
+	&= \frac{\partial}{\partial w} \left( -\frac{1}{N} \sum_{n=1}^{N} \left[\log(1)-\log(1+\exp(-wx_n) \right] + \frac{\lambda}{2}\lVert \textbf{w} \rVert^2  \right) \\
+	&= -\frac{1}{N} \sum_{n=1}^{N} \left[ \frac{x_n \exp(-wx_n)}{1+\exp(-wx_n)} \right] + \lambda\textbf{w}   \\
+	&= -\frac{1}{N} \sum_{n=1}^{N} \left[ x_n(\hat{y}_n^{-1}-1)\hat{y}_n \right] + \lambda\textbf{w} = 
+	-\frac{1}{N} \sum_{n=1}^{N} (1- \hat{y}_n)x_n + \lambda\textbf{w} 
+	\end{align*}
+	\underline{Case $y_n = 0$:}
+	\begin{align*}
+	\frac{\partial \mathcal{L}_\lambda}{\partial w} &= \frac{\partial}{\partial w} \left( -\frac{1}{N} \sum_{n=1}^{N} \log p_w (y_n = 0|x_n) + \frac{\lambda}{2}\lVert \textbf{w} \rVert^2  \right) \\
+	&= \frac{\partial}{\partial w} \left( -\frac{1}{N} \sum_{n=1}^{N} \frac{1}{1+\exp(+wx_n)} + \frac{\lambda}{2}\lVert \textbf{w} \rVert^2  \right) \\
+	&= \frac{\partial}{\partial w} \left( -\frac{1}{N} \sum_{n=1}^{N} \left[\log(1)-\log(1+\exp(+wx_n) \right] + \frac{\lambda}{2}\lVert \textbf{w} \rVert^2  \right) \\
+	&= -\frac{1}{N} \sum_{n=1}^{N} \left[ \frac{-x_n \exp(+wx_n)}{1+\exp(+wx_n)} \right] + \lambda\textbf{w}   
+	= -\frac{1}{N} \sum_{n=1}^{N} \left[ \frac{-x_n }{\exp(-wx_n)+1} \right] + \lambda\textbf{w}   \\
+	&= -\frac{1}{N} \sum_{n=1}^{N}  -x_n\hat{y}_n + \lambda\textbf{w} = 
+	-\frac{1}{N} \sum_{n=1}^{N} (0- \hat{y}_n)x_n + \lambda\textbf{w} 
+	\end{align*}
+	\item We can rewrite this as a matrix expression:
+	\begin{align*}
+	\frac{\partial \mathcal{L}_\lambda}{\partial w} = -\frac{1}{N} \sum_{n=1}^{N} \left( y_n - \hat{y}_n \right) x_n + \lambda \textbf{w} = - \frac{1}{N} X^T \cdot \left( Y - \hat{Y} \right) + \lambda \textbf{w}
+	\end{align*} 
+	\item Properties of logistic regression
+	\begin{enumerate}[label=(\alph*)]
+		\item Suppose the data is linear separable and $\lambda=0$. In order to fit the data best, one would like to optimize the sigmoid function $\frac{1}{1+\exp(-wx)}$. Since the data is linear separable all, data points with $y_n=0$ are left of $x=0$ and all points with $y_n=1$ are to the right. In this case, the optimal fit would be the Heaviside function (step function). In order to optimize the sigmoid function to approach the Heaviside function, $w\rightarrow \inf$. Hence, our weight vector would diverge. 
+		\item If we suppose that $d>n$ ($\lambda=0$) then the data matrix is sparse and several features will carry no information (equal 0). To fit a larger accumulation of features with value 0 the logistic function must approach, similar to previous question, the Heaviside function. Therefore the weight vector will diverge.
+		\item To avoid the divergence of the weight vector one can introduce regularization such that the algorithm stops early enough to give a good estimation without diverging too fast. If one does not consider this the algorithm might overfit strongly which influences the true error.
+	\end{enumerate}
+						
+\end{enumerate}
+
+\newpage
+
+\section{Multi-Class classification using Least Squares}
+
+\subsection{"One vs. all Classification" with Linear Regression}
+
+\newpage
+
+\section{Probability and Maximum Likelihood Estimation}
+
+\subsection{Probability Review}
+
+\begin{enumerate}
+	\item 
+	\begin{enumerate}[label=(\alph*)]
+		\item Since the disease is quite rare it is likely that one does not have the disease even if one is tested positive. The amount of healthy persons in a group is larger than the number of sick persons and even if the test is highly accurate it's much more likely that one is healthy given the test is incorrect. 
+		\item The probability of being tested positive (P) given having the disease ($\bar{H}$) is given by:
+		\begin{align}
+			P(P|\bar{H})=\frac{P(\bar{H}|P)P(P)}{P(\bar{H})}=0.99.
+		\end{align}
+		By reversing this Bayesian theorem we can yield the probability having the disease given being tested positive:
+		\begin{align}
+			P(P|\bar{H})=\frac{P(\bar{H}|P)P(\bar{H})}{P(P)},
+		\end{align}
+		where $P(P)$ is the total probability being tested positive, which is the sum of the probabilities of being tested positive and being sick, or being tested positive and being healthy:
+		\begin{align}
+		P(\bar{H}|P)&=\frac{P(P|\bar{H})P(\bar{H})}{P(P)}=\frac{P(P|\bar{H})P(\bar{H})}{P(P|\bar{H})P(\bar{H})+P(P|H)P(H)}\\
+		&=\frac{0.99\times 10^{-4}}{0.99\times 10^{-4}+0.01\times(1-10^{-4})}=\frac{1}{102}=0.98\%
+		\end{align}
+	\end{enumerate}
+	\item We can rewrite the table as follows:
+	% Table generated by Excel2LaTeX from sheet 'Sheet1'
+	\begin{table}[h!]
+		\centering
+		\begin{tabular}{|c|c|c|c|}
+			\toprule
+			& S=0   & S=1   &  \\
+			\midrule
+			C=1   & P(S=0 $\cap$ C=1)    & P(S=1 $\cap$ C=1)    & P(C=1) \\
+			\midrule
+			C=0   & P(S=0 $\cap$ C=0)    & P(S=1 $\cap$ C=0)    & P(C=0) \\
+			\midrule
+			& P(S=0) & P(S=1) & 1 \\
+			\bottomrule
+		\end{tabular}%
+	\end{table}% 
+	\begin{table}[h!]
+		\centering
+		\begin{tabular}{|c|c|c|c|}
+			\toprule
+			& S=0   & S=1   &  \\
+			\midrule
+			C=1   & $\frac{23}{154}$    & $\frac{34}{154}$    & $\frac{57}{154}$  \\
+			\midrule
+			C=0   & $\frac{97}{154}$    & $\frac{56}{154}$    & $\frac{23}{154}$  \\
+			\midrule
+			& $\frac{64}{154}$  & $\frac{90}{154}$  & 1 \\
+			\bottomrule
+		\end{tabular}%
+	\end{table}%
+	It follows:
+	\begin{enumerate}[label=(\alph*)]
+		\item $\hat{p}(C=1,S=1)=P(C=1\cap S=1)=\frac{43}{154}=22.08\%$
+		\item $\hat{p}(C=1|S=1)=\frac{P(C=1\cap S=1)}{P(S=1)}=\frac{34}{90}=37.78\%$
+		\item $\hat{p}(C=0|S=0)=\frac{P(C=0\cap S=0)}{P(S=0)}=\frac{41}{64}=64.06\%$
+	\end{enumerate}
+	\item A hat over a parameter denotes an estimator of the parameter. The estimator estimates a probability value of an event based on a limited amount of samples whereas the actual probability of an event is given by looking at all samples.    
+\end{enumerate}
+
+\subsection{Maximum Likelihood Estimation}
+
+\begin{enumerate}
+	\item The log-likelihood function of G given a is given by:
+\end{enumerate}
+
 
 
 %\chapter*{Bibliography}

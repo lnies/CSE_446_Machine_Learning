@@ -19,21 +19,19 @@ import pickle
 import matplotlib.image as mpimg
 from timeit import default_timer as timer
 
-def calc_miscl_err(Y, Y_est):
+def calc_miscl_err(Y, X, w):
     """
-    Calculate the misclassification error
+    Calculate the misclassification error as posted on class canvas
     """
     # Define dimensionality
     d = len(Y)
+    # Threshold 
+    b = 0.5
     # Calculate the error
-    error = 0
-    for i in range(d):
-        if ( Y[i] != Y_est[i] ):
-            error += 1
-    error /= d
-    error *= 100
-    # Return error
-    return error
+    Yhat = np.dot(X,w)
+    Yhat_labels = ( Yhat - b ) >= 0
+    errors = np.abs(Yhat_labels - Y)
+    return (100*sum(errors)/(Yhat.shape[0]*1.0))
     
 def calc_avg_sq_err(X, Y, w):
     """
@@ -44,25 +42,7 @@ def calc_avg_sq_err(X, Y, w):
     d = len(X[0])
     # Calculate the error
     error = ((1)/(2*N)) * (np.linalg.norm( Y - np.dot(X,w) ))**2
-    
     return error
-
-def estimate(X, Y, wstar, TH):
-    """
-    Function for estimating the true label
-    """
-    # Define dimensionality
-    N = len(X)
-    d = len(X[0])
-    # Estimate the label 
-    Y_est = np.zeros(N)
-    for i in range(N):
-        if ( np.dot(X[i],wstar) >= TH ) :
-            Y_est[i] = 1
-        else:
-            Y_est[i] = 0
-    # Return estimation
-    return Y_est
 
 def update_w(X, Y, w, eta, lamda):
     """
@@ -83,20 +63,18 @@ def GD(Xtrain, Ytrain, Xtest, Ytest, Xdev, Ydev):
     d = len(Xtrain[0])
     # initialize starting stepsize eta(0) = 10 and starting w(0)=0
     w = np.zeros(d)
-    eta = 1e-2 
-    lamda = 1
+    # Set parameters
+    eta = 1e-1 *(1/4) 
+    lamda = 0.01
+    # Establish error vectors and calculation
     error_train = calc_avg_sq_err(Xtrain, Ytrain, w)
     error_dev = calc_avg_sq_err(Xdev, Ydev, w)
     error_test = calc_avg_sq_err(Xtest, Ytest, w)
-    Y_est_train = estimate(Xtrain, Ytrain, w, TH = 0.5)
-    Y_est_dev = estimate(Xdev, Ydev, w, TH = 0.5)
-    Y_est_test = estimate(Xtest, Ytest, w, TH = 0.5)
-    misc_train = calc_miscl_err(Ytrain, Y_est_train)
-    misc_dev = calc_miscl_err(Ydev, Y_est_dev)
-    misc_test = calc_miscl_err(Ytest, Y_est_test)
+    misc_train = calc_miscl_err(Ytrain, Xtrain, w)
+    misc_dev = calc_miscl_err(Ydev, Xdev, w)
+    misc_test = calc_miscl_err(Ytest, Xtest, w)
     print("Initial error: %3.5f" % error_train)
-    # Start loop for finding optimal w
-    K = 400 # Parameter to tune in order to find good convergence
+    K = 3000 # Parameter to tune in order to find good convergence
     error_train_arr = np.array(0)
     error_train_arr = np.delete(error_train_arr, 0)
     error_train_arr = np.append(error_train_arr, error_train)
@@ -115,14 +93,14 @@ def GD(Xtrain, Ytrain, Xtest, Ytest, Xdev, Ydev):
     misc_test_arr = np.array(0)
     misc_test_arr = np.delete(misc_test_arr, 0)
     misc_test_arr = np.append(misc_test_arr, misc_test)
+    # Start loop for finding optimal w
     for k in range(K):
+        # Update w at the beginning of each loop
         w = update_w(Xtrain, Ytrain, w, eta, lamda)
-        Y_est_train = estimate(Xtrain, Ytrain, w, TH = 0.5)
-        Y_est_dev = estimate(Xdev, Ydev, w, TH = 0.5)
-        Y_est_test = estimate(Xtest, Ytest, w, TH = 0.5)
-        misc_train = calc_miscl_err(Ytrain, Y_est_train)
-        misc_dev = calc_miscl_err(Ydev, Y_est_dev)
-        misc_test = calc_miscl_err(Ytest, Y_est_test)
+        # Calculate errors
+        misc_train = calc_miscl_err(Ytrain, Xtrain, w)
+        misc_dev = calc_miscl_err(Ydev, Xdev, w)
+        misc_test = calc_miscl_err(Ytest, Xtest, w)
         misc_train_arr = np.append(misc_train_arr, misc_train)
         misc_dev_arr = np.append(misc_dev_arr, misc_dev)
         misc_test_arr = np.append(misc_test_arr, misc_test)
@@ -132,20 +110,20 @@ def GD(Xtrain, Ytrain, Xtest, Ytest, Xdev, Ydev):
         error_dev_arr = np.append(error_dev_arr, error_dev)
         error_test = calc_avg_sq_err(Xtest, Ytest, w)
         error_test_arr = np.append(error_test_arr, error_test)
+        # Loop control
         if ( k % 10 == 0 ):
             print("Loop number %i/%i" % (k,K))
             print("Squared Error: %3.5f, Miscl. Error %3.2f%%" % (error_dev,misc_dev))
     # Print error growth
     x = np.arange(0,K+1,1)
     plt.subplot(1,2,1)
-    plt.semilogy(x, error_train_arr, label = "Training error", linewidth=4)
-    plt.semilogy(x, error_dev_arr, label = "Dev error", linewidth=4)
-    plt.semilogy(x, error_test_arr, label = "Test error", linewidth=4)
+    plt.plot(x, error_train_arr, label = "Training error", linewidth=4)
+    plt.plot(x, error_dev_arr, label = "Dev error", linewidth=4)
+    plt.plot(x, error_test_arr, label = "Test error", linewidth=4)
     plt.grid(True)
     plt.xlabel("Iteration step K")
     plt.ylabel("Averaged squared error")
     plt.legend()
-    
     plt.subplot(1,2,2)
     axes = plt.gca()
     axes.set_ylim([0,5])
@@ -158,10 +136,6 @@ def GD(Xtrain, Ytrain, Xtest, Ytest, Xdev, Ydev):
     plt.legend()
     plt.show()
 
-
-
-
-
 def main():
     """
     Main function: main sequence of programm is controlled and called here
@@ -170,7 +144,11 @@ def main():
     with gzip.open("mnist_2_vs_9.gz") as f:
         data = pickle.load(f, encoding="bytes")
     Xtrain, Ytrain, Xtest, Ytest, Xdev, Ydev = data[b"Xtrain"], data[b"Ytrain"], data[b"Xtest"], data[b"Ytest"], data[b"Xdev"], data[b"Ydev"]
-    
+    # Add Bias to data
+    Xtrain[:,783] = 1
+    Xdev[:,783] = 1
+    Xtest[:,783] = 1
+    # Start gradient descent
     GD(Xtrain, Ytrain, Xtest, Ytest, Xdev, Ydev)
     
     

@@ -101,12 +101,20 @@ def estimate(X, Y, wstar, TH):
     d = len(X[0])
     # Estimate the label 
     Y_est = np.zeros(N)
+    M = np.dot(X,wstar)
+    for i in range(N):
+        if (M[i] >= TH):
+            Y_est[i] = 1
+        else:
+            Y_est[i] = 0
+    """
     for i in range(N):
         if ( np.dot(X[i],wstar) >= TH ) :
             Y_est[i] = 1
         else:
             Y_est[i] = 0
     # Return estimation
+    """
     return Y_est
 
 
@@ -134,6 +142,10 @@ def main():
     with gzip.open("mnist_2_vs_9.gz") as f:
         data = pickle.load(f, encoding="bytes")
     Xtrain, Ytrain, Xtest, Ytest, Xdev, Ydev = data[b"Xtrain"], data[b"Ytrain"], data[b"Xtest"], data[b"Ytest"], data[b"Xdev"], data[b"Ydev"]
+    # Add Bias to data
+    Xtrain[:,783] = 1
+    Xdev[:,783] = 1
+    Xtest[:,783] = 1
     # Loop over different values of lambda and threshold to tune 
     # the algorithm on the development set
     print("Begin of searching for best parameters of lambda and the threshold:")
@@ -145,8 +157,8 @@ def main():
     for T in range(1,11):
         print("Loop %i out of 10" % T)
         T /= 10
-        for L in range(10,250):
-            L /= 1
+        for L in range(1,100,1):
+            L /= 100
             # Calculate optimized vector w and estimation on Xtrain
             w_star_train = find_w(Xtrain, Ytrain, lamda = L)
             # Calculate the squared errors
@@ -161,14 +173,14 @@ def main():
             miscl_err_dev = calc_miscl_err(Ydev, Ydev_est)
             miscl_err_test = calc_miscl_err(Ytest, Ytest_est)
             # Rough test if error rates have improved
-            if ( miscl_err_dev < lowest_miscl_err_dev or sq_err_dev < lowest_sq_err_dev  ):
+            if ( miscl_err_dev < lowest_miscl_err_dev ):  #or sq_err_dev < lowest_sq_err_dev  ):
                 lowest_miscl_err_dev = miscl_err_dev
                 lowest_sq_err_dev = sq_err_dev
                 T_best = T
                 L_best = L
     print("")
     print("After grid search the best parameters were found:")
-    print("Threshold: %3.1f, Lambda: %3.1f" % (T_best, L_best))
+    print("Threshold: %3.2f, Lambda: %3.5f" % (T_best, L_best))
     print("")
     # Recalculate best result
     # Calculate optimized vector w and estimation on Xtrain
