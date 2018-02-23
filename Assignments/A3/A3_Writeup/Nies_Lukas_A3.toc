@@ -1,4 +1,4 @@
-\select@language {english}
+\babel@toc {english}{}
 \contentsline {section}{\numberline {0}Policies}{1}{section.0}
 \contentsline {subsection}{\numberline {0.1}List of Collaborators}{1}{subsection.0.1}
 \contentsline {subsection}{\numberline {0.2}List of Acknowledgments}{1}{subsection.0.2}
@@ -13,4 +13,5 @@
 \contentsline {subsection}{\numberline {3.1}"One vs. all Classification" with Linear Regression}{6}{subsection.3.1}
 \contentsline {section}{\numberline {4}Probability and Maximum Likelihood Estimation}{7}{section.4}
 \contentsline {subsection}{\numberline {4.1}Probability Review}{7}{subsection.4.1}
-\contentsline {chapter}{Bibliography}{8}{Item.25}
+\contentsline {subsection}{\numberline {4.2}Maximum Likelihood Estimation}{8}{subsection.4.2}
+\contentsline {chapter}{Bibliography}{8}{equation.4.10}

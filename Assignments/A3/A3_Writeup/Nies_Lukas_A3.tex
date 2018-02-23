@@ -210,6 +210,25 @@ I will include some of the \textcolor{red}{bonus questions} in the same .pdf fil
 
 \subsection{"One vs. all Classification" with Linear Regression}
 
+\begin{enumerate}
+	\item We can rewrite this as a matrix expression:
+	\begin{align*}
+	\frac{\partial \mathcal{L}_W}{\partial W} = -\frac{1}{N} \sum_{n=1}^{N} \left  x_n( y_n - \hat{y}_n \right)^T + \lambda \textbf{W} = - \frac{1}{N} X^T \cdot \left( Y - \hat{Y} \right) + \lambda \textbf{W}
+	\end{align*}
+	\item Stepsizes $ -10^{-2} \leq \eta \leq -10^{-1} $ worked well for this problem. For the error rate see figure \ref{fig:3.1}. For generating the plots, $\eta = \frac{1}{4}\times 10^{-1}$ and $\eta=10^{-2}$ were chosen.
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=\linewidth]{./Problem_1/Problem_1.2.png}
+		\caption{Plot of averaged squared errors (left) and misclassification loss in percent (right) for the gradient descent algorithm. For generating the plots, $\eta = \frac{1}{4}\times 10^{-1}$ and $\eta=10^{-2}$ were chosen.}
+		\label{fig:3.1}
+	\end{figure}
+	The lowest error I achieved is comparable to the closed form estimator, with $1.08\%$ on the development set. 
+\end{enumerate}
+
+
+
+
+
 \newpage
 
 \section{Probability and Maximum Likelihood Estimation}
@@ -276,7 +295,35 @@ I will include some of the \textcolor{red}{bonus questions} in the same .pdf fil
 \subsection{Maximum Likelihood Estimation}
 
 \begin{enumerate}
-	\item The log-likelihood function of G given a is given by:
+	\item If the observations are independent then the likelihood function is given by the product of the probability mass function which is the Poisson distribution in this case:
+	\begin{align}
+		l(\lambda, G_1,\dots, G_N)=\prod_{i=1}^{N}\frac{\lambda^{G_i}}{G_i!}\exp(-\lambda)
+	\end{align}
+	Therefore the log-likelihood function is given applying the (natural) logarithm:
+	\begin{align}
+		L(\lambda, G_1,\dots, G_N)&= \ln\left( \prod_{i=1}^{N}\frac{\lambda^{G_i}}{G_i!}\exp(-\lambda)  \right)= \sum_{i=1}^{N}\left[ \ln\left( \frac{\lambda^{G_i}}{G_i!}\exp(-\lambda) \right) \right] \notag \\
+		&= \sum_{i=1}^{N}\left[  \ln(\lambda^{G_i})-\ln(G_i!)+\ln(\exp(-\lambda)) \right] \notag \\
+		&= \sum_{i=1}^{N}\left[  G_i\ln(\lambda)-\ln(G_i!)-\lambda\right]
+	\end{align}
+	\item In order to find the MLE for $\lambda$ we need to solve
+	\begin{align}
+		\hat{\lambda}=\arg\max_\lambda(L(\lambda, G_1,\dots, G_N))
+	\end{align}
+	by taking the derivative in respect to $\lambda$:
+	\begin{align}
+		\frac{\partial}{\partial\lambda}\left( L(\lambda, G_1,\dots, G_N) \right) &= 0. \\ \notag
+		\Leftrightarrow
+		0 &= \frac{\partial}{\partial\lambda}\left(\sum_{i=1}^{N}\left[  G_i\ln(\lambda)-\ln(G_i!)-\lambda\right]  \right) \notag \\
+		\Leftrightarrow
+		0 &= \sum_{i=1}^{N}\left[  \frac{G_i}{\hat{\lambda}}-1\right] = -N + \frac{1}{\lambda}\sum_{i=1}^{N}G_i \notag \\
+		\Leftrightarrow
+		\hat{\lambda} &= \frac{1}{N}\sum_{i=1}^{N}G_i. 
+	\end{align}
+	\item The MLE for $\lambda$ using the observed G is therefore:
+	\begin{align}
+		\hat{\lambda} &= \frac{1}{N}\sum_{i=1}^{N}G_i. = \frac{1}{8}\left( 6+4+2+7+5+1+2+5 \right) = 4
+	\end{align}
+	
 \end{enumerate}
 
 

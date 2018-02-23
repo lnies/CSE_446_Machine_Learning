@@ -134,7 +134,7 @@ def SGD(Xtrain, Ytrain, Xtest, Ytest, Xdev, Ydev):
             
     plt.subplot(1,2,2)
     axes = plt.gca()
-    axes.set_ylim([0,5])
+    axes.set_ylim([10,20])
     plt.plot(x, misc_train_arr, label = "Training misclassification", linewidth=2)
     plt.plot(x, misc_dev_arr, label = "Dev misclassification", linewidth=2)
     plt.plot(x, misc_test_arr, label = "Test misclassification", linewidth=2)
