@@ -1,4 +1,4 @@
-\babel@toc {english}{}
+\select@language {english}
 \contentsline {section}{\numberline {0}Policies}{1}{section.0}
 \contentsline {subsection}{\numberline {0.1}List of Collaborators}{1}{subsection.0.1}
 \contentsline {subsection}{\numberline {0.2}List of Acknowledgments}{1}{subsection.0.2}

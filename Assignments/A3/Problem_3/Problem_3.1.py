@@ -24,11 +24,8 @@ def calc_miscl_err(Y, Yhat):
     Calculate the misclassification error (according to class canvas)
     """
     indsYhat=np.argmax(Yhat,axis=1)
-
     indsY=np.argmax(Y,axis=1)
-    
     errors = (indsYhat-indsY)!=0
-    
     return (100*sum(errors)/(Yhat.shape[0]*1.0))
     
 def calc_avg_sq_err(X, Y, w):
@@ -100,7 +97,7 @@ def SGD(Xtrain, Ytrain, Xtest, Ytest, Xdev, Ydev):
         if ( k % 10 == 0 and k != 0 ):
             print("Loop number %i/%i" % (k,K))
             print("Squared Error: %3.5f, Miscl. Error %3.2f%%" % (error_dev,misc_dev))
-        # Calculate errors after every 500th iteration
+        # Calculate errors after every Pth iteration
         P = 10
         if ( k % P == 0 and k != 0):
             Yhat_train = np.dot(Xtrain,w)
@@ -119,19 +116,17 @@ def SGD(Xtrain, Ytrain, Xtest, Ytest, Xdev, Ydev):
             error_test = calc_avg_sq_err(Xtest, Ytest, w)
             error_test_arr = np.append(error_test_arr, error_test)
             
-            
+    # Plot the graphs
     x = np.arange(1,K/P+2,1)
     fig = plt.figure(figsize=(16,6))
-            
     plt.subplot(1,2,1)
     plt.semilogy(x, error_train_arr, label = "Training error", linewidth=2)
     plt.semilogy(x, error_dev_arr, label = "Dev error", linewidth=2)
     plt.semilogy(x, error_test_arr, label = "Test error", linewidth=2)
     plt.grid(True)
-    plt.xlabel("Iteration step K in 500x axis value")
+    plt.xlabel("Iteration step K in 10x axis value")
     plt.ylabel("Averaged squared error")
-    plt.legend()
-            
+    plt.legend()       
     plt.subplot(1,2,2)
     axes = plt.gca()
     axes.set_ylim([10,20])
@@ -139,17 +134,12 @@ def SGD(Xtrain, Ytrain, Xtest, Ytest, Xdev, Ydev):
     plt.plot(x, misc_dev_arr, label = "Dev misclassification", linewidth=2)
     plt.plot(x, misc_test_arr, label = "Test misclassification", linewidth=2)
     plt.grid(True)
-    plt.xlabel("Iteration step K in 500x axis value")
+    plt.xlabel("Iteration step K in 10x axis value")
     plt.ylabel("Misclassification rate in %")
     plt.legend()
-        
+    # Save plot in extra file 
     plt.savefig("Problem_3.1.png", bbox_inches='tight')
-
     plt.close(fig)
-
-
-
-
 
 def main():
     """
@@ -181,20 +171,8 @@ def main():
         Ytest[i,test_label[i]] = 1
     for i in range(len(Xdev)):
         Ydev[i,dev_label[i]] = 1
-        
+    # Start stochastic gradient descent  
     SGD(Xtrain, Ytrain, Xtest, Ytest, Xdev, Ydev)
     
-    
-    
-
-
-
-
 if __name__ == '__main__':
     main()
-
-
-
-
-
-
