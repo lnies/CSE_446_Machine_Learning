@@ -1,0 +1,13 @@
+\select@language {english}
+\contentsline {section}{\numberline {0}Policies}{1}{section.0}
+\contentsline {subsection}{\numberline {0.1}List of Collaborators}{1}{subsection.0.1}
+\contentsline {subsection}{\numberline {0.2}List of Acknowledgments}{1}{subsection.0.2}
+\contentsline {subsection}{\numberline {0.3}Policies}{1}{subsection.0.3}
+\contentsline {section}{\numberline {1}Convexity: Linear and Logistic Regression}{2}{section.1}
+\contentsline {section}{\numberline {2}Neural Networks and Non-convex optimization}{2}{section.2}
+\contentsline {subsection}{\numberline {2.1}Computational Complexity}{2}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Saddle Points and Symmetry}{3}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Representation and Non-linear Decision Boundaries}{4}{subsection.2.3}
+\contentsline {section}{\numberline {3}MLPs on MNIST}{6}{section.3}
+\contentsline {subsection}{\numberline {3.1}One hidden layer MLP}{6}{subsection.3.1}
+\contentsline {chapter}{Bibliography}{7}{figure.caption.5}
